@@ -1,0 +1,1608 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2021-06-03T02:33:29.165974+00:00",
+  "repo": "ietf-wg-httpapi/rfc7807bis",
+  "labels": [
+    {
+      "name": "editorial",
+      "description": "",
+      "color": "0E8A16"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "MDU6SXNzdWU3OTY0NTYzNjU=",
+      "title": "Update references",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/1",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "editorial"
+      ],
+      "body": "... to account for things that have been published since.",
+      "createdAt": "2021-01-28T23:32:38Z",
+      "updatedAt": "2021-04-26T03:26:59Z",
+      "closedAt": "2021-04-26T03:26:59Z",
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think this is done - can reopen if we find anything else.",
+          "createdAt": "2021-04-26T03:26:59Z",
+          "updatedAt": "2021-04-26T03:26:59Z"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "MDU6SXNzdWU3OTY0NTY2NjQ=",
+      "title": "IANA considerations",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/2",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "mnot"
+      ],
+      "labels": [
+        "editorial"
+      ],
+      "body": "... can be updated to just tell IANA to point the registrations at this document.",
+      "createdAt": "2021-01-28T23:33:20Z",
+      "updatedAt": "2021-05-25T06:59:42Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "MDU6SXNzdWU3OTY0NTY5MjE=",
+      "title": "Validate HTTP message examples",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/3",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "mnot"
+      ],
+      "labels": [
+        "editorial"
+      ],
+      "body": "",
+      "createdAt": "2021-01-28T23:33:59Z",
+      "updatedAt": "2021-04-26T03:27:30Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 4,
+      "id": "MDU6SXNzdWU3OTY0NTcxNTg=",
+      "title": "Deprecate XML?",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/4",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Just asking.",
+      "createdAt": "2021-01-28T23:34:32Z",
+      "updatedAt": "2021-02-10T01:35:26Z",
+      "closedAt": "2021-02-10T01:35:26Z",
+      "comments": [
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "Is there any real harm in keeping XML in? And in the cases where the happy path of an API is using XML - they do still exist :) - then having the unhappy paths also using XML is hugely convenient, rather than needing to parse success vs failure in different ways.",
+          "createdAt": "2021-01-29T17:26:43Z",
+          "updatedAt": "2021-01-29T17:26:43Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Seems like we can close this with no action, then. If anyone wants to fight for it, we can reopen.",
+          "createdAt": "2021-02-10T01:35:25Z",
+          "updatedAt": "2021-02-10T01:35:25Z"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "MDU6SXNzdWU3OTY0NTc2NDI=",
+      "title": "Incorporate errata",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/5",
+      "state": "CLOSED",
+      "author": "mnot",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "editorial"
+      ],
+      "body": "Either by making editorial changes or filing issues.\r\n\r\n[errata](https://www.rfc-editor.org/errata_search.php?rfc=7807)",
+      "createdAt": "2021-01-28T23:35:47Z",
+      "updatedAt": "2021-04-26T03:34:14Z",
+      "closedAt": "2021-04-26T03:34:14Z",
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closing, as we have two errata currently, addressed by the commit above and #19.",
+          "createdAt": "2021-04-26T03:34:14Z",
+          "updatedAt": "2021-04-26T03:34:14Z"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "MDU6SXNzdWU3OTY0NTk4NzU=",
+      "title": "Multiple problems",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/6",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "sdatspun2"
+      ],
+      "labels": [],
+      "body": "Sometimes an API will want to report more than one problem in a response. 7807 explains that this can be done in extensions, but does not natively allow multiple problems to be conveyed, because there was concern that doing so would make it too easy to contradict the semantics of the status code.\r\n\r\nSince publication, developers have still wanted a generic solution to this. A few possible directions we could go on:\r\n\r\n0. Do nothing\r\n1. Improve the documentation regarding how to handle multiple problems in extensions\r\n2. Introduce a way to natively convey multiple problems, as long as they share the same status code semantics\r\n3. Something else?",
+      "createdAt": "2021-01-28T23:41:07Z",
+      "updatedAt": "2021-05-04T13:10:02Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "I'm somewhat curious how often multiple *different* problems really happen, as opposed to multiple different facets of the same problem.\r\n\r\nBy \"multiple different facets of the same problem\", I'm meaning things like request validation failures. A request might be invalid because of multiple different fields in the incoming JSON(/whatever content type is being used). But the overall problem is still \"Validation Failed\". It's just that it failed for several reasons.\r\n\r\nThe real multiple problems would, in my mind at least, be something like:\r\n* The incoming request was invalid (So a \"Validation Failed\" problem with a status of 400/422)\r\n* And you don't have permission to do this (So a \"Permission Denied\" problem with a status of 403)\r\n* And the resource doesn't exist (So a \"Not Found\" problem with a status of 404)\r\n\r\nThe \"multiple facets\" case is relatively simple to support. Indeed, I'm sure the wider community have a myriad of different ways to do it already, but obviously a standard way to achieve it would be better.\r\n\r\nThe \"multiple problems\" case is much harder, simply because of the different status codes that can come up. But my (potentially naive) suspicion is that it's also less useful.",
+          "createdAt": "2021-01-29T17:25:13Z",
+          "updatedAt": "2021-01-29T17:25:13Z"
+        },
+        {
+          "author": "serialseb",
+          "authorAssociation": "NONE",
+          "body": "I hope it's useful, here is the scenario of what we currently do (it's a work in progress).\r\n\r\nWe currently retrieve various problem documents from various api calls that are done in a scatter/gather scenario, unbeknownst to the client.\r\nWe aggregate those potential multiple problems:\r\n - if they're all the same type / status, we reuse this and agrgregate the details.\r\n - if they're not of the same type / status, we extract a response status (see below) and set the type to an \"aggregate\", and add a `inner_problems` array of problem documents to provide details of each of the errors encountered during this call\r\n\r\nThe status code in the case of an aggregate is set according to those rules:\r\n - if all status codes are the same, use this status code\r\n - if status codes are not the same but in the same 100th, set it to 400 or 500\r\n - if it's spread across, use a 500\r\n\r\nIt's not ideal but it allows us to communicate to the client why their request failed, with information about each dataset that may have rejected a request.\r\n\r\n",
+          "createdAt": "2021-01-30T10:22:09Z",
+          "updatedAt": "2021-01-30T10:22:09Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@serialseb that's an interesting pattern. I could see recommending that in the spec, and advising problem definitions to think carefully about accommodating multiple instances of their details...",
+          "createdAt": "2021-02-10T01:41:00Z",
+          "updatedAt": "2021-02-10T01:41:00Z"
+        },
+        {
+          "author": "gervaisb",
+          "authorAssociation": "NONE",
+          "body": "I agree with the _facets_ ideas. And I would go further by asking to provide a format for validation errors.",
+          "createdAt": "2021-02-10T13:31:01Z",
+          "updatedAt": "2021-02-10T13:31:01Z"
+        },
+        {
+          "author": "gabesullice",
+          "authorAssociation": "NONE",
+          "body": "> The \"multiple problems\" case is much harder, simply because of the different status codes that can come up. But my (potentially naive) suspicion is that it's also less useful.\r\n\r\nI agree with this. I find it hard to imagine that clients will actually attempt to resolve all problems in a multi-status response before retrying a request because the implementation seems like it would be overly complicated. @serialseb, in practice, do your clients attempt to resolve multiple the problems or are the problems merely logged?\r\n\r\nOption 1 seems most pragmatic to me. I.e. explain that a problem type can use extensions to define an array of subproblems with examples. Then explain that if the problems are not subproblems of a broader category, the server should choose the most critical problem.\r\n\r\nIf the server doesn't choose the most critical problem, then we will likely have to provide a way to order/prioritize problems in the media type to guide the client. For example, if a server responds with both the `insufficient-storage` and `invalid-field` error types, the client will have to understand that it's a waste of time to fix the validation error because the server is out of space. This still permits a client to fix multiple problems iteratively by retrying the request after each problem has been fixed.\r\n",
+          "createdAt": "2021-03-12T18:37:33Z",
+          "updatedAt": "2021-03-12T18:37:33Z"
+        },
+        {
+          "author": "serialseb",
+          "authorAssociation": "NONE",
+          "body": "@gabesullice in practice, when there are multiple problems, it comes to a human to analyse. That analysis can be done iwth raw text, or with structured data. People do structured data all the time, and if you don't have an answer they'll build their own.\r\nNow, the rules we use is to allow a simple automated system to take care of the cases where the most specific issues happen (say, two gateways are timing out, it's a timeout, we merge towards a specific status code, automated clietns take care of it). In the cases where they're not, the lack of standard way of communicating a common scenario leads to one of those less than ideal scenarios: try not to step on the spec's turf, and create your own schema (implementation cost reduction through network effect nullified, no way to generiically notify operators as schema is now per api), not give data (worst outcome), or give text and hope someone reads it.\r\nOperational support scenarios can be automated in the \"let's get a human involved\" pathway, and as long as we have no answer for this, no tool vendor will use this, making everything more complex, more isolated, and in turn, more expensive.\r\n\r\nIf one of the variables is badly written and an invalid URI, and another one does not exist, and i've been teaching people to reuse errors they understand, i now have no standard way to explain that one problem is X and another is Y.\r\n\r\nOperational is part of APIs and automation is as important to DevRelOps as it is to just plain APIs. ",
+          "createdAt": "2021-03-12T19:06:57Z",
+          "updatedAt": "2021-03-12T19:06:57Z"
+        },
+        {
+          "author": "andrecedik",
+          "authorAssociation": "NONE",
+          "body": "Thank you @serialseb for the insights into how you're handling this issue. It's an interesting approach to the limitations of the original RFC and reflects what we're also trying to 'fix' with [our I-D](https://datatracker.ietf.org/doc/draft-cedik-http-warning/). Do you also return the `status` attribute within the `inner_problems` array to let the client know the severity of the problem?\r\n\r\n> if a server responds with both the insufficient-storage and invalid-field error types, the client will have to understand that it's a waste of time to fix the validation error because the server is out of space\r\n\r\n@gabesullice it may be a waste of time at the moment, but when you know beforehand that fixing the space problem won't make the other problem(s) go away one could also think about correcting the `invalid-field error` before sending a new request. \r\n\r\n> This still permits a client to fix multiple problems iteratively by retrying the request after each problem has been fixed.\r\n\r\nYes, but isn't that a bad user experience? I'd rather know everything I'm doing wrong right now before making a new request, fixing one problem, making another request, fixing another problem, and so on.",
+          "createdAt": "2021-03-30T06:25:24Z",
+          "updatedAt": "2021-03-30T06:25:24Z"
+        },
+        {
+          "author": "gabesullice",
+          "authorAssociation": "NONE",
+          "body": "> Yes, but isn't that a bad user experience?\r\n\r\nIt's certainly a trade off, but fixing one problem at a time is the best way to debug. Whenever I try to make more than one change at a time, I end up in a more chaotic debugging state than before. It's good practice to make isolated changes that you understand rather than throwing things at the wall to see what sticks.\r\n\r\nThe trade off is that the media type is less flexible and certain things will be more difficult to convey.\r\n\r\nHowever, in my experience with the JSON:API spec (which supports multiple error objects), server implementers tend to dump useless stack traces into response bodies and try to abuse them to make non-atomic updates. Multiple errors also encourage client implementers to try the kitchen sink approach to debugging.\r\n\r\nSo it's in the spirit of designing something that makes good practices easy and bad practices difficult that I'm pushing back against supporting multiple problem details.\r\n\r\n---\r\n\r\nMy suggestion is to finalize this document for the single error case. Then mint an error type called `multiple` which defines an extension member named `instances`. The value of `instances` would be an array of problem objects as defined for the single error case. Perhaps it will add additional extension members for those child objects as well.\r\n\r\nTo benefit from network effects, the `multiple` type can be published using the IETF process. By separating that into its own document, you can iterate on that design in a separate document without postponing this one.",
+          "createdAt": "2021-03-30T13:54:55Z",
+          "updatedAt": "2021-03-30T13:54:55Z"
+        },
+        {
+          "author": "serialseb",
+          "authorAssociation": "NONE",
+          "body": "> Do you also return the `status` attribute within the `inner_problems` array to let the client know the severity of the problem?\r\n\r\nYes we do, but this is only used for operators to gain additional insight.\r\n\r\n> To benefit from network effects, the multiple type can be published using the IETF process. By separating that into its own document, you can iterate on that design in a separate document without postponing this one.\r\n\r\nI'd be receptive to such a proposal\r\n\r\n\r\n",
+          "createdAt": "2021-04-28T07:19:14Z",
+          "updatedAt": "2021-04-28T07:19:14Z"
+        },
+        {
+          "author": "andrecedik",
+          "authorAssociation": "NONE",
+          "body": "> So it's in the spirit of designing something that makes good practices easy and bad practices difficult that I'm pushing back against supporting multiple problem details.\r\n\r\nI'm with you on making bad practices difficult and good practices easy \ud83d\ude01 \r\n\r\n> My suggestion is to finalize this document for the single error case. Then mint an error type called multiple which defines an extension member named instances. The value of instances would be an array of problem objects as defined for the single error case. Perhaps it will add additional extension members for those child objects as well.\r\n\r\nSounds promising. I'd be willing to support this. ",
+          "createdAt": "2021-05-04T05:58:27Z",
+          "updatedAt": "2021-05-04T05:58:27Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "body": ">However, in my experience with the JSON:API spec (which supports multiple error objects), server implementers tend to dump useless stack traces into response bodies and try to abuse them to make non-atomic updates. \r\n\r\nI am not a proponent of JSON:API spec, but honestly, this has nothing to do with the multiple error objects. It is due to lack of knowledge/discipline/governance on the API developer's side. Someone can dump exception in `detail` even today. A few days ago, I had to explain to a very senior Java developer that you just cannot stream Java exceptions in error response of an HTTP API. \r\n\r\n>My suggestion is to finalize this document for the single error case. Then mint an error type called multiple which defines an extension member named instances. The value of instances would be an array of problem objects as defined for the single error case. Perhaps it will add additional extension members for those child objects as well.\r\n\r\nI disagree. Multiple problems could be added using extension mechanism today as well. One of the main reasons for -bis is to provide support for multiple problems without any extension (in order to increase adoption).",
+          "createdAt": "2021-05-04T13:10:02Z",
+          "updatedAt": "2021-05-04T13:10:02Z"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "MDU6SXNzdWU3OTY3MDkzNjQ=",
+      "title": "Repository of common Problem types",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/7",
+      "state": "OPEN",
+      "author": "sazzer",
+      "authorAssociation": "NONE",
+      "assignees": [
+        "mnot"
+      ],
+      "labels": [],
+      "body": "(I'm not sure if this is the correct place to propose this, so apologies if not!)\r\n\r\nAs RFC-7807 gains wider-spread adoption, it is becoming the case that more and more APIs are returning effectively the same problems with different values for the fields. This makes it difficult to work across different APIs, because you need to understand that different problems from those APIs actually mean the same thing.\r\n\r\nCommon examples that you might expect to see include:\r\n* Resource not found\r\n* Authentication failure\r\n* Optimistic lock failure (e.g. the `If-Match` header on a `PUT` request has the wrong value)\r\n* Request validation failure\r\n\r\nIt seems that it would be useful to have a repository of these common problem types that can then be reused across APIs, so that ideally these common situations can be handled in the exact same way on the client.\r\n\r\nEffectively the same idea as the standard list of [Link Relations](https://www.iana.org/assignments/link-relations/link-relations.xhtml), whereby all clients that see a link relation of, for example, `self` or `item` know what they mean regardless of the API that produced them.",
+      "createdAt": "2021-01-29T09:08:21Z",
+      "updatedAt": "2021-05-25T06:57:23Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Unlike relation type name (`self` or `item), problem `type` is a URI in 7807. Is there any other example of a repository of entities where each entity is uniquely addressable? \r\n\r\nAlso, I am working on API for such a repository https://github.com/sdatspun2/error-catalog-service (When you read, replace \"Error Type\" with \"Problem Type\" and \"Error Catalog\" with \"Problem Type Repository\"). I would like to submit it here to evolve it if there is interest.",
+          "createdAt": "2021-01-31T17:20:14Z",
+          "updatedAt": "2021-01-31T17:20:14Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "My concern here, and why I raised this ticket, is less to do with APIs\nusing the same value for different meanings, and instead to do with APIs\nusing different values for the same meaning. Mostly it makes API design\nthat bit easier if there is a well known value to use for what you're\ntrying to indicate.\n\nOn Sun, 31 Jan 2021, 17:20 Sanjay Dalal, <notifications@github.com> wrote:\n\n> Unlike relation type name (self or item), problem type` is a URI in 7807.\n> Is there any other example of a repository of entities where each entity is\n> uniquely addressable?\n>\n> Also, I am working on API for such a repository\n> https://github.com/sdatspun2/error-catalog-service (When you read,\n> replace \"Error Type\" with \"Problem Type\" and \"Error Catalog\" with \"Problem\n> Type Repository\"). I would like to submit it here to evolve it if there is\n> interest.\n>\n> \u2014\n> You are receiving this because you authored the thread.\n> Reply to this email directly, view it on GitHub\n> <https://github.com/ietf-wg-httpapi/rfc7807bis/issues/7#issuecomment-770416575>,\n> or unsubscribe\n> <https://github.com/notifications/unsubscribe-auth/AAAQEGB7BDO32QVU2OTYXDTS4WGNVANCNFSM4WYQPZJA>\n> .\n>\n",
+          "createdAt": "2021-01-31T18:03:18Z",
+          "updatedAt": "2021-01-31T18:03:18Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "There are a couple of ways to go here:\r\n\r\n1. Create an IANA registry of problem types, much as for link relations.\r\n2. Create a publicly-coordinated informal repository (eg, in a wiki).\r\n\r\nBecause types are required to be URIs, avoiding conflicts (one of the main reasons to use a registry) isn't relevant; it would be more to aid discovery. If we wanted some sort of quality filter on it, we'd probably use an IANA registry, and would need a process around that (e.g., expert review, IETF review; see [RFC8126 Section 4](https://tools.ietf.org/html/rfc8126#section-4)). \r\n\r\nNote that 7087 allows relative URIs in the `type` field, we couldn't use bare tokens like link relations do. However, if folks wanted \"neutral\" URIs that didn't reflect a particular vendor, we could easily mint URIs in a common name space like `urn:ietf:params:http-problems:foo` or `https://httpwg.org/http-problems/foo` or something else.\r\n\r\nP.S. Resource Not Found and Authentication Failure are already HTTP status codes -- 404 and 401, respectively (unless you mean non-HTTP auth in the latter case). ",
+          "createdAt": "2021-02-01T04:20:45Z",
+          "updatedAt": "2021-02-01T04:20:45Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "> P.S. Resource Not Found and Authentication Failure are already HTTP status codes -- 404 and 401, respectively (unless you mean non-HTTP auth in the latter case).\r\n\r\nThese are already HTTP status codes, but it's not unreasonable for APIs to want to *always* return a Problem response for any error. Sometimes it's easier to develop the server code that way (e.g. in Rust it's very verbose to have many different response types.) Sometimes it's easier to allow clients to always assume an `application/problem+json` response. Sometimes it's just that people like consistency. And actually the only real downside seems to be that the response payload is non-zero in size\r\n\r\nGiven that though, it means that people start to mint URIs for problem types that directly correspond to HTTP status codes. And, odds are, different people do it differently. That's a key example where some standard values would just make that a little bit easier. For example, I've started using values like `https://httpstatuses.com/404` in these cases - it doesn't actually tell you anything more than the HTTP status code, but it means that the response body is always in a consistent format which just makes life that little bit easier in some cases. (I did consider a link to the appropriate section of RFC-7232, but that seemed a bit more awkward given that it would need a fragment in the URI)",
+          "createdAt": "2021-02-04T09:35:00Z",
+          "updatedAt": "2021-02-04T09:35:00Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "The RFC recommends that `about:blank` be used in this situation. We intentionally did not have per-status-code values, because that would encourage developers to ignore the real status code, and because duplicating values at different layers is a vector for bugs and security issues.",
+          "createdAt": "2021-02-04T23:32:27Z",
+          "updatedAt": "2021-02-04T23:32:27Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "Ah - I'd totally missed that paragraph! That does make a lot of sense,\nespecially when coupled with the absence of the \"type\" parameter mapping on\nto \"about:blank\". :)\n\nOn Thu, 4 Feb 2021 at 23:32, Mark Nottingham <notifications@github.com>\nwrote:\n\n> The RFC recommends that about:blank be used in this situation. We\n> intentionally did not have per-status-code values, because that would\n> encourage developers to ignore the real status code, and because\n> duplicating values at different layers is a vector for bugs and security\n> issues.\n>\n> \u2014\n> You are receiving this because you authored the thread.\n> Reply to this email directly, view it on GitHub\n> <https://github.com/ietf-wg-httpapi/rfc7807bis/issues/7#issuecomment-773672594>,\n> or unsubscribe\n> <https://github.com/notifications/unsubscribe-auth/AAAQEGAO2P4YQSS3XB73MOLS5MVBVANCNFSM4WYQPZJA>\n> .\n>\n",
+          "createdAt": "2021-02-04T23:41:46Z",
+          "updatedAt": "2021-02-04T23:41:46Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "For \"standard\" problem types, would folks be willing to stomach the `urn:ietf:params:http-problems:foo` form? That's likely the most permanent, easy way to do it.\r\n\r\nUsing `httpwg.org` is also possible, as would be `ietf.org`. Some might complain that they (especially the former) are rooted in DNS, and therefore might not be stable over a long time scale.\r\n\r\nAnother option would be minting our own URI scheme, to make something like `http-problem:foo`. That might make some of the URN folks unhappy, though; would have to try to find out.",
+          "createdAt": "2021-02-10T01:38:34Z",
+          "updatedAt": "2021-02-10T01:38:34Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I think we need to resolve #11 before we can decide on the format.",
+          "createdAt": "2021-02-10T01:41:23Z",
+          "updatedAt": "2021-02-10T01:41:23Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "I guess the form we go for depends on some other things. If we decide (per #11 as @asbjornu says) that the value should be a URI, and that it should resolve to documentation, then something like `https://httpwg.org/problems/foo` might be better. But then, as you say, that means that URL has to remain stable for the foreseeable future.\r\n\r\nPersonally speaking, I'm fine with the `urn:ietf:params:http-problems:foo` idea - I currently always use `tag:xxx,2021:foo` for mine anyway - but it does mean that they are definitely not resolvable.\r\n\r\nI'm less keen on the idea of a new scheme. It is obvious what's happening, but it does start to look like *all* problems must be in that scheme, which then potentially defeats the point of #11 in the first place. Also, (and I might be missing things here) it seems that the only real benefit of `http-problem:foo` over `urn:ietf:params:http-problems:foo` is in the length of the string, which isn't a huge deal - it's a saving of 17 characters.",
+          "createdAt": "2021-02-10T09:57:25Z",
+          "updatedAt": "2021-02-10T09:57:25Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "In the meeting, folks seemed to pretty strongly lean towards an IANA registry with some bar to entry (TBD).",
+          "createdAt": "2021-03-15T06:48:36Z",
+          "updatedAt": "2021-03-15T06:48:36Z"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "MDU6SXNzdWU3OTc3NTUzODQ=",
+      "title": "Should JSON schema be used to describe Problem Details Object?",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/8",
+      "state": "OPEN",
+      "author": "sdatspun2",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "sdatspun2"
+      ],
+      "labels": [],
+      "body": "Should JSON schema (https://json-schema.org/specification.html) be used to describe Problem Details Object?",
+      "createdAt": "2021-01-31T16:48:56Z",
+      "updatedAt": "2021-04-23T14:13:28Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "simonplend",
+          "authorAssociation": "NONE",
+          "body": "I think it would be very beneficial for an official JSON schema to be created for Problem Details objects. A couple of use cases immediately come to mind:\r\n\r\n- As documentation of the required shape of a Problem Details object\r\n- As something which APIs could validate their responses against before they are sent back to the client e.g. https://www.fastify.io/docs/latest/Validation-and-Serialization/#serialization",
+          "createdAt": "2021-02-01T19:24:39Z",
+          "updatedAt": "2021-02-01T19:24:39Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "The thing that makes this awkward is twofold:\n* All of the defined fields are optional\n* Arbitrary other fields can be added as needed\n\nSo the best that a schema can achieve is to define the types of the 5\ndefined fields - depending on other issues being discussed - but the client\nstill can't rely on the shape because of the above.\n\nOn Mon, 1 Feb 2021, 19:24 Simon Plenderleith, <notifications@github.com>\nwrote:\n\n> I think it would be very beneficial for an official JSON schema to be\n> created for Problem Details objects. A couple of use cases immediately come\n> to mind:\n>\n>    - As documentation of the required shape of a Problem Details object\n>    - As something which APIs could validate their responses against\n>    before they are sent back to the client e.g.\n>    https://www.fastify.io/docs/latest/Validation-and-Serialization/#serialization\n>\n> \u2014\n> You are receiving this because you are subscribed to this thread.\n> Reply to this email directly, view it on GitHub\n> <https://github.com/ietf-wg-httpapi/rfc7807bis/issues/8#issuecomment-771097841>,\n> or unsubscribe\n> <https://github.com/notifications/unsubscribe-auth/AAAQEGGVPNIP3CU2RG5XX6DS435YPANCNFSM4W3QNADA>\n> .\n>\n",
+          "createdAt": "2021-02-01T21:05:54Z",
+          "updatedAt": "2021-02-01T21:05:54Z"
+        },
+        {
+          "author": "simonplend",
+          "authorAssociation": "NONE",
+          "body": "> * All of the defined fields are optional\r\n\r\nThis is true, but what awkwardness do you feel this introduces?\r\n\r\n> * Arbitrary other fields can be added as needed\r\n\r\nJSON Schema allows you to effectively extend schemas (through use of the `allOf` and `$ref` keywords). This would allow users to define a schema which extends a base Problem Details JSON schema. User defined schemas would then be free to define any \"extension\" fields e.g.\r\n\r\n```json\r\n{\r\n  \"allOf\": [{ \"$ref\": \"https://example.com/schemas/problem-details-object.json\" }],\r\n  \"properties\": {\r\n    \"extension_field\": { \"type\": \"string\" }\r\n  }\r\n}\r\n```",
+          "createdAt": "2021-02-01T21:47:08Z",
+          "updatedAt": "2021-02-01T21:47:08Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "The \"awkwardness\" - and it was a bad choice of words :( - is that a generic\nJSON Schema for Problem Details will validate almost any object, whether\nit's actually a Problem Details or not. The *only* thing it would catch is\nif there are fields present matching the 5 standard names but with\nincompatible types. E.g. a response with a *status* field that was a string.\n\nThe ability to define your own schema for specific problem responses would\nbe a huge win, but then there needs to be some way for the client to know\nwhich schema to use. Presumably that would be the *Link* header with a rel\nof *described-by*, though having clients able to determine the correct\nschema based on the *type* field would also be fantastically useful - and\nwould then mean you can define that certain values for *type* automatically\nhave certain other required structure in the payload.\n",
+          "createdAt": "2021-02-01T21:58:25Z",
+          "updatedAt": "2021-02-01T21:58:25Z"
+        },
+        {
+          "author": "simonplend",
+          "authorAssociation": "NONE",
+          "body": "> The \"awkwardness\" - and it was a bad choice of words :( - is that a generic JSON Schema for Problem Details will validate almost any object, whether it's actually a Problem Details or not. The *only* thing it would catch is if there are fields present matching the 5 standard names but with incompatible types. E.g. a response with a *status* field that was a string.\r\n\r\nThanks for clarifying - I understand what you mean now. Specifying `\"additionalProperties\": false` on the base schema wouldn't be possible as it would prevent any extension fields being added by a user defined schema which extends it. It would be down to the user defined schema to specify `\"additionalProperties\": false` - certainly not ideal.\r\n\r\n> The ability to define your own schema for specific problem responses would be a huge win, but then there needs to be some way for the client to know which schema to use. Presumably that would be the *Link* header with a rel of *described-by*, though having clients able to determine the correct schema based on the *type* field would also be fantastically useful - and would then mean you can define that certain values for *type* automatically have certain other required structure in the payload.\r\n\r\nThis is a really interesting use case. How are you imagining the client might use the schema for a specific problem response once it has retrieved it?",
+          "createdAt": "2021-02-02T13:13:36Z",
+          "updatedAt": "2021-02-02T13:13:36Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "> This is a really interesting use case. How are you imagining the client might use the schema for a specific problem response once it has retrieved it?\r\n\r\nI'd not thought that far ahead :)\r\n\r\nHowever - to make up some potential uses :)\r\n\r\nAt the very least you could use it to ensure that the response payload was valid. If the schema says that a particular field is mandatory, you can expect it to always be there. Things like that. Potentially that can be used by languages like TypeScript to give better access to the payload values in a typesafe manner.\r\n\r\nPotentially though, it could also make use of things like `default` to reduce the payload size. The schema is likely incredibly cacheable, and any values that are unlikely to change can then be omitted from the actual Problem payload, the schema gives them default values, and the client still sees all of the correct values with less network traffic. Very useful if clients are on low bandwidth connections.",
+          "createdAt": "2021-02-02T13:21:30Z",
+          "updatedAt": "2021-02-02T13:21:30Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "WRT using schemas for (effectively) compression -- that feels like premature optimisation, and implies a _requirement_ to process the schema, which is going to orphan clients that don't want that burden.\r\n\r\nThat aside, I think adding a schema in an appendix makes sense. We should defer this until we discuss all the other changes, though.",
+          "createdAt": "2021-02-10T01:31:53Z",
+          "updatedAt": "2021-02-10T01:31:53Z"
+        },
+        {
+          "author": "awwright",
+          "authorAssociation": "NONE",
+          "body": "I don't see any problem at all with specifying a JSON Schema. It would be a simple, but useful, one. And being able to specify a profile for a Problem document also seems like a potentially useful feature. For example, it would allow servers to describe what each of the custom properties in the problem document means.\r\n\r\nWith respect to using defaults to omit keywords: The semantics of \"properties\" doesn't actually let you use \"default\" to fill in missing values. This is a [known issue](https://github.com/json-schema-org/json-schema-spec/issues/867).",
+          "createdAt": "2021-02-18T05:46:05Z",
+          "updatedAt": "2021-02-18T05:46:05Z"
+        },
+        {
+          "author": "serialseb",
+          "authorAssociation": "NONE",
+          "body": "How would you handle the non-normative nature of the schema? Or are we talking about adding in appendices normative schemas? If yes, shoudl this apply to hydra/ld, rdfs over xml, xsd, json schema, where do we find that repository and what is the process of updating them if they are normative?",
+          "createdAt": "2021-03-12T19:20:45Z",
+          "updatedAt": "2021-03-12T19:20:45Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "NONE",
+          "body": "A JSON Schema, just like A JSON-LD Conext (see #10), must be non-normative, imho. They would be provided as a convenience to implementers to help adoption of the format and to avoid fragmentation.",
+          "createdAt": "2021-03-15T11:07:23Z",
+          "updatedAt": "2021-03-15T11:07:23Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Pl review https://github.com/ietf-wg-httpapi/rfc7807bis/pull/18.",
+          "createdAt": "2021-04-23T14:13:28Z",
+          "updatedAt": "2021-04-23T14:13:28Z"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "MDU6SXNzdWU3OTc3NTY5NDY=",
+      "title": "Should `instance` be deprecated? ",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/9",
+      "state": "CLOSED",
+      "author": "sdatspun2",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "In order to solve the multiple problems use case #6, potential schema change for the Problem Details Object would include an array of problems. In cases where there is singular problem, one can respond with having a single entry in the array. In that case, should we deprecate `instance` member?\r\n\r\nIf we do deprecate, how should we handle the deprecation? Should we use the `Deprecation` response header field?",
+      "createdAt": "2021-01-31T16:55:53Z",
+      "updatedAt": "2021-02-10T02:43:22Z",
+      "closedAt": "2021-02-10T02:43:22Z",
+      "comments": [
+        {
+          "author": "asbjornu",
+          "authorAssociation": "NONE",
+          "body": "Most problems will still be single-instance, so the top-level `instance` alongside the other defined properties should be kept as is, imho. Since all properties are optional, they can be omitted if the default single-instance problem scenario doesn't fit the specific error situation.",
+          "createdAt": "2021-02-01T08:12:46Z",
+          "updatedAt": "2021-02-01T08:12:46Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Agreed with @asbjornu. I think this issue is premature; let's figure out how to handle multiple problems first. @sdatspun2 do you mind if we close it, reopening if necessary later?",
+          "createdAt": "2021-02-10T01:41:59Z",
+          "updatedAt": "2021-02-10T01:41:59Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "NONE",
+          "body": "@mnot I am ok to close now.",
+          "createdAt": "2021-02-10T02:43:22Z",
+          "updatedAt": "2021-02-10T02:43:22Z"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "MDU6SXNzdWU3OTgyMDkwMDg=",
+      "title": "JSON-LD Context",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/10",
+      "state": "OPEN",
+      "author": "asbjornu",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "In HydraCG/Specifications#178 we have been working on making the response in the case of an API error compatible with RFC 7807. Since Hydra is based on JSON-LD, and RFC 7807 does not provide an official JSON-LD Context, we have had to define the term (property) `status` of RFC 7807 in the scope and namespace of Hydra.\r\n\r\nI believe the use of RFC 7807 and JSON-LD in combination is a Venn diagram with a larger overlap than the one provided by Hydra and thus believe the community would be best served if RFC 7807bis provided its own JSON-LD Context. [Hydra's JSON-LD Context for RFC 7807](https://github.com/HydraCG/Specifications/blob/master/spec/latest/core/error.jsonld) looks like the following:\r\n\r\n```json\r\n{\r\n  \"@context\": {\r\n    \"rdf\": \"http://www.w3.org/1999/02/22-rdf-syntax-ns#\",\r\n    \"rdfs\": \"http://www.w3.org/2000/01/rdf-schema#\",\r\n    \"hydra\": \"http://www.w3.org/ns/hydra/core#\",\r\n    \"type\": { \"@id\": \"rdf:type\", \"@type\": \"@id\" },\r\n    \"title\": \"rdfs:label\",\r\n    \"detail\": \"rdfs:comment\",\r\n    \"status\": \"hydra:statusCode\",\r\n    \"instance\": { \"@id\": \"rdfs:seeAlso\", \"@type\": \"@id\" }\r\n  }\r\n}\r\n```",
+      "createdAt": "2021-02-01T10:27:59Z",
+      "updatedAt": "2021-05-31T14:41:04Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hey @asbjornu,\r\n\r\nI'm not familiar with Hydra, but am usually pretty skeptical about LD.\r\n\r\nWhat would this require -- is this an on-the-wire change, or just an appendix to the spec?",
+          "createdAt": "2021-02-02T00:18:33Z",
+          "updatedAt": "2021-02-02T00:18:33Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "An appendix would be fine. It just needs to be described somewhere and the `status` field needs to be mapped to a URI provided by RFC 7807bis. It would also be great if the JSON-LD Context document itself (i.e. `rfc7808bis.jsonld`) was made available somewhere publicly.",
+          "createdAt": "2021-02-02T00:36:09Z",
+          "updatedAt": "2021-02-02T00:37:13Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Ack. I think we should leave this towards the end of the process, after any other changes are incorporated. ",
+          "createdAt": "2021-02-10T01:42:32Z",
+          "updatedAt": "2021-02-10T01:42:32Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "for the \"the status field needs to be mapped to a URI provided by RFC 7807bis\" part, @asbjornu, would `urn:ietf:rfc:xxxx` according to https://datatracker.ietf.org/doc/html/rfc2648 work?",
+          "createdAt": "2021-05-31T14:30:57Z",
+          "updatedAt": "2021-05-31T14:30:57Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "It could, @dret. But I think it would give a better developer experience if the URI was dereferenceable, and when dereferenced, provided information about what it represented with relevant pointer(s) to RFC 7808bis. Something similar to the [Atom namespace URI](https://www.w3.org/2005/Atom).",
+          "createdAt": "2021-05-31T14:41:04Z",
+          "updatedAt": "2021-05-31T14:41:04Z"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "MDU6SXNzdWU3OTkyMjY0Mjk=",
+      "title": "Should 'type' definitely be required to be a URI?",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/11",
+      "state": "CLOSED",
+      "author": "pimterry",
+      "authorAssociation": "NONE",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "In @dret's Twitter [feedback thread](https://twitter.com/dret/status/1355075053088608258), this was the only and much-repeated comment. I'll copy some of the posts from there in here:\r\n\r\nhttps://twitter.com/vasilakisfil/status/1355083598777511937:\r\n> the type should not required to be a URI reference, this is a killer for most ordinary developers\r\n> ...\r\n> Having worked closed with such developers I understand why. Not everyone is so API savvy. It isn't very intuitive for devs not working on hateoas and APIs, so they drop the whole spec completely making things worse. Making it a requirement, has the opposite effects.\r\n\r\nhttps://twitter.com/pimterry/status/1355112881646399491 (me):\r\n> +1, I've seen confusion here, it's counter-intuitive.\r\n> Seems odd to use the id as the implicit link to the docs too: what if I want two errors to be distinguishable but both reference the same docs?\r\n> An arbitrary string with a _suggestion_ that it be a URI would be better imo.\r\n> Oh, and what if I want to change the URLs for my error docs? If 'type' links to them, as encouraged, I either have to change the type identifiers for all my errors or have point them at the old URLs forever.\r\n\r\nhttps://twitter.com/Riussi/status/1355091136868737024:\r\n> I concur. We've just started using RFC 7807 and defining those would be easier if it is not mandated as a URI\r\n\r\nhttps://twitter.com/simonplend/status/1355087138497282048:\r\n> I've also found that folks find this really confusing. \"What is this URL for?\"\r\n\r\nThis confusion is also repeated frequently elsewhere, e.g. it's the top complaint in unrelated [reddit discussion](https://www.reddit.com/r/api/comments/hze1i2/do_you_folks_use_rfc_7807_problem_details_in_http/) of the standard. Meanwhile https://jonathancrozier.com/blog/base-your-api-error-response-model-on-a-solid-standard-with-the-problem-details-rfc (on the first page of results for \"problem details standard\") says:\r\n\r\n> For example, let\u2019s consider the type property. For most of the projects I am working on, it isn\u2019t practical to have a webpage dedicated to each type of possible error. Given that the standard specifically states that the value is assumed to be \"about:blank\" if it is not present, I usually leave this member out.\r\n\r\nArguably `type` is the most useful field in the standard, so this is not a good result.\r\n\r\nI think it'd be useful to discuss this, at least to document the reasoning here more clearly, and to consider alternative approaches and/or alternative ways to make type URIs easier for devs.",
+      "createdAt": "2021-02-02T12:13:16Z",
+      "updatedAt": "2021-05-25T06:56:46Z",
+      "closedAt": "2021-05-25T06:56:46Z",
+      "comments": [
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "I'll add a separate comment, from my personal point of view:\r\n\r\n* As far as I understand, the goal is to encourage namespacing of error types, is that right? Are there other benefits that the URI provides?\r\n* Imo, it's quite unusual as a web API response - it reminds me of a more rigorous XML-style API design with careful namespacing of all identifiers, rather than the less rigorous JSON formats that are now more common. It feels inconsistent with other HTTP standards too, e.g. link relation types do not use URIs as type identifiers.\r\n* Similarly, while API developers will be familiar with HTTP URLs, a great many (I believe) are not familiar with the URIs more generally and the other formats available (e.g. Erik [mentioned](https://twitter.com/dret/status/1355114738796138497) tag URIs - I'd like to think I'm reasonably interested in the standards and tools available, and I'd never even heard of these!).\r\n* Recommending that unique id for an error type to be a documentation URL is problematic, because documentation URLs may well change and unique ids must not (yes, old documentation URLs _should_ redirect to new ones, but there's not always a 1-1 mapping of URLs, it's messy to keep using the incorrect URL/domains in this field, and we all know this isn't always true/possible anyway).\r\n* Having a separate optional documentation URL instead would be more useful imo. Right now, it's not guaranteed that a type URL is dereferenceable, so applications must effectively treat it as never dereferenceable. A separate field (or indeed link relation) would be defined as such, making it usable in many more cases.\r\n* Making it an opaque string instead would still allow for the use of URIs for namespacing if desired, and we could still _recommend_ that users do that without necessarily requiring that.",
+          "createdAt": "2021-02-02T12:25:33Z",
+          "updatedAt": "2021-02-02T12:25:33Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> Are there other benefits that the URI provides?\r\n\r\nURIs can be dereferenceable. That's a pretty significant feature.\r\n\r\n> Recommending that unique id for an error type to be a documentation URL is problematic, because documentation URLs may well change and unique ids must not\r\n\r\nPerhaps the RFC can mention the possibility to use HTTP's features to make URIs stable, such as using stable API URLs in `type` that perform HTTP redirects towards the (ever changing) documentation.\r\n\r\n> Having a separate optional documentation URL instead would be more useful imo. \r\n\r\nI think that's a horrible suggestion. Big \ud83d\udc4e\ud83c\udffc .\r\n\r\n> Making it an opaque string instead would still allow for the use of URIs for namespacing if desired\r\n\r\nOpaque strings are already allowed. I don't really understand the problem here. The last paragraph of [RFC 7807 section 3.1](https://tools.ietf.org/html/rfc7807#section-3.1) states the following:\r\n\r\n>  Note that both \"type\" and \"instance\" accept relative URIs; this means that they must be resolved relative to the document's base URI, as per [[RFC3986], Section 5](https://tools.ietf.org/html/rfc3986#section-5).\r\n\r\nThis means `\"type\": \"i-hate-uris\"` is perfectly valid.",
+          "createdAt": "2021-02-02T12:38:30Z",
+          "updatedAt": "2021-02-02T12:38:30Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "The type field currently has to be a URI Reference. This means it can either be a URI or a relative-ref. This in turn means that you can use almost any bare string in there and still be following the letter of the RFC, even if not the intention.\r\n\r\nI've seen examples of exactly that - with values for `type` that are actually just error codes because, strictly speaking, they are legal relative URIs that just don't happen to resolve to anything.\r\n\r\nPersonally, I've no major problem with that, except that it makes it much more likely to get collisions across APIs - with two different APIs using the same type \"URI\" to mean different things.\r\n\r\nI can imagine there are some big benefits to be obtained if the URI *is* dereferenceable though. Things like getting human-readable documentation from it, or a JSON Schema that describes the shape of the problem details. Dereferencing an `instance` URI might take you directly to the log messages for what went wrong (for internal APIs only!)\r\n\r\nBut equally, saying that these *must* be dereferenceable is potentially quite a big hurdle for many smaller developers that would potentially either stop them using this or else just have them ignore the difficult bits.",
+          "createdAt": "2021-02-02T12:48:12Z",
+          "updatedAt": "2021-02-02T12:48:12Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "> URIs can be dereferenceable. That's a pretty significant feature.\r\n\r\nCurrently, `type` is _not_ dereferenceable though, explicitly. The RFC says \"Consumers SHOULD NOT automatically dereference the type URI\", and has no mechanism to know when it could be dereferenceable. In effect, it's manually dereferenceable only.\r\n\r\nImo it would be more useful there was such a mechanism, or indeed a separate always-dereferenceable URL elsewhere.\r\n\r\n> I think that's a horrible suggestion. Big \ud83d\udc4e\ud83c\udffc .\r\n\r\nCould you be more specific about why?\r\n\r\n> This means \"type\": \"i-hate-uris\" is perfectly valid.\r\n\r\nI see - that's not communicated at all right now! If that's intended, I think it would be useful to communicate that better in the spec. Currently every single example in the spec is an absolute HTTP URL, all discussion of the standard elsewhere does the same, and I think the comments above clearly show that other options aren't widely recognized.\r\n\r\nIllustrating that a classic error code string is allowed but a full URL is encouraged would resolve quite a few of the concerns there I think.",
+          "createdAt": "2021-02-02T12:48:46Z",
+          "updatedAt": "2021-02-02T12:48:46Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "Race condition posting there, sorry - to reply to @sazzer:\r\n\r\n> I've seen examples of exactly that - with values for type that are actually just error codes because, strictly speaking, they are legal relative URIs that just don't happen to resolve to anything.\r\n\r\nOk, I think this agrees with @asbjornu's point, and this is likely a communication issue rather than a change to the format itself them.\r\n\r\n> I can imagine there are some big benefits to be obtained if the URI is dereferenceable though. \r\n\r\n> saying that these must be dereferenceable is potentially quite a big hurdle for many smaller developers\r\n\r\nAgree, I'd love to have a documented way to know when that's possible. Making it possible to include a dereferenceable URL explicitly but optionally would be a big help.",
+          "createdAt": "2021-02-02T12:53:00Z",
+          "updatedAt": "2021-02-02T12:53:00Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": ">     This means \"type\": \"i-hate-uris\" is perfectly valid.\n> \n> I see - that's not communicated at all right now! If that's intended, I \n> think it would be useful to communicate that better in the spec. \n> Currently every single example in the spec is an absolute HTTP URL, all \n> discussion of the standard elsewhere does the same, and I think the \n> comments above clearly show that other options aren't widely recognized.\n\nthat wouldn't be great as a pattern to recommend. the actual error URI \nin this case is the relative URI resolved against the URI of the context \n(in this case, the resource that returned the error). so while this is \ntechnically legal, it's pretty bad in terms of utility when it comes to \nimplementations properly handling the type values as URIs.\n\n-- \nerik wilde | mailto:erik.wilde@dret.net |\n            | http://dret.net/netdret    |\n            | http://twitter.com/dret    |\n",
+          "createdAt": "2021-02-02T12:58:12Z",
+          "updatedAt": "2021-02-02T12:58:12Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "> Race condition posting there, sorry - to reply to @sazzer:\r\n\r\nYeah, we both posted the same thing at the same time :) And yes, I think we are both saying the exact same thing.\r\n\r\nEdit - looking at timestamps it wasn't the exact same time. Just my window hadn't updated at the time!\r\n\r\n> Currently, `type` is _not_ dereferenceable though, explicitly. The RFC says \"Consumers SHOULD NOT automatically dereference the type URI\", and has no mechanism to know when it could be dereferenceable. In effect, it's manually dereferenceable only.\r\n\r\nMaybe I'm wrong, but I've always read that with the emphasis on \"automatically\". As in - dereference only when needed and not always. And I've read it like that because some scenarios that would cause errors to be returned would also mean that the URI that is the problem type would also fail to resolve, and potentially cause more problems for the service (DoS attack or similar.) Equally, especially for `type`, it could be that the intention is for *humans* to dereference it and not computers. For example, I've started using type values similar to `https://httpstatuses.com/404` for cases where the status code alone tells you everything, but I still want to include a Problem response.\r\n\r\nThere's also a problem that not all clients are capable of dereferencing all URIs. For example, if it's an \"http\" scheme then you need to be able to make HTTP requests to the target server. Not all clients can do that, especially if they are on a closed network.",
+          "createdAt": "2021-02-02T12:58:51Z",
+          "updatedAt": "2021-02-02T12:59:44Z"
+        },
+        {
+          "author": "simonplend",
+          "authorAssociation": "NONE",
+          "body": ">>> This means \"type\": \"i-hate-uris\" is perfectly valid.\r\n>>>\r\n>> I see - that's not communicated at all right now! If that's intended, I think it would be useful to communicate that better in the spec. Currently every single example in the spec is an absolute HTTP URL, all discussion of the standard elsewhere does the same, and I think the comments above clearly show that other options aren't widely recognized.\r\n>>\r\n> that wouldn't be great as a pattern to recommend. the actual error URI\r\n> in this case is the relative URI resolved against the URI of the context\r\n> (in this case, the resource that returned the error). so while this is\r\n> technically legal, it's pretty bad in terms of utility when it comes to\r\nimplementations properly handling the type values as URIs.\r\n\r\n@dret Would it be reasonable then to also include examples of `type` URIs which are not URLs? e.g. [tag URIs](https://tools.ietf.org/html/rfc4151) as you suggested on Twitter.",
+          "createdAt": "2021-02-02T13:07:04Z",
+          "updatedAt": "2021-02-02T13:07:04Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-02-02 14:07, Simon Plenderleith wrote:\n> @dret <https://github.com/dret> Would it be reasonable then to also \n> include examples of |type| URIs which are not URLs? e.g. tag URIs \n> <https://tools.ietf.org/html/rfc4151> as you suggested on Twitter.\n\ni think what we have clearly established is that if 'type' remains to be \ndefined as a URI, better guidance would be a good idea.\n",
+          "createdAt": "2021-02-02T13:22:05Z",
+          "updatedAt": "2021-02-02T13:22:05Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> Currently, `type` is _not_ dereferenceable though, explicitly. The RFC says \"Consumers SHOULD NOT automatically dereference the type URI\", and has no mechanism to know when it could be dereferenceable. In effect, it's manually dereferenceable only.\r\n\r\n`SHOULD NOT automatically` just means there should not be **automatic** dereferencing. Non-automatic dereferencing such as making the URI a user-clickable link, or a developer copying and pasting it into a browser, is perfectly valid, though. That should perhaps be made more explicit.\r\n\r\n> > I think that's a horrible suggestion. Big \ud83d\udc4e\ud83c\udffc .\r\n> \r\n> Could you be more specific about why?\r\n\r\n`type` works perfectly well for documentation. Decoupling the problem type from the problem type's documentation when the former can redirect to the latter just adds confusion, possible inconsistencies, and errors, imho.\r\n\r\n> > This means \"type\": \"i-hate-uris\" is perfectly valid.\r\n> \r\n> I see - that's not communicated at all right now!\r\n\r\nBut it is. As I wrote above, the last paragraph of [RFC 7807 section 3.1](https://tools.ietf.org/html/rfc7807#section-3.1) states the following:\r\n\r\n> Note that both \"type\" and \"instance\" accept relative URIs; this means that they must be resolved relative to the document's base URI, as per [[RFC3986], Section 5](https://tools.ietf.org/html/rfc3986#section-5).\r\n\r\n\u2026\r\n\r\n> If that's intended, I think it would be useful to communicate that better in the spec.\r\n\r\nI agree that can be emphasized closer to the definition of `type` and not just as a seemingly unrelated paragraph. A way to accomplish this would be to promote each member in section 3.1 to its own section so the spec can use more than one paragraph to describe each member.\r\n\r\n> Currently every single example in the spec is an absolute HTTP URL.\r\n\r\nExamples are non-normative. To understand the spec, you have to read the normative text. An example containing `type` with a relative URI would be a good addition, though.\r\n\r\n> all discussion of the standard elsewhere does the same, and I think the comments above clearly show that other options aren't widely recognized.\r\n\r\nAgreed.\r\n\r\n> Would it be reasonable then to also include examples of `type` URIs which are not URLs? e.g. [tag URIs](https://tools.ietf.org/html/rfc4151) as you suggested on Twitter.\r\n\r\nI think `tag` URIs sounds like a bad fit for `type` as they are more of a human readable alternative to UUID.",
+          "createdAt": "2021-02-02T13:23:08Z",
+          "updatedAt": "2021-02-02T13:23:08Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "> the actual error URI in this case is the relative URI resolved against the URI of the context (in this case, the resource that returned the error).\r\n\r\nHmm, yes, so `\"type\": \"my-custom-error\"` is actually quite very bad. Doing so is most likely a mistake: if a developer returns `\"type\": \"my-custom-error\"` as an error type from two different resources, clients must treat those as distinct types, relative to different base URLs. That's quite surprising! This is probably not what the dev intended, and code that does treat them as equivalent automatically is not following the spec.\r\n\r\nIt looks like this is a real problem: even the most popular [problem details implementation](https://github.com/zalando/problem) makes this mistake. It matches problem detail classes automatically by comparing the `type` value, and never uses a base URL or relative resolution for type values anywhere. I suspect that it's not alone in this, and that using bare strings as global error types will work in many places, incorrectly.\r\n\r\n> Would it be reasonable then to also include examples of type URIs which are not URLs? e.g. tag URIs\r\n\r\nImo, tag URIs are a good improvement, but they're still not great. The most convenient equivalent tag we'd be suggesting is probably `tag:example.com,2021:my-error`. It's obvious that it isn't dereferenceable, which is good, but it's still an unusual error code format.\r\n\r\nThere's clearly friction with URIs error codes right now, and widespread patterns of _not_ using URIs for error identifiers in every existing API I can find (e.g. [Stripe](https://stripe.com/docs/error-codes), [AWS](https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList), [Azure](https://docs.microsoft.com/en-us/rest/api/storageservices/common-rest-api-error-codes)). Instead, they all use opaque string identifiers decoupled from documentation URLs.\r\n\r\nFrom my perspective and I think from the feedback above, it would be useful to have a standard that supported existing common error API patterns. This doesn't preclude namespacing where that's useful, it just doesn't enforce it.\r\n\r\n> I've always read that with the emphasis on \"automatically\". As in - dereference only when needed and not always.\r\n\r\n> `SHOULD NOT automatically` just means there should not be automatic dereferencing.\r\n\r\nOk, I see how this sentence is referring to fully automated dereferencing concerns, thanks! That's useful.\r\n\r\nThe spec still supports what I'm saying though, right? Even if the type is an HTTP URL, there is no requirement or guarantee that it leads to a real resource. The spec says that it's _encouraged_ to do so, and no more, and @sazzer's comment that \"saying that these must be dereferenceable is potentially quite a big hurdle\" seems to agree. Is that not correct?\r\n\r\nAssuming that's right then tooling can't use the URI as a helpful documentation link for devs, or anything similar. That's not valid because `type` is not specified to be a URL of a resource at all. It's not designed for human or machine consumption, it's only guaranteed to be usable as a type id.\r\n\r\nI think being able to use these URIs would be great. There's good use cases, from generic HTTP clients that helpfully link to error documentation in exceptions to [my own HTTP debugger](https://httptoolkit.tech), where I would _love_ to pull in error docs alongside error responses.\r\n\r\nTo build these tools we need a URL that's guaranteed to go to docs, if present. If the documentation URL were instead in a link header with an HTML media type, similar to other standards (e.g. the documentation link for the [deprecation header](https://tools.ietf.org/html/draft-ietf-httpapi-deprecation-header-01#section-3.1)) then that would be possible. Using a link header would also better fit with HATEOAS, and would make error docs immediately visible to existing tooling that isn't aware of problem details.\r\n\r\n> Decoupling the problem type from the problem type's documentation when the former can redirect to the latter just adds confusion, possible inconsistencies, and errors, imho.\r\n\r\nImho, as a developer I would find this spec more useful if they were indeed decoupled, and the type wasn't necessarily a URI at all (meaning no duplication & possible inconsistency).\r\n\r\nDoing so would resolve all the feedback above, would make this standard would be easier to get started with, it'd support more cases like error types that share the same documentation URLs and support changing doc URLs, it'd avoid semantics like relative URIs that are not being implemented correctly, it would support more dereferencing use cases, and it would better match existing patterns in other specifications and in existing real-world APIs.\r\n\r\nI do see how this is subjective and debatable, but there's many benefits, and imho requiring type URIs like limits some valuable use cases.\r\n\r\n---\r\n\r\nGoing to leave this here for now, since I need to get some other work done! This is really interesting though, hope these points are helpful.",
+          "createdAt": "2021-02-02T16:20:14Z",
+          "updatedAt": "2021-02-02T16:20:14Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@pimterry:\r\n\r\n> It looks like this is a real problem: even the most popular [problem details implementation](https://github.com/zalando/problem) makes this mistake.\r\n\r\nThe examples look good to me:\r\n\r\n> ```java\r\n> Problem.builder()\r\n>     .withType(URI.create(\"https://example.org/out-of-stock\"))\r\n>     .withTitle(\"Out of Stock\")\r\n>     .withStatus(BAD_REQUEST)\r\n>     .withDetail(\"Item B00027Y5QG is no longer available\")\r\n>     .build();\r\n> ```\r\n> \r\n> Will produce this:\r\n> \r\n> ```json\r\n> {\r\n>   \"type\": \"https://example.org/out-of-stock\",\r\n>   \"title\": \"Out of Stock\",\r\n>   \"status\": 400,\r\n>   \"detail\": \"Item B00027Y5QG is no longer available\"\r\n> }\r\n> ```\r\n\r\n\u2026\r\n\r\n> There's clearly friction with URIs error codes right now, and widespread patterns of _not_ using URIs for error identifiers in every existing API I can find (e.g. [Stripe](https://stripe.com/docs/error-codes), [AWS](https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList), [Azure](https://docs.microsoft.com/en-us/rest/api/storageservices/common-rest-api-error-codes)). Instead, they all use opaque string identifiers decoupled from documentation URLs.\r\n\r\nBut afaict, none of those APIs implement RFC 7807 and thus aren't very relevant in this discussion.\r\n\r\n> From my perspective and I think from the feedback above, it would be useful to have a standard that supported existing common error API patterns.\r\n\r\nWhat's considered \"common\" is relative and up to the eye of the beholder. Using Universal Resource **Identifiers** as **identifiers** shouldn't be the esoteric, impenetrable mystery it's being described as, imho.\r\n\r\n> The spec still supports what I'm saying though, right? Even if the type is an HTTP URL, there is no requirement or guarantee that it leads to a real resource.\r\n\r\nCorrect.\r\n\r\n> Assuming that's right then tooling can't use the URI as a helpful documentation link for devs, or anything similar.\r\n\r\nWhy not?\r\n\r\n> That's not valid because `type` is not specified to be a URL of a resource at all. It's not designed for human or machine consumption, it's only guaranteed to be usable as a type id.\r\n\r\nI disagree. [The specification states](https://tools.ietf.org/html/rfc7807#section-3.1) this design goal very clearly (emphasis mine):\r\n\r\n> \"type\" (string) - A URI reference [[RFC3986](https://tools.ietf.org/html/rfc3986)] that identifies the problem type.  This specification encourages that, *when dereferenced, it provide human-readable documentation for the problem type* (e.g., using HTML [[W3C.REC-html5-20141028](https://tools.ietf.org/html/rfc7807#ref-W3C.REC-html5-20141028)]).\r\n\r\n\u2026\r\n\r\n> I think being able to use these URIs would be great. There's good use cases, from generic HTTP clients that helpfully link to error documentation in exceptions to [my own HTTP debugger](https://httptoolkit.tech), where I would _love_ to pull in error docs alongside error responses.\r\n\r\nWhat do you mean with \"pull in\"?\r\n\r\n> To build these tools we need a URL that's guaranteed to go to docs, if present.\r\n\r\nWhy not change it to \"guaranteed to go to docs, if dereferenceable\"?\r\n\r\n> If the documentation URL were instead in a link header with an HTML media type, similar to other standards (e.g. the documentation link for the [deprecation header](https://tools.ietf.org/html/draft-ietf-httpapi-deprecation-header-01#section-3.1)) then that would be possible. Using a link header would also better fit with HATEOAS, and would make error docs immediately visible to existing tooling that isn't aware of problem details.\r\n\r\nThere's no one stopping anyone from doing exactly that.\r\n\r\n> Imho, as a developer I would find this spec more useful if they were indeed decoupled, and the type wasn't necessarily a URI at all (meaning no duplication & possible inconsistency).\r\n\r\nYou avoid the duplication of resolved `type` URIs if you use absolute URIs as your problem `type`.\r\n\r\n> Doing so would resolve all the feedback above, would make this standard would be easier to get started with, it'd support more cases like error types that share the same documentation URLs and support changing doc URLs, it'd avoid semantics like relative URIs that are not being implemented correctly, it would support more dereferencing use cases, and it would better match existing patterns in other specifications and in existing real-world APIs.\r\n\r\nIt would also be a breaking change with existing software that actually implements the specification according to how it is written.",
+          "createdAt": "2021-02-03T08:33:43Z",
+          "updatedAt": "2021-02-03T08:33:43Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "> > It looks like this is a real problem: even the most popular [problem details implementation](https://github.com/zalando/problem) makes this mistake.\r\n> \r\n> The examples look good to me:\r\n> \r\n> > ```java\r\n> > Problem.builder()\r\n> >     .withType(URI.create(\"https://example.org/out-of-stock\"))\r\n> >     .withTitle(\"Out of Stock\")\r\n> >     .withStatus(BAD_REQUEST)\r\n> >     .withDetail(\"Item B00027Y5QG is no longer available\")\r\n> >     .build();\r\n> > ```\r\n> > \r\n> > \r\n> > Will produce this:\r\n> > ```json\r\n> > {\r\n> >   \"type\": \"https://example.org/out-of-stock\",\r\n> >   \"title\": \"Out of Stock\",\r\n> >   \"status\": 400,\r\n> >   \"detail\": \"Item B00027Y5QG is no longer available\"\r\n> > }\r\n> > ```\r\n\r\nI think the problem is more with *relative* URIs. If I've been following the discussion correctly then this:\r\n```\r\nGET /some/bad/uri HTTP/1.1\r\nHost: www.example.com\r\n\r\n-----\r\nHTTP/1.1 400 Bad Request\r\nContent-Type: application/problem+json\r\n\r\n{\r\n    \"type\": \"some-bad-request\"\r\n}\r\n```\r\n\r\nShould be parsed as if the `type` field was actually `http://www.example.com/some/bad/some-bad-request`, because it's relative to the URL that actually requested the resource in the first place. And (almost) nobody actually does that - they all treat it as if the `type` field was just `some-bad-request` instead.\r\n\r\n> Using Universal Resource Identifiers as identifiers shouldn't be the esoteric, impenetrable mystery it's being described as, imho.\r\n\r\nThey're not, really. XML has been doing it for 20+ years with namespace URIs. There are probably examples that go back further too.\r\n\r\n> Why not change it to \"guaranteed to go to docs, if dereferenceable\"?\r\n\r\nAs soon as you say \"guaranteed\" then you're putting a burden on developers. Especially when they plan to support dereferencing them at some future time, but not just yet. They will either ignore it, and thus not follow the spec correctly, or else it'll force them to use a different pattern for their URIs. ",
+          "createdAt": "2021-02-03T09:17:19Z",
+          "updatedAt": "2021-02-03T09:17:19Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "> I think the problem is more with relative URIs.\r\n\r\nExactly :+1:. Nowhere do any libraries I've seen even look at the resource URL, so they can never handle relative types correctly.\r\n\r\n> > That's not valid because type is not specified to be a URL of a resource at all. It's not designed for human or machine consumption, it's only guaranteed to be usable as a type id.\r\n>\r\n> I disagree. The specification states this design goal very clearly\r\n\r\nThe specification there states the goal of linking to a useful document and encourages that, but explicitly does not guarantee or mandate it. I think we agree it shouldn't, and that not all URIs will be links to usable documentation. AFAICT, it's totally valid to intentionally use an HTTP `type` URI that leads to a 404.\r\n\r\nMeanwhile, no developer wants to be given a link to documentation and then hit a 404. If tools want to present `type` URIs to developers as helpful links to human-readable documentation, they first need to know whether it is actually a link to a resource.\r\n\r\n> Why not change it to \"guaranteed to go to docs, if dereferenceable\"?\r\n\r\nThe problem with \"guaranteed to go to docs, if dereferenceable\" as opposed to \"if present\" is that the former requires automatically dereferencing every `type` to know if it's dereferenceable. The spec specifically discourages that, for the good reasons you've pointed out above, so we shouldn't design for that. An explicit link doesn't have this problem at all.\r\n\r\n> Using Universal Resource Identifiers as identifiers shouldn't be the esoteric, impenetrable mystery it's being described as, imho.\r\n\r\nSorry, I don't mean to portray URIs as completely impenetrable, that's not fair. It seems true that the huge majority of existing APIs have existing error formats that don't use URIs for error codes though, and that many developers aren't very familiar with the nuances of URIs, e.g. URNs, tag URIs, etc.\r\n\r\nURIs are also clearly more complicated than plain strings, and all else being equal it would be good to make implementing this standard (and all standards!) as simple as possible.\r\n\r\n> none of those APIs implement RFC 7807 and thus aren't very relevant in this discussion.\r\n\r\nI really think existing widely used APIs are relevant to this standard (and all API standards!).\r\n\r\nThose APIs don't use this RFC today, but the standard only becomes useful if it's widely used by real clients and APIs. Popular APIs like Stripe/AWS/et al eventually supporting this is part of that, and adoption is easier for them if it fits their existing patterns (for example, they wouldn't need to change their existing error code documentation, or change logic that checks those codes).\r\n\r\nAdoption is similarly easier for clients and APIs responses are easier to immediately understand if the format fits their expectations, which are largely based on the common patterns they see in existing APIs.\r\n\r\nIf we want the standard to be widely adopted, we have to care about existing API patterns (and I really want this standard to be widely adopted!)\r\n\r\n---\r\n\r\nOk, so as discussed, using URIs for `type` does have some downsides, but we do have two concrete benefits that we've mentioned so far:\r\n\r\n* It strongly encourages namespacing.\r\n* It potentially links the type to a resource.\r\n\r\nAre there others I've missed?\r\n\r\nI think my position is that the first benefit is good, but IMHO outweighed by the downsides (and would still be an option for those who want it without _requiring_ URIs) whilst the 2nd benefit isn't fully realized in the current draft (you can't automatically know whether it's a usable link or just an id) and would be better realized with link headers (more explicit, more standard, less coupled).\r\n\r\n> It would also be a breaking change with existing software that actually implements the specification according to how it is written.\r\n\r\nYep, even if we agree that this would be beneficial, there is definitely a question of compatibility with existing implementations. I think there's some good routes through here with minimal impact, and this is still a draft anyway. I don't think it makes much sense to do detailed analysis & planning for that though until there's some consensus on the kind of changes we'd like to make.",
+          "createdAt": "2021-02-03T20:19:54Z",
+          "updatedAt": "2021-02-03T20:19:54Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@pimterry:\r\n\r\n> Meanwhile, no developer wants to be given a link to documentation and then hit a 404. If tools want to present `type` URIs to developers as helpful links to human-readable documentation, they first need to know whether it is actually a link to a resource.\r\n\r\nThere's absolutely no guarantee that can be given by anyone, anywhere, at any time, that any URI will resolve to anything at all. All URIs can lead to 404, no matter what their context and semantics are and no matter how many different avenues to provide links you give. Given enough time, most URIs end up pointing to a domain squatted by a shark. Is this of concern to RFC 7807bis? I believe it isn't.\r\n\r\n> The problem with \"guaranteed to go to docs, if dereferenceable\" as opposed to \"if present\" is that the former requires automatically dereferencing every `type` to know if it's dereferenceable.\r\n\r\nScratch \"guarantee\" altogether. No guarantees can be given. Let's work from that premise and see where we go.\r\n\r\n> Sorry, I don't mean to portray URIs as completely impenetrable, that's not fair. It seems true that the huge majority of existing APIs have existing error formats that don't use URIs for error codes though, and that many developers aren't very familiar with the nuances of URIs, e.g. URNs, tag URIs, etc.\r\n\r\nThe perception of impenetrable mystique built around URIs affects both how RFC 7807's `type` is perceived as well as how hypermedia is approached (or rather, isn't) in the realm of APIs. Unlike you, though, I think that's ample reason to **not** give in to the perception, but instead, evangelize for more use of URIs both as identifiers as well as the target of hypermedia controls in an API.\r\n\r\nThe fact that most HTTP APIs aren't RESTful by any stretch of the imagination doesn't make it right for a standardization organization such as IETF to cave in and succumb to the million flies doctrine. I'd say the right thing to do is the direct opposite and continue to normalize the use of URIs as well as hypermedia so APIs can become more, not less, RESTful over time.\r\n\r\n> URIs are also clearly more complicated than plain strings, and all else being equal it would be good to make implementing this standard (and all standards!) as simple as possible.\r\n\r\nI think that's just a matter of familiarity. Use URIs enough and they become the opaque identifiers they are meant to be. A simple solution to this may perhaps be to override the base URI. Since [`Content-Base`](https://webconcepts.info/concepts/http-header/Content-Base) isn't an option and afaik no `base` link relation exists, we need another way to establish a base URI, perhaps by registering the `base` link relation.\r\n\r\nAnother alternative is to add a slash to make the URI absolute: `\"type\": \"/out-of-credit\"`. Now you have a `type` that will be considered equal no matter how you compare it against a `type` given in a response from the same authority.\r\n\r\n> I really think existing widely used APIs are relevant to this standard (and all API standards!).\r\n\r\nAs a reminder of how bad sad the status quo is, perhaps.\r\n\r\n> Those APIs don't use this RFC today, but the standard only becomes useful if it's widely used by real clients and APIs. \r\n\r\nTrue.\r\n\r\n> Ok, so as discussed, using URIs for `type` does have some downsides, but we do have two concrete benefits that we've mentioned so far:\r\n> \r\n> * It strongly encourages namespacing.\r\n> * It potentially links the type to a resource.\r\n> \r\n> Are there others I've missed?\r\n\r\nAs discussed in #7, there's an existing desire to reuse `type` URIs across different APIs, something which is impossible with opaque strings since you have no idea whether `invalid-draft` coming from three different APIs means:\r\n\r\n1. It is currently impossible to let a current of air into the enclosed space specified in the request.\r\n2. The document specified does not exist in draft form and may be published or deleted.\r\n3. Military enrolment is currently not possible.\r\n\r\nSemantical ambiguities like these aren't insignificant and URIs solve them elegantly and efficiently. [schema.org](https://schema.org/)  is a testament to how successful the use of URIs to identify things in an unambiguous, unique, and reusable way, really is.\r\n\r\n> I think there's some good routes through here with minimal impact\r\n\r\nPlease elaborate.\r\n\r\n> and this is still a draft anyway.\r\n\r\nRFC 7807bis is a draft, RFC 7807 isn't.\r\n",
+          "createdAt": "2021-02-03T22:56:31Z",
+          "updatedAt": "2021-02-03T22:56:31Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "> > Meanwhile, no developer wants to be given a link to documentation and then hit a 404. If tools want to present `type` URIs to developers as helpful links to human-readable documentation, they first need to know whether it is actually a link to a resource.\r\n> \r\n> There's absolutely no guarantee that can be given by anyone, anywhere, at any time, that any URI will resolve to anything at all. All URIs can lead to 404, no matter what their context and semantics are and no matter how many different avenues to provide links you give. Given enough time, most URIs end up pointing to a domain squatted by a shark. Is this of concern to RFC 7807bis? I believe it isn't.\r\n\r\nThere's also the fact that not all URIs are resolvable for all clients. It's entirely possible that the URI resolves correctly for the server developer, but some client is behind some firewall that doesn't allow access to it.\r\n\r\nOr it might be temporarily down. Or a myriad of other reasons why a reasonable URI can't be resolved *right now*.\r\n\r\n> Another alternative is to add a slash to make the URI absolute: \"type\": \"/out-of-credit\". Now you have a type that will be considered equal no matter how you compare it against a type given in a response from the same authority.\r\n\r\nThat's still relative. If I understand things correctly, the path segment is now absolute but the schema/host/port/etc isn't specified so become relative to the original request. If you got that type from different APIs *on different hosts* then the resolved absolute URI is still different.\r\n\r\n> As discussed in #7, there's an existing desire to reuse type URIs across different APIs, something which is impossible with opaque strings since you have no idea whether invalid-draft coming from three different APIs means:\r\n\r\nIt's perfectly possible with opaque strings. It's not possible with relative URIs iff the resulting value is first expanded to be an absolute URI - and thus might have a different value based on the scheme/hostname/port of the API being called. If the value was always an absolute URI or a relative URI that didn't get expanded then this problem goes away. Though at that point you've just got opaque strings that might or might not bear some resemblance to a URI.",
+          "createdAt": "2021-02-04T09:28:35Z",
+          "updatedAt": "2021-02-04T09:28:35Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> > Another alternative is to add a slash to make the URI absolute: \"type\": \"/out-of-credit\". Now you have a type that will be considered equal no matter how you compare it against a type given in a response from the same authority.\r\n> \r\n> That's still relative. If I understand things correctly, the path segment is now absolute but the schema/host/port/etc isn't specified so become relative to the original request. If you got that type from different APIs _on different hosts_ then the resolved absolute URI is still different.\r\n\r\nYes, that's why I wrote \"from the same **[authority](https://tools.ietf.org/html/rfc3986#section-3.2)**\".\r\n\r\n> > As discussed in #7, there's an existing desire to reuse type URIs across different APIs, something which is impossible with opaque strings since you have no idea whether invalid-draft coming from three different APIs means:\r\n> \r\n> It's perfectly possible with opaque strings.\r\n\r\nNot unless these strings are registered and clearly defined in a global registry.\r\n\r\n> It's not possible with relative URIs iff the resulting value is first expanded to be an absolute URI - and thus might have a different value based on the scheme/hostname/port of the API being called.\r\n\r\nI agree that's just as useless as opaque, non-URI strings.",
+          "createdAt": "2021-02-04T10:45:58Z",
+          "updatedAt": "2021-02-04T10:45:58Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "> There's absolutely no guarantee that can be given by anyone, anywhere, at any time, that any URI will resolve to anything at all.\r\n\r\n> It's entirely possible that the URI resolves correctly for the server developer, but some client is behind some firewall that doesn't allow access to it.\r\n\r\nOk, granted, you can't get a perfect guarantee. There is both a semantic and practical difference though between \"here is a link that I intend you to dereference to find more information\" and \"here is a URI that is not intended to be dereferenced, it's just a type id\".\r\n\r\nWe currently allow both, intentionally, with no distinguishable difference until you dereference it. When looking for usable links to more information, any tooling is interested only in the former, where the URL is _very likely_ to be useful (granted, not guaranteed). Meanwhile if you ever accidentally use the latter it's extremely likely to provide a bad user experience.\r\n\r\nIt's very easy to differentiate these cases, and it would be useful, so we should.\r\n\r\n> > If you got that type from different APIs on different hosts then the resolved absolute URI is still different.\r\n>\r\n> Yes, that's why I wrote \"from the same authority\".\r\n\r\nUnfortunately that's the same problem: client implementations do not take the authority into account either, they never use the base URL. I agree that they should, but right now it looks like most implementations of this specification handle both relative & absolute paths incorrectly, and only correctly use fully specified absolute URIs.\r\n\r\n> Semantical ambiguities like these aren't insignificant and URIs solve them elegantly and efficiently.\r\n\r\nI agree that URIs are excellent! I don't object to the use of URIs, I object to _requiring_ that all APIs errors use URIs in all cases, as we do right now. There's lots of feedback (see above) that others feel similarly, and would like to use this spec without URIs.\r\n\r\nAs an interesting supporting point: the WHATWG URL specification [specifically removed](https://url.spec.whatwg.org/#goals) all references to URIs because \"URI and IRI are just confusing\". URIs are not well understood by many developers, and that will limit adoption of this spec.\r\n\r\nRight now, as in the blog post above, some users avoid using `type` entirely because it's confusing and they don't want to create pages for every error type. This creates more semantic ambiguity than the status quo!\r\n\r\n> > I think there's some good routes through here with minimal impact [on backward compat]\r\n>\r\n> Please elaborate.\r\n\r\nOk, one option would be:\r\n\r\n* Make `type` a freeform string where every response from the same API with that code represents the same type of error. Unspecified still defaults to `about:blank`. Just one constraint: if `type` is an absolute URI, it must either be a URI already reserved for that purpose or a URI under the control of the API using it (e.g. HTTP/tag on your domain).\r\n    * This has no compatibility impact for existing APIs using absolute type URIs. Types in their existing responses are still valid and retain extremely similar rules for error type matching (technically there _could_ be differences, e.g. # fragments in URL shouldn't be considered in URL comparisons, but I would be astonished if that is in use and working correctly for error handling in any API today).\r\n\t* No compatibility impact for clients receiving existing responses that are absolute URIs or absolute paths, for similar reasons.\r\n\t* Semantics change slightly for clients & APIs using path-relative URI types. Today these should be assumed to be distinct types per endpoint, and they would instead be treated as API-global.\r\n  \t  * Helpfully, it appears that most implementations match this proposed behaviour today already, rather than the specified behaviour.\r\n  \t  * In addition, impact of incompatibility is low: clients would incorrectly treat error types as distinct unrecognized errors, and would fail in slightly less granular ways.\r\n\t* Clients who parse `type` as a URI have potential compatibility issues parsing non-URI responses. This risk is low because:\r\n  \t  * This doesn't affect or invalidate any existing client & API exchange that works today. It only affects clients newly making requests to APIs who start using some new URI-unparseable error type.\r\n  \t  * URI syntax is _very_ permissive, so most plain strings that would be used are also valid relative URIs, e.g `invalid-draft` works just fine (though, as mentioned, its semantics change slightly as it's currently a relative URI). It's very difficult to come up with examples of plausible error codes that would fail to parse as URIs. We could tighten the allowed characters if this is a concern.\r\n* If a type is an absolute URI defined in a URI registry of common types or otherwise recognized by the client, the error SHOULD be treated as an instance of the globally registered error types (i.e. #7)\r\n\t* Fully compatible, and we retain the ability to share types across different services\r\n\t* By putting `about:blank` into this URI registry, we retain the same semantics for that\r\n* APIs are encouraged to use absolute URIs as types, for namespacing and type-sharing benefits, but this becomes optional.\r\n* APIs who have documentation relevant to the error response should include a link header.\r\n    * I'd suggest we mint a new relation `problem-doc`. This would pair very nicely with the existing [`service-doc` relation](https://tools.ietf.org/html/rfc8631#section-4.1). Service-doc provides general documentation for the resource, problem-doc provides documentation for the type of error returned.\r\n\r\nThat resolves all the points above, with minimal backward compatibility impact. It still supports all the benefits that absolute URIs give us for those who want that, but also supports other cases too.\r\n\r\nWould that work for you? Are there specific compatibility concerns in here that would need further mitigation?",
+          "createdAt": "2021-02-05T15:13:52Z",
+          "updatedAt": "2021-02-05T15:41:56Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "> Ok, granted, you can't get a perfect guarantee. There is both a semantic and practical difference though between \"here is a link that I intend you to dereference to find more information\" and \"here is a URI that is not intended to be dereferenced, it's just a type id\".\r\n> \r\n> We currently allow both, intentionally, with no distinguishable difference until you dereference it. When looking for usable links to more information, any tooling is interested only in the former, where the URL is _very likely_ to be useful (granted, not guaranteed). Meanwhile if you ever accidentally use the latter it's extremely likely to provide a bad user experience.\r\n\r\nI've been working with XML for many years, where XML namespaces are URIs that almost never dereference to anything. In fact, there are normally specific mechanisms in XML tooling to know where the XSD for a given namespace is simply because the namespace URI doesn't dereference.\r\n\r\nAnd it works fine. People use it, and all is good. So tooling only being interested in dereferenceable links isn't strictly accurate.\r\n\r\n> Ok, one option would be:\r\n> [....]\r\n\r\nIn terms of your proposal. My one concern with it is that I suspect many developers will opt for the choice of just using error codes instead of URIs, because they find it easier. That then means that you lose namespacing, you lose the ability for different APIs to share the same error types, and probably other things.\r\n\r\nThere's also the minor concern that strictly speaking you can't distinguish a URI from an arbitrary string that happens to have the same format. Somebody might write a string that just happens to contain `://` in the middle of it. Is that a URI? Or is it a coincidence? That's very much an edge case though and almost certainly can be ignored :)\r\n\r\nThe impact on existing clients is also a concern, if it means that suddenly they can't understand errors that they could before. That's only an issue for clients that are correctly handling relative URIs though, and I don't know how many of those there are - if any.",
+          "createdAt": "2021-02-05T15:47:56Z",
+          "updatedAt": "2021-02-05T15:47:56Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "> So tooling only being interested in dereferenceable links isn't strictly accurate.\r\n\r\nTrue. I'm really talking about a specific subset of tooling, I should be more specific. I'm thinking about tooling that might format an error response for human consumption, like debuggers, manual clients like Postman & curl, loggers, and other error reporting tools.\r\n\r\nI think those are tools that could get a lot of value from this spec, and in many of these cases it's useful to know if the URL is documentation intended for human consumption.\r\n\r\n> There's also the minor concern that strictly speaking you can't distinguish a URI from an arbitrary string that happens to have the same format. Somebody might write a string that just happens to contain :// in the middle of it. Is that a URI? Or is it a coincidence? That's very much an edge case though and almost certainly can be ignored :)\r\n\r\nIt's slightly more general unfortunately, since some absolute URIs only contain `:` e.g. `tag:example.com,2021:my-error`.\r\n\r\nIf that's a concern, I think saying \"error types must not contain : unless they're an absolute URI\" would be a reasonable constraint, and would support most error codes you see in the real world. Explicitly specifying that would help parsers to quickly differentiate the two cases too.\r\n\r\n> My one concern with it is that I suspect many developers will opt for the choice of just using error codes instead of URIs, because they find it easier.\r\n\r\nThat is quite possible. It appears that there's also a group of people who currently avoid the spec altogether though, or use it suboptimally, because of the URI requirement. Standard formatting of error messages seems very valuable even without URIs.\r\n\r\nPersonally I'm OK with this. Error types intended to be reused elsewhere can use URIs, and error types not intended for global reuse don't need URIs. The challenging case is when you want to reuse a URI defined by somebody else who didn't explicitly make it reusable. I'm OK with not supporting that, but I see how others might find this useful.\r\n\r\n> The impact on existing clients is also a concern, if it means that suddenly they can't understand errors that they could before. That's only an issue for clients that are correctly handling relative URIs though, and I don't know how many of those there are - if any.\r\n\r\nYep. I doubt it's used much though, and I suspect this change would actually _increase_ the number of implementations that matched the spec when using relative URIs. I'd be really interested to know if anybody can find an example of a relative `type` URI in production anywhere though.",
+          "createdAt": "2021-02-05T16:13:26Z",
+          "updatedAt": "2021-02-05T16:13:26Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> There is both a semantic and practical difference though between \"here is a link that I intend you to dereference to find more information\" and \"here is a URI that is not intended to be dereferenced, it's just a type id\".\r\n\r\nBut RFC 7807 does not state \"here is a URI that is not intended to be dereferenced, it's just a type id\". It states that `type` should not be **automatically** dereferenced. Dereferencing `type` based on a user's action, perhaps by clicking \"view documentation\" in a UI is perfectly fine and should probably be encouraged for documentation purposes in the specification. rfc7808bis should seek to clarify that.\r\n\r\nIf the link doesn't resolve, the UI would have to recover from that failure somehow regardless of the semantics and guarantees that were given regarding the link that was dereferenced. \"Sorry, no documentation for `example.com/out-of-credit` is available\" is a fine error message for `type` just as it is described by the specification as well as for a new `documentation` URI that as such don't provide anything valuable `type` doesn't already provide.\r\n\r\n> We currently allow both, intentionally, with no distinguishable difference until you dereference it. When looking for usable links to more information, any tooling is interested only in the former, where the URL is _very likely_ to be useful (granted, not guaranteed). Meanwhile if you ever accidentally use the latter it's extremely likely to provide a bad user experience.\r\n\r\nWhy would the user experience be bad? Please elaborate.\r\n\r\n> Unfortunately that's the same problem: client implementations do not take the authority into account either, they never use the base URL.\r\n\r\nThen they don't have the problem described, since they will just compare `/out-of-credit` with `/out-of-credit` across all responses, regardless of the context (base) URI.\r\n\r\n> I agree that they should, but right now it looks like most implementations of this specification handle both relative & absolute paths incorrectly, and only correctly use fully specified absolute URIs.\r\n\r\nFor clients that don't treat `type` as a URI, `/out-of-credit` in response A is just an opaque string, indiscernible from `/out-of-credit` in response B, even though A and B may be from entirely different authorities altogether (although within the same API, I assume).\r\n\r\n> As an interesting supporting point: the WHATWG URL specification [specifically removed](https://url.spec.whatwg.org/#goals) all references to URIs because \"URI and IRI are just confusing\".\r\n\r\nI think you meant \"URL\" and not \"URI\" here, but regardless I agree with WHATWG in that both \"URI\" and \"IRI\" are confusing and don't add much to the more prevalent \"URL\". I'm not sure IETF is ready to replace its usage of \"URI\" to \"URL\" yet, though. That would probably require rfc3986bis of some sort.\r\n\r\n> URIs are not well understood by many developers, and that will limit adoption of this spec.\r\n\r\nI agree URIs are not well understood. But I think that is a problem and believe the solution is not to cave in and stop using URIs, but to use **even more** URIs.\r\n\r\n![URI ALL THE THINGS](https://user-images.githubusercontent.com/12283/107090318-51682300-6800-11eb-94ba-c2d947489403.png)\r\n\r\n> Right now, as in the blog post above, some users avoid using `type` entirely because it's confusing\r\n\r\nThen let's invest in making it less confusing in rfc7807bis! \ud83d\ude03 \r\n\r\n> and they don't want to create pages for every error type.\r\n\r\nThey don't have to. Let's be more explicit about that. More examples could perhaps help.\r\n\r\n> Ok, one option would be: [\u2026] Would that work for you?\r\n\r\nSorry, no. I'll just +1 @sazzer's criticism here. I don't think this is going to work. In hindsight, it may have been better if non-URI values were interpreted not as relative URIs, but as implicit URNs or something similar. But that train sailed with a boat on water under the bridge more than 5 years ago.\r\n\r\n>  Are there specific compatibility concerns in here that would need further mitigation?\r\n\r\nYes, your suggestion is going to break clients with the following expectations:\r\n\r\n* `type` URIs that point to external documentation.\r\n* Non-absolute `type` URIs are relative to the context.\r\n\r\n\r\n>> So tooling only being interested in dereferenceable links isn't strictly accurate.\r\n> \r\n> True. I'm really talking about a specific subset of tooling, I should be more specific. I'm thinking about tooling that might format an error response for human consumption, like debuggers, manual clients like Postman & curl, loggers, and other error reporting tools.\r\n\r\nIsn't it possible for these tools to only present documentation upon a user's explicit action?\r\n\r\n> I think those are tools that could get a lot of value from this spec, and in many of these cases it's useful to know if the URL is documentation intended for human consumption.\r\n\r\nIf `type` is dereferenceable, the content is intended for human consumption.\r\n\r\n> It appears that there's also a group of people who currently avoid the spec altogether though, or use it suboptimally, because of the URI requirement. Standard formatting of error messages seems very valuable even without URIs.\r\n\r\nPerhaps we could survey these people on the reason they're not using RFC 7807 instead of just speculating?\r\n\r\n> Yep. I doubt it's used much though, and I suspect this change would actually _increase_ the number of implementations that matched the spec when using relative URIs. I'd be really interested to know if anybody can find an example of a relative `type` URI in production anywhere though.\r\n\r\nI believe your suspicion may be correct. I would love to see the result of a survey of existing implementations before concluding, but I'm currently +0 to make the compromise of making non-URI `type` implicit URNs or some other similar solution that doesn't convert them into context-relative HTTP(S) URIs.",
+          "createdAt": "2021-02-05T21:54:20Z",
+          "updatedAt": "2021-02-05T21:54:20Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "To expand on the \"making non-URI `type` implicit URNs\", this sort of implicit expansion has precedent in [RFC 4287 section 4.2.7.2](https://tools.ietf.org/html/rfc4287#section-4.2.7.2)'s definition of `rel`:\r\n\r\n>The value of \"rel\" MUST be a string that is non-empty and matches either the \"isegment-nz-nc\" or the \"IRI\" production in [[RFC3987](https://tools.ietf.org/html/rfc3987)]. Note that use of a relative reference other than a simple name is not allowed.  If a name is given, implementations MUST consider the link relation type equivalent to the same name registered within the IANA Registry of Link Relations ([Section 7](https://tools.ietf.org/html/rfc4287#section-7)), and thus to the IRI that would be obtained by appending the value of the rel attribute to the string \"[http://www.iana.org/assignments/relation/](http://www.iana.org/assignments/relation/)\".\r\n\r\nIn [RFC 5988 section 4.1](https://tools.ietf.org/html/rfc5988#section-4.1), `rel`values are either required to be registered in IANA's Link Relation Registry, or in the case of Extension Relation Types, full URIs. RFC 7807's deviation from these two mechanisms in making `type` relative to the context is perhaps the source of the greatest issue here.\r\n\r\nI've come to agree that `\"type\": \"out-of-funds\"` should be comparable across problem documents disregard of their request context.",
+          "createdAt": "2021-02-10T01:58:43Z",
+          "updatedAt": "2021-02-10T01:58:55Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hey @asbjornu - that's interesting, but it's backwards-incompatible, so we'd need to use a new media type. Is that worth it (considering the resulting confusion, etc.)?",
+          "createdAt": "2021-02-10T02:04:21Z",
+          "updatedAt": "2021-02-10T02:04:21Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Sorry for being imprecise. What I meant was that I agree with (part of) the problem description. I'm +0 on actually doing anything about it. If enough weight is put behind a new media type to break with the current implementations of `type`, then I would not oppose it.",
+          "createdAt": "2021-02-10T02:17:42Z",
+          "updatedAt": "2021-02-10T02:17:42Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "The obvious concern with a new media type is that implementers will either need to migrate completely over to it, or else end up supporting two different ways of representing problems. That feels at odds with what - to me - is one of the major benefits of RFC-7807 in the first place, that there is one standard way to do this and you'd need a good reason to do something different.",
+          "createdAt": "2021-02-10T09:52:21Z",
+          "updatedAt": "2021-02-10T09:52:21Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-02-10 10:52, Graham Cox wrote:\n> The obvious concern with a new media type is that implementers will \n> either need to migrate completely over to it, or else end up supporting \n> two different ways of representing problems. That feels at odds with \n> what - to me - is one of the major benefits of RFC-7807 in the first \n> place, that there is one standard way to do this and you'd need a good \n> reason to do something different.\n\nthe discussion around using URIs as identifiers has been had what feels \nlike a million times. everybody knows the implications. it's a design \ntrade-off.\n\ngiven that there is no clear \"winner\" i think not breaking the existing \nmedia type should make it a big preference to stick with what we have.\n\ni am more than willing to make proposals how to improve the language so \nthat people reading the spec get a bit more context and assistance. but \nas we all know, specs are not read as much as one might wish, so we'll \nstill see broken implementations out there. that's just life.\n\n-- \nerik wilde | mailto:erik.wilde@dret.net |\n            | http://dret.net/netdret    |\n            | http://twitter.com/dret    |\n",
+          "createdAt": "2021-02-10T10:10:07Z",
+          "updatedAt": "2021-02-10T10:10:07Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "Whilst it would still be technically incompatible, I think the practical outcome from [my proposed changes](https://github.com/ietf-wg-httpapi/rfc7807bis/issues/11#issuecomment-774093348) would be that:\r\n\r\n* The incompatibility only affects fully relative URIs (e.g. `out-of-funds`). Both absolute URIs and absolute paths would retain effectively identical semantics to the current spec.\r\n* That incompatible case is not used or discussed in the wild anywhere that I've ever seen (counter examples very welcome!)\r\n* In generic implementations, the incompatible case appears to be incorrectly implemented everywhere, with every implementation I've seen already matching the proposed rather than specified behaviour for this case. It seems likely that this breaking change would dramatically _increase_ the number of implementations correctly implementing the specification today.\r\n\r\nDoes that affect the calculus on breaking changes here?\r\n\r\n(I do agree that @asbjornu's proposal to make relative error types global by default has much larger compatibility implications, unfortunately, and that minting a new media type has repercussions that make this unlikely to be worthwhile in either case)",
+          "createdAt": "2021-02-10T10:24:51Z",
+          "updatedAt": "2021-02-10T10:24:51Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "> Both absolute URIs and absolute paths would retain effectively identical semantics to the current spec.\r\n\r\nNot quite. Absolute URIs retain identical semantics. Absolute paths only retain identical semantics if they are from the same scheme and authority. If they come from different authorities then the resolved URI from those absolute paths is different, and thus the value to use under the current spec is different.\r\n\r\nHowever, as you say, nobody does that. At least, nobody that I've ever seen. I don't know how we'd find out if introducing a breaking change is actually going to break things in any real code, but it seems to me that this proposed change is the cleanest route and that the risk of breaking things is mitigated by the fact that (almost) everybody does it wrong now anyway.\r\n\r\nThe other option would be to introduce not a new media type, but a new parameter to the existing media type. So it becomes `application/problem+json; v=2`. Anyone who doesn't specify a value for `v` would then be assumed to be using the most recent version of the spec, which is what we're discussing here. If they explicitly want to retain the old behaviour then they would specify `v=1`. (That would also open the door for further future changes that introduce a `v=3` as well.)\r\n\r\nI will say, I'm not hugely thrilled by that idea. I prefer trying to keep things simple and not need to do any versioning like that. But it is an option.",
+          "createdAt": "2021-02-10T11:48:28Z",
+          "updatedAt": "2021-02-10T11:48:28Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "> Absolute paths only retain identical semantics if they are from the same scheme and authority. If they come from different authorities then the resolved URI from those absolute paths is different, and thus the value to use under the current spec is different.\r\n\r\nIn the proposed version, both relative & absolute paths would be considered as scoped to the API (i.e. the scheme & authority). So `out-of-funds` should be treated as same type of error everywhere in the API (unlike today) and as distinct types if returned from different APIs (same as today).\r\n\r\n`/problem/out-of-funds` doesn't change though: it should be treated as the same type everywhere in the same API (the same as today) and as distinct types if returned by different APIs (the same as today).\r\n\r\nDoes that not match today's semantics? Maybe I'm missing something, do you have an example where the  behaviour changes?",
+          "createdAt": "2021-02-10T12:08:06Z",
+          "updatedAt": "2021-02-10T12:08:06Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "So it seems like we have some agreement that we don't want to introduce a new mime type, and as a result we shouldn't change the nature of `type` in a backwards-incompatible fashion.\r\n\r\n**Proposal:** we should resolve this issue by focusing on making the spec communicate more clearly about how to use URIs successfully in `type`, possibly adding new fields, etc. in separate issues. Once we do that, we should close this issue, but label it `revisit-on-breaking-change` so that if for some reason we find a compelling enough reason to mint a new mime type, we remember to reconsider.\r\n",
+          "createdAt": "2021-02-10T23:45:42Z",
+          "updatedAt": "2021-02-10T23:45:42Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "Personally I'd still prefer the technically-incompatible-but-_probably_-more-compatible proposal with no mime type change at all, but I can understand if that's not an acceptable risk.\r\n\r\nIf we're talking about guaranteed-safe changes we can make, the things I'd personally find useful are:\r\n\r\n* Making a clear & simple recommendation in the spec for users who have a simple error code and who don't want to link the error type to a documentation page. E.g. they should use tags, or URNs, or absolute paths, or something else.\r\n* Discouraging fully relative paths, since they're very counter-intuitive, most/all implementations handle them wrong, and we may want to change their semantics in a future breaking change.\r\n* Providing some way for clients to know if a type URL is designed to be dereferenced as a link to documentation, or if it's simply acting as an identifier.\r\n\r\nI'll file new issues for those, and we can continue discussion on them independently there. Happy for this issue to be tagged and left for a future breaking change in the meantime if that's all we can do for now.",
+          "createdAt": "2021-02-11T15:31:18Z",
+          "updatedAt": "2021-02-11T15:31:18Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "See PR #20. Thoughts?",
+          "createdAt": "2021-04-26T03:52:33Z",
+          "updatedAt": "2021-04-26T03:52:33Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Am merging #20, which will close this. If anyone has further input, please open a new issue or comment.",
+          "createdAt": "2021-05-25T06:56:39Z",
+          "updatedAt": "2021-05-25T06:56:39Z"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "MDU6SXNzdWU4MDM2NTI3MjI=",
+      "title": "Problem Details Object for Warning",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/12",
+      "state": "OPEN",
+      "author": "sdatspun2",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Capturing @ioggstream's response from email thread with follow up questions. Should Problem Details JSON Object schema have any member indicating that the problem(s) is an error(s) or warning(s)? If yes, which status code(s) could be used in case of warning.\r\n\r\nOn Tue, Jan 19, 2021 at 12:30 AM Roberto Polli <roberto@> wrote:\r\nI would like to find a convergent solution for both Problem and\r\nContent-Warning, eg. see\r\nhttps://github.com/dret/I-D/blob/master/http-warning/draft-cedik-http-warning-02.txt#L295\r\nwhich proposes the use of a list of Problem.json which - imho -\r\nprovide redundant information (eg. `status` should always be the\r\nsame).\r\n\r\nKind regards,\r\nR.\r\n--\r\nRoberto Polli\r\nAPI Expert",
+      "createdAt": "2021-02-08T15:11:08Z",
+      "updatedAt": "2021-04-28T07:16:01Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "My initial thought is that the problem type itself should indicate this (e.g., in its documentation). The term 'problem' was used very deliberately, to cover both (and perhaps more).\r\n\r\nIs there a use case for software generically sifting things considered \"warnings\" from \"problems\" without knowing anything specific about the type? If so, more details about it would help drive the design here.\r\n\r\nAlso, if we go down this road, should we be considering a 'level' parameter?",
+          "createdAt": "2021-02-10T01:46:27Z",
+          "updatedAt": "2021-02-10T01:46:27Z"
+        },
+        {
+          "author": "andrecedik",
+          "authorAssociation": "NONE",
+          "body": "I've contacted Erik to see if it would be best to put our ideas and efforts into rfc7807bis instead of the I-D. Haven't heard from him back though. \r\n\r\nI have to agree with Mark when he's saying: \r\n> The term 'problem' was used very deliberately, to cover both (and perhaps more).\r\n\r\nFrom my point of view: I'd rather see a solution in rfc7807bis than trying to recreate the wheel since errors and warnings both are conveying information an API client might need to function properly or communicate to the end user. Having two separate ways of handling these situations makes API design more complicated. \r\n\r\n> Also, if we go down this road, should we be considering a 'level' parameter?\r\n\r\nWhat do you have in mind @mnot? Something like a log level (error, warn, info, debug)?",
+          "createdAt": "2021-02-11T07:42:12Z",
+          "updatedAt": "2021-02-11T07:42:12Z"
+        },
+        {
+          "author": "ioggstream",
+          "authorAssociation": "NONE",
+          "body": "> if it would be best to put our ideas and efforts into rfc7807bis instead of the I-D\r\n\r\n@andrecedik I think that disentangling the ~Warning I-D  from the content will still be useful and could move further, though.",
+          "createdAt": "2021-02-11T08:30:03Z",
+          "updatedAt": "2021-02-11T08:30:03Z"
+        },
+        {
+          "author": "andrecedik",
+          "authorAssociation": "NONE",
+          "body": "Yes @ioggstream, that could be the (only) reason for keeping the I-D alive. Throw out the proposed format for the body and just introduce the warning header field.",
+          "createdAt": "2021-02-11T08:43:38Z",
+          "updatedAt": "2021-02-11T08:43:38Z"
+        },
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "body": ">If yes, which status code(s) could be used in case of warning.\r\n\r\nhttps://tools.ietf.org/html/draft-cedik-http-warning-02#section-6 suggests using 2xx\r\n\r\n`Since warnings do not have an effect on the returned HTTP status code, the response status code SHOULD be in the 2xx range, indicating that the intent of the client was successful.`\r\n\r\nhttps://tools.ietf.org/html/rfc7807#section-1\r\n`Thus, API clients can be informed of both the high-level error class (using the status code) and the finer-grained details of the problem (using one of these formats).`\r\n\r\nhigh-level error class means 4xx and 5xx (https://www.iana.org/assignments/http-status-codes/http-status-codes.xml)\r\n\r\nAs a consumer of an API, I would not imagine scenarios having a response with HTTP status as `400` and having `200` in the response body (top level or in the proposed contained problem(s)) with the proposed `level` as `warning`. Having a `status` in the response body already creates a situation that needs explanation in https://tools.ietf.org/html/rfc7807#section-5. Adding the warning scenario in the mix will make it even more complex to explain imo and most importantly for no practical use case perhaps.\r\n\r\n>My initial thought is that the problem type itself should indicate this (e.g., in its documentation). The term 'problem' was used very deliberately, to cover both (and perhaps more).\r\n\r\nI agree that this differentiation should be left to the documentation.\r\n\r\n",
+          "createdAt": "2021-02-11T15:40:10Z",
+          "updatedAt": "2021-02-11T15:40:10Z"
+        },
+        {
+          "author": "serialseb",
+          "authorAssociation": "NONE",
+          "body": "The scenario i envision is one where problem documents are persisted, and then shared across other systems, or visualised in a log viewer, all of which tend to have a minimum amount of standard behaviours. One would be displaying a \u26a0 or \u26d4\ufe0f or what not for operators, another would be alerting differently based on the severity of a problem document.",
+          "createdAt": "2021-04-28T07:16:01Z",
+          "updatedAt": "2021-04-28T07:16:01Z"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "MDU6SXNzdWU4MDY1MDAwODE=",
+      "title": "Make a clear recommendation for the 'type' to use when not linking to a documentation URL",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/13",
+      "state": "OPEN",
+      "author": "pimterry",
+      "authorAssociation": "NONE",
+      "assignees": [
+        "mnot"
+      ],
+      "labels": [],
+      "body": "_Pulling this conversation out of #11:_\r\n\r\nIt's clear that there's demand for error codes scoped to the API, without creating documentation pages for each code and linking to them in the `type` field. There are many ways that implementers could do this, from linking to non-existent URLs to URNs to tags URIs, etc.\r\n\r\nIt would be useful if the specification included examples of this, and made a clear recommendation for this case.",
+      "createdAt": "2021-02-11T15:32:05Z",
+      "updatedAt": "2021-05-25T06:57:56Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 14,
+      "id": "MDU6SXNzdWU4MDY1MDE2OTU=",
+      "title": "Consider discouraging relative path URLs in the 'type' field",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/14",
+      "state": "CLOSED",
+      "author": "pimterry",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "_Pulling this conversation out of #11:_\r\n\r\nRelative path URLs like `out-of-funds` act counter-intuitively. At first glance, they are some kind of api-global identifier, but in fact they should be considered as a path relative to the current resource, so an `out-of-funds` response from `example.com/buy/123` is a totally distinct error type to an `out-of-funds` response from `example.com/buy/456`.\r\n\r\nThat is likely not what anybody intended. In addition, it appears that almost all implementations of this spec do not take that into account, parsing and comparing type URIs directly, and never using the resource URI that returned it at all.\r\n\r\nThis is a likely footgun for users implementing this spec, and there are easy better alternatives (see #13), so we should highlight that.",
+      "createdAt": "2021-02-11T15:33:53Z",
+      "updatedAt": "2021-05-25T10:28:37Z",
+      "closedAt": "2021-05-25T10:28:37Z",
+      "comments": [
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "> so an out-of-funds response from example.com/buy/123 is a totally distinct error type to an out-of-funds response from example.com/buy/456\r\n\r\nMinor but important nitpick - sorry! Those two examples are actually the same - the resolved value is `example.com/buy/out-of-funds`. The relative path in this case would replace the final path segment, not append to it.\r\n\r\nA better example could be `example.com/buy/123` vs `example.com/lease/456`.\r\n\r\nThis does fantastically highlight why relative URLs are difficult to use though :)",
+          "createdAt": "2021-02-11T16:48:03Z",
+          "updatedAt": "2021-02-11T16:48:03Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "Haha, good catch! The same would apply if I'd included a trailing slash too I think: `example.com/buy/123/`. Glad I've successfully illustrated my point though :facepalm:",
+          "createdAt": "2021-02-11T17:24:38Z",
+          "updatedAt": "2021-02-11T17:24:38Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think this was addressed by #20 - can we close?",
+          "createdAt": "2021-05-25T06:59:12Z",
+          "updatedAt": "2021-05-25T06:59:12Z"
+        },
+        {
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "body": "Yes, I think so! :+1:",
+          "createdAt": "2021-05-25T10:28:37Z",
+          "updatedAt": "2021-05-25T10:28:37Z"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "id": "MDU6SXNzdWU4MDY1MDcyNDk=",
+      "title": "Provide an indication of whether a type URL is designed to be dereferenced for documentation",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/15",
+      "state": "OPEN",
+      "author": "pimterry",
+      "authorAssociation": "NONE",
+      "assignees": [
+        "dret"
+      ],
+      "labels": [],
+      "body": "_Pulling this conversation out of #11:_\r\n\r\n* The current spec allows any type URLs to be used, and there's no strong requirement that they link to documentation, it's just encouraged.\r\n* As an API client, it can be useful to be able to automatically find human-readable documentation relevant to an error response.\r\n* Right now, the only way to do that is to dereference every type URL to see if it goes to a documentation resource, but a) that's discouraged by the spec (type URIs should not be dereferenced automatically) and b) it's not very efficient for anybody involved.\r\n\r\nAs an example, Zolando's [API design guidelines](https://opensource.zalando.com/restful-api-guidelines/#176) specify that:\r\n\r\n> Problem type and instance identifiers in our APIs are not meant to be resolved. RFC 7807 encourages that custom problem types are URI references that point to human-readable documentation, but we deliberately decided against that, as all important parts of the API must be documented using OpenAPI anyway. In addition, URLs tend to be fragile and not very stable over longer periods because of organizational and documentation changes and descriptions might easily get out of sync.\r\n\r\nAll their API responses use absolute path types to deal with this, like `\"type\": \"/problems/out-of-stock\"`, which intentionally go nowhere. This is allowed by our current spec, but makes life difficult for those of us who want to automatically find documentation from arbitrary problem detail responses.\r\n\r\nIt would be useful to provide an explicit way to link to documentation in these cases, or to make it clear that no documentation is available.",
+      "createdAt": "2021-02-11T15:40:24Z",
+      "updatedAt": "2021-05-31T13:10:55Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "serialseb",
+          "authorAssociation": "NONE",
+          "body": "With identification using URIs, you never quite know if it is a document or just a reference to a concept. Any person that followed httpRange-14 back in the days knows that this is hard.\r\nThat said, the scenarios are multiple:\r\n1. Identification only relies on expanding a uri to its full form (from a basue uri for any uri), and checking it against a known value\r\n2. can i learn anything from it, which is a \"follow your nose\" first principle: click on it, see if anything comes out\r\n\r\nIf you were to add a \"documentation\" uri, i have no more guarantee that anything usefull will come out of it rather than following my nose to the original type, so I'm not sure Im gaining a lot from a predictability perspective.\r\n\r\nIf the main operator is human, then a documentation URI would only make sense because it overrides the main URI, which would only be done if said URI is not in control of the operator that published said URI. This seems unlikely to me, but I could see a scenario where you want, on your own API, to provide your own documentation for that `type` above and beyond from the one that would be provided by the provider of that error. \r\nI'm not sure what i think about that capacity, to say that \"in our realm, we don't do things the way they said, we got our own\". It's an open question for me.\r\n\r\nIf the main operator is a machine, then just a URI seems insufficient, especially as the override i mentioned above would be needed per type of automate-able documentation one could retrieve.",
+          "createdAt": "2021-03-12T19:30:03Z",
+          "updatedAt": "2021-03-12T19:30:03Z"
+        },
+        {
+          "author": "sazzer",
+          "authorAssociation": "NONE",
+          "body": "> If the main operator is human, then a documentation URI would only make sense because it overrides the main URI, which would only be done if said URI is not in control of the operator that published said URI\r\n\r\nIn that case, I wonder if a Link header - with `rel=\"help\"` maybe? - would be a better way of achieving that? That way the actual problem payload doesn't change just because some server wants to indicate that human-readable documentation about the problem exists somewhere different to the provided URI.",
+          "createdAt": "2021-03-12T19:42:02Z",
+          "updatedAt": "2021-03-12T19:42:13Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "jumping in to hopefully make some progress with this:\r\n- \"automatically\" following type links (as mentioned by @pimterry) isn't a great idea, since this may cause the well-known problem of overwhelming the server of the type URI. that's why RFC 7807 says that \"Consumers SHOULD NOT automatically dereference the type URI.\"\r\n- instead of adding a specific \"hint\", we could add language saying that if you want your type URIs not to be dereferencable, just create them that way, for example by using URNs (or similar URI schemes).\r\nthat way, we could one the one had provide guidance for those who want to create dereferencable URIs (make them absolute) and for those not wanting dereferencable URIs (do not use relative URIs but instead use URI schemes that have no associated dereferencing mechanism, such as URN URIs).",
+          "createdAt": "2021-05-31T13:10:21Z",
+          "updatedAt": "2021-05-31T13:10:21Z"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "id": "MDU6SXNzdWU4NDUzMTI4NzI=",
+      "title": "Deprecating media type?",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/16",
+      "state": "CLOSED",
+      "author": "sdatspun2",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": ">Note that because extensions are effectively put into a namespace by the problem type, it is not possible to define new \"standard\" members without defining a new media type\r\n\r\n@mnot Pardon my ignorance here...what was the reason to tie \"standard\" members with a media type and not with schema (at least for JSON and XML)? It locks the definition but it also makes it extremely difficult to evolve. Should this be revisited? \r\n\r\nIt would be much easier to resolve #6 and #8 if we could made backward-compatible changes to schemas. \r\n\r\n",
+      "createdAt": "2021-03-30T21:37:56Z",
+      "updatedAt": "2021-05-25T13:24:39Z",
+      "closedAt": "2021-05-25T13:24:39Z",
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "The media type advertises that the content is of a certain format; if you make backwards-compatible changes to that, you're going to break some processors. ",
+          "createdAt": "2021-03-30T21:50:30Z",
+          "updatedAt": "2021-03-30T21:50:30Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Is there something actionable here, or can we close this?",
+          "createdAt": "2021-04-26T06:14:11Z",
+          "updatedAt": "2021-04-26T06:14:11Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "i am still struggling with this a little. i am assuming this actually talks about forward-compatible changes, i.e. an updated format processed by old processors. i am not sure what the title of this issue refers to looking at the comments, though. but it seems that following the usual practice of not making \"breaking changes\" should be fine, right? this means not changing any definitions of the existing members, and only adding members that can be safely ignored.",
+          "createdAt": "2021-04-27T07:23:16Z",
+          "updatedAt": "2021-04-27T07:23:16Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Sorry, I should have typed backwards _in_compatible changes. Compatible changes are fine. ",
+          "createdAt": "2021-04-27T07:26:45Z",
+          "updatedAt": "2021-04-27T07:26:45Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "So, can we close?",
+          "createdAt": "2021-05-25T06:53:52Z",
+          "updatedAt": "2021-05-25T06:53:52Z"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "id": "MDU6SXNzdWU4NjcyMjExMjA=",
+      "title": "Handling invalid problem objects",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/19",
+      "state": "OPEN",
+      "author": "mnot",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "mnot"
+      ],
+      "labels": [],
+      "body": "From https://www.rfc-editor.org/errata/eid5515 :\r\n\r\nJSON objects with a null \"type\" are syntactically correct, but there is no information on how it should be handled.\r\n\r\n{\r\n\"type\": null,\r\n\"status\": 404,\r\n\"title\": \"Not Found\"\r\n}\r\n\r\nIt makes sense to treat null as an alias of \"about:blank\" and that's how I think it should be documented.",
+      "createdAt": "2021-04-26T03:30:48Z",
+      "updatedAt": "2021-05-25T06:59:32Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Note that the errata above is only `Reported`.\r\n\r\nMy .02 -- if `type` is `null`, it's invalid, _not_ \"syntactically correct\"; it's specified to be a string, and if someone assumes that `null` has semantics, that's not currently specified behaviour. So the real question here is whether the default of `about:blank` is assumed when the value is invalid, or whether some other error handling comes into play.\r\n\r\nI think the safest thing to do would _not_ be to assume that `null` implies `about:blank` -- i.e., no change to the spec.",
+          "createdAt": "2021-04-26T03:33:35Z",
+          "updatedAt": "2021-04-26T03:33:35Z"
+        },
+        {
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Since this is a specification of a format for error messages, I believe it is important that the processing of the error message is clear and lenient so the processing itself does not cause errors, possibly shrouding the initial error that caused the `application/problem+json` response in the first place.\r\n\r\nI therefore think the specification should be explicit that all erroneous values (such as `\"type\": null`, `\"status\": \"invalid\"`, `\"detail\": 123`, etc.) should be ignored and treated as the default value of each member, which for `type` equals to `about:blank`, but for other members equal to an empty string(?).",
+          "createdAt": "2021-04-26T04:58:21Z",
+          "updatedAt": "2021-04-26T04:58:21Z"
+        },
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I think I agree; changing issue title.",
+          "createdAt": "2021-04-26T06:13:15Z",
+          "updatedAt": "2021-04-26T06:13:15Z"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "id": "MDU6SXNzdWU5MDgzNjIyMDc=",
+      "title": "provide guidance for intentionally non-dereferencable URIs",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/issues/21",
+      "state": "OPEN",
+      "author": "dret",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "#11 provides good guidance in terms of probably bets avoiding relative URIs. what about also providing guidance for people who intentionally want to use non-dereferencable URIs for `type` or `instance`? should we add some guidance for this as well? we had some discussion around `tag` URIs in #11 and there are other possibilities as well. but the main question is: if somebody never intends to use dereferencable URIs for `type` or `instance`, should we mention that and provide guidance?",
+      "createdAt": "2021-06-01T14:35:54Z",
+      "updatedAt": "2021-06-01T14:35:54Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 17,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjE2NTk4NTA0",
+      "title": "fix metadata",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/pull/17",
+      "state": "MERGED",
+      "author": "reschke",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-04-16T07:13:19Z",
+      "updatedAt": "2021-04-16T07:43:47Z",
+      "baseRepository": "ietf-wg-httpapi/rfc7807bis",
+      "baseRefName": "main",
+      "baseRefOid": "a832532a9cd89835cc9ecc2c41c511a47e6ea963",
+      "headRepository": "reschke/rfc7807bis",
+      "headRefName": "patch-1",
+      "headRefOid": "c02f381ea4e471983605dd74ae5e6e987fe0bf97",
+      "closedAt": "2021-04-16T07:43:43Z",
+      "mergedAt": "2021-04-16T07:43:43Z",
+      "mergedBy": "dret",
+      "mergeCommit": {
+        "oid": "c1bd1003cb39fa4c3fecd6aa593445aa928a473e"
+      },
+      "comments": [
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "looks good. thanks, @reschke!",
+          "createdAt": "2021-04-16T07:43:47Z",
+          "updatedAt": "2021-04-16T07:43:47Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 18,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjIyMTAwOTUw",
+      "title": "Added JSON schema",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/pull/18",
+      "state": "OPEN",
+      "author": "sdatspun2",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-04-23T14:11:40Z",
+      "updatedAt": "2021-05-01T01:15:42Z",
+      "baseRepository": "ietf-wg-httpapi/rfc7807bis",
+      "baseRefName": "main",
+      "baseRefOid": "c1bd1003cb39fa4c3fecd6aa593445aa928a473e",
+      "headRepository": "sdatspun2/rfc7807bis",
+      "headRefName": "main",
+      "headRefOid": "4ed3cca1b9aaac4e00a70d85366733c0e91f0d5d",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This PR is for Issue #8 ",
+          "createdAt": "2021-04-23T14:15:24Z",
+          "updatedAt": "2021-04-23T14:15:24Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0MjI3NjUx",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "See inline.",
+          "createdAt": "2021-04-26T02:37:14Z",
+          "updatedAt": "2021-04-26T02:42:46Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "Might be worth adding a `minimum` of `100` and a `maximum` of `599`.",
+              "createdAt": "2021-04-26T02:37:14Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            },
+            {
+              "originalPosition": 25,
+              "body": "```suggestion\r\n      \"format\": \"uri-reference\",\r\n```",
+              "createdAt": "2021-04-26T02:38:07Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            },
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\n      \"format\": \"uri-reference\",\r\n```",
+              "createdAt": "2021-04-26T02:38:19Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            },
+            {
+              "originalPosition": 2,
+              "body": "Is this the right URI? I'm not up to speed on the latest in schema-land...",
+              "createdAt": "2021-04-26T02:39:19Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            },
+            {
+              "originalPosition": 20,
+              "body": "Shouldn't this be `examples` and an array, as per http://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.9.5 ?",
+              "createdAt": "2021-04-26T02:40:14Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            },
+            {
+              "originalPosition": 18,
+              "body": "We should remove this until the spec text is in place -- it's not clear we're going to go this way.",
+              "createdAt": "2021-04-26T02:42:08Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            },
+            {
+              "originalPosition": 35,
+              "body": "Same as above, should be removed until the issue is settled.",
+              "createdAt": "2021-04-26T02:42:28Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0Njk4Mzc3",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-26T13:52:00Z",
+          "updatedAt": "2021-04-26T13:52:01Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "https://tools.ietf.org/html/draft-handrews-json-schema-validation-01#section-5\r\n\r\nI kept it slightly old to increase adoption. Latest is 2020-12. Other option could be 2019-09. Lmk so I can change in next commit.\r\n\r\nhttps://json-schema.org/specification-links.html\r\n",
+              "createdAt": "2021-04-26T13:52:00Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0NzEwOTgy",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-26T14:02:19Z",
+          "updatedAt": "2021-04-26T14:02:19Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "Hmm...relied on a tool. Fixing in next commit.",
+              "createdAt": "2021-04-26T14:02:19Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0NzExODM3",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-26T14:03:03Z",
+          "updatedAt": "2021-04-26T14:03:04Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "Ohk...",
+              "createdAt": "2021-04-26T14:03:04Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0NzEyMjUz",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-26T14:03:27Z",
+          "updatedAt": "2021-04-26T14:03:27Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "Next commit.",
+              "createdAt": "2021-04-26T14:03:27Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0NzEyNjAz",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-26T14:03:45Z",
+          "updatedAt": "2021-04-26T14:03:45Z",
+          "comments": [
+            {
+              "originalPosition": 25,
+              "body": "Yes. Relative should be supported. Next commit.",
+              "createdAt": "2021-04-26T14:03:45Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0NzEyOTA0",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-26T14:04:01Z",
+          "updatedAt": "2021-04-26T14:04:01Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "+1",
+              "createdAt": "2021-04-26T14:04:01Z",
+              "updatedAt": "2021-04-28T13:26:09Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ4MDE4NDU2",
+          "commit": {
+            "abbreviatedOid": "4ed3cca"
+          },
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-29T09:56:03Z",
+          "updatedAt": "2021-04-29T09:56:03Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "not sure about the \"best\" version/URI to choose, as they're still in eternal draft mode.",
+              "createdAt": "2021-04-29T09:56:03Z",
+              "updatedAt": "2021-04-29T09:56:03Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ4MDE5MzYx",
+          "commit": {
+            "abbreviatedOid": "4ed3cca"
+          },
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-29T09:57:04Z",
+          "updatedAt": "2021-04-29T09:57:05Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "\"going to go this way\" meaning adding a JSON schema, @mnot?",
+              "createdAt": "2021-04-29T09:57:04Z",
+              "updatedAt": "2021-04-29T09:57:05Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ4NzcyMDk0",
+          "commit": {
+            "abbreviatedOid": "4ed3cca"
+          },
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-30T00:10:25Z",
+          "updatedAt": "2021-04-30T00:10:25Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "No, I mean we haven't resolved how multiple problems should be handled.",
+              "createdAt": "2021-04-30T00:10:25Z",
+              "updatedAt": "2021-04-30T00:10:25Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ5NzAwNjE2",
+          "commit": {
+            "abbreviatedOid": "4ed3cca"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-05-01T00:59:43Z",
+          "updatedAt": "2021-05-01T00:59:43Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "The schema proposal is an attempt to resolve it :)",
+              "createdAt": "2021-05-01T00:59:43Z",
+              "updatedAt": "2021-05-01T00:59:43Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ5NzAwNzc3",
+          "commit": {
+            "abbreviatedOid": "4ed3cca"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-05-01T01:01:08Z",
+          "updatedAt": "2021-05-01T01:01:08Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "I am thinking of removing it. Some linters do not recognize $schema, esp. those that follow pre OpenAPI 3.1 spec.",
+              "createdAt": "2021-05-01T01:01:08Z",
+              "updatedAt": "2021-05-01T01:01:08Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ5NzAyMjc4",
+          "commit": {
+            "abbreviatedOid": "4ed3cca"
+          },
+          "author": "darrelmiller",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-05-01T01:15:42Z",
+          "updatedAt": "2021-05-01T01:15:42Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "We use the following \r\n```\r\n \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\r\n```\r\nin the [OpenAPI 3.1 metaschema](https://github.com/OAI/OpenAPI-Specification/blob/main/schemas/v3.1/schema.json) and it has been reviewed by the JSON Schema editors.",
+              "createdAt": "2021-05-01T01:15:42Z",
+              "updatedAt": "2021-05-01T01:15:42Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjIyOTMwOTA3",
+      "title": "Warn about relative URIs in \"type\" and \"instance\"",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/pull/20",
+      "state": "MERGED",
+      "author": "mnot",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This necessitated rearranging the section on members for clarity.\r\n\r\nAlso, \"Consumers MUST use the 'type' string...\" was changed to\r\n\"Consumers MUST use the 'type' URI...\" for consistency.\r\n\r\nFixes #11.",
+      "createdAt": "2021-04-26T03:51:55Z",
+      "updatedAt": "2021-05-25T06:56:53Z",
+      "baseRepository": "ietf-wg-httpapi/rfc7807bis",
+      "baseRefName": "main",
+      "baseRefOid": "7d017bddc129bbd4785c9cc498da3efcb3ab8297",
+      "headRepository": "ietf-wg-httpapi/rfc7807bis",
+      "headRefName": "mnot-11",
+      "headRefOid": "4a7649c3445d0aed16151d8cc2a9c4f64fd7c5a8",
+      "closedAt": "2021-05-25T06:56:46Z",
+      "mergedAt": "2021-05-25T06:56:46Z",
+      "mergedBy": "mnot",
+      "mergeCommit": {
+        "oid": "aa4ec7750fcc3252ed6e523f12bef68aff8825f3"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0MjU5NDE4",
+          "commit": {
+            "abbreviatedOid": "ce8340d"
+          },
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "I think this is a great improvement and that it resolves the issue. I would just like a bit more verbosity in the example given for relative URIs.",
+          "createdAt": "2021-04-26T04:40:08Z",
+          "updatedAt": "2021-04-26T04:49:50Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "This is a great improvement, but I think we should be even more verbose with the example to explain thoroughly what the issue with relative URIs is and not expect everyone to know relative URI resolving by heart. Below is a suggestion for how to make this paragraph even clearer.\r\n\r\n```suggestion\r\nWhile relative URIs are allowed in \"type\", it is RECOMMENDED that only absolute URIs be used, to avoid confusion. For example, if the two resources \"https://api.example.org/foo/bar/123\" and \"https://api.example.org/widget/456\" both respond with a \"type\" equal to the relative URI reference \"example-problem\", when resolved they will identify different resources (\"https://api.example.org/foo/bar/example-problem\" and \"https://api.example.org/widget/example-problem\" respectively), which is counter-intuitive for many users.\r\n```",
+              "createdAt": "2021-04-26T04:40:08Z",
+              "updatedAt": "2021-04-26T04:55:17Z"
+            },
+            {
+              "originalPosition": 20,
+              "body": "Perhaps we should say something about dereferencing being encouraged on user interaction, such as clicking a button in a UI or similar? It would be good to give ideas about how the `type` URI is intended to be used for human-readable documentation in practice, imho.",
+              "createdAt": "2021-04-26T04:44:21Z",
+              "updatedAt": "2021-04-26T04:55:17Z"
+            },
+            {
+              "originalPosition": 5,
+              "body": "Thumbs up for giving each member a heading. \ud83d\udc4d\ud83c\udffc ",
+              "createdAt": "2021-04-26T04:45:54Z",
+              "updatedAt": "2021-04-26T04:55:17Z"
+            },
+            {
+              "originalPosition": 51,
+              "body": "If the similar paragraph for \"type\" is modified, this paragraph should be modified to remain consistent with it.",
+              "createdAt": "2021-04-26T04:48:21Z",
+              "updatedAt": "2021-04-26T04:55:17Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0MjYzODA2",
+          "commit": {
+            "abbreviatedOid": "8d7a808"
+          },
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-26T04:55:36Z",
+          "updatedAt": "2021-04-26T04:55:37Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": ":)",
+              "createdAt": "2021-04-26T04:55:36Z",
+              "updatedAt": "2021-04-26T04:55:37Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0MjY5NDA0",
+          "commit": {
+            "abbreviatedOid": "8d7a808"
+          },
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-26T05:12:55Z",
+          "updatedAt": "2021-04-26T05:12:56Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "That sounds like a separate issue, maybe #13.",
+              "createdAt": "2021-04-26T05:12:55Z",
+              "updatedAt": "2021-04-26T05:12:56Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0MjY5ODE1",
+          "commit": {
+            "abbreviatedOid": "8d7a808"
+          },
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-26T05:14:10Z",
+          "updatedAt": "2021-04-26T05:14:10Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "Agreed",
+              "createdAt": "2021-04-26T05:14:10Z",
+              "updatedAt": "2021-04-26T05:14:10Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ0NTYyNDU1",
+          "commit": {
+            "abbreviatedOid": "8d7a808"
+          },
+          "author": "pimterry",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "I've added a couple of quick thoughts on ways this could go slightly further, but I think this is already a great improvement that would fix #14.",
+          "createdAt": "2021-04-26T11:31:14Z",
+          "updatedAt": "2021-04-26T11:54:58Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Is it worth mentioning that this isn't just counter-intuitive, but is actually handled wrongly by most existing implementations? Similar to GET with a body in the HTTP RFC, where it says\r\n\r\n> sending a payload body on a GET request might cause some existing implementations to reject the request.\r\n\r\nMaybe here something like:\r\n\r\n> ...which is counter-intuitive for many users, and might be misinterpreted by some existing implementations.\r\n\r\nThis would help readers to better understand the practical impact of ignoring this recommendation: there is a very real possibility that tools will handle this incorrectly.",
+              "createdAt": "2021-04-26T11:31:14Z",
+              "updatedAt": "2021-04-26T11:54:58Z"
+            },
+            {
+              "originalPosition": 14,
+              "body": "Do we have a recommendation on relative-host absolute-path URIs, e.g. `/problems/example-problem`?\r\n\r\nThese are encouraged today as the best option in [some existing popular API style guides](https://github.com/zalando/restful-api-guidelines/blob/master/chapters/http-status-codes-and-errors.adoc#must-support-problem-json), so could be worth an explicit mention.\r\n\r\nI'm not actually sure the best position is here: they're still potentially slightly confusing but \"it's an error code scoped to the whole origin\" is much less tricky that the fully relative case imo.\r\n\r\nIf we think that these are discouraged too, as the current text implies since they are indeed relative URIs, then it still might be useful to explicitly include them in the explanation here, since they do behave somewhat differently and they're in real use today.\r\n\r\nIf we think that they're actually OK, then it would definitely be good to clarify why this is different from fully relative URIs like `example-problem`, and be clear that they're not recommended against in the same way.",
+              "createdAt": "2021-04-26T11:45:35Z",
+              "updatedAt": "2021-04-26T11:54:58Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ1NTIzMjk2",
+          "commit": {
+            "abbreviatedOid": "8d7a808"
+          },
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-27T07:27:47Z",
+          "updatedAt": "2021-04-27T07:27:47Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Good suggestion; will add something along those lines.",
+              "createdAt": "2021-04-27T07:27:47Z",
+              "updatedAt": "2021-04-27T07:27:47Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjQ1NTIzNTAx",
+          "commit": {
+            "abbreviatedOid": "8d7a808"
+          },
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-04-27T07:28:01Z",
+          "updatedAt": "2021-04-27T07:28:01Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "Also a good point; will refine this.",
+              "createdAt": "2021-04-27T07:28:01Z",
+              "updatedAt": "2021-04-27T07:28:01Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjUwMjY2NTE5",
+          "commit": {
+            "abbreviatedOid": "4a7649c"
+          },
+          "author": "asbjornu",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "\ud83d\udc4d\ud83c\udffc ",
+          "createdAt": "2021-05-03T11:22:35Z",
+          "updatedAt": "2021-05-03T11:22:35Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
