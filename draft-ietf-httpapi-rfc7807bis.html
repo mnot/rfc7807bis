@@ -11,7 +11,7 @@
 <meta content='
        This document defines a "problem detail" as a way to carry machine-readable details of errors in a HTTP response to avoid the need to define new error response formats for HTTP APIs. 
     ' name="description">
-<meta content="xml2rfc 3.7.0" name="generator">
+<meta content="xml2rfc 3.8.0" name="generator">
 <meta content="status" name="keyword">
 <meta content="HTTP" name="keyword">
 <meta content="error" name="keyword">
@@ -21,7 +21,7 @@
 <meta content="XML" name="keyword">
 <meta content="draft-ietf-httpapi-rfc7807bis-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.7.0
+  xml2rfc 3.8.0
     Python 3.8.10
     appdirs 1.4.4
     ConfigArgParse 1.2.3
@@ -33,7 +33,7 @@
     lxml 4.6.3
     pycountry 20.7.3
     pyflakes 2.2.0
-    PyYAML 5.4.1
+    PyYAML 5.3.1
     requests 2.25.1
     setuptools 51.3.3
     six 1.15.0
@@ -855,7 +855,7 @@ address div.right {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Nottingham, et al.</td>
-<td class="center">Expires 3 December 2021</td>
+<td class="center">Expires 12 December 2021</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -871,12 +871,12 @@ address div.right {
 <a href="https://datatracker.ietf.org/doc/html/rfc7807" class="eref">7807</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-06-01" class="published">1 June 2021</time>
+<time datetime="2021-06-10" class="published">10 June 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-12-03">3 December 2021</time></dd>
+<dd class="expires"><time datetime="2021-12-12">12 December 2021</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -923,7 +923,7 @@ address div.right {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 3 December 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 12 December 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -951,85 +951,87 @@ address div.right {
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="ulEmpty toc compact">
-<li class="ulEmpty toc compact" id="section-toc.1-1.1">
+<nav class="toc"><ul class="compact toc ulEmpty">
+<li class="compact toc ulEmpty" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.2">
+          <li class="compact toc ulEmpty" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="xref">2</a>.  <a href="#name-requirements" class="xref">Requirements</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.3">
+          <li class="compact toc ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-the-problem-details-json-ob" class="xref">The Problem Details JSON Object</a></p>
-<ul class="ulEmpty toc compact">
-<li class="ulEmpty toc compact" id="section-toc.1-1.3.2.1">
-                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-members-of-a-problem-detail" class="xref">Members of a Problem Details Object</a></p>
+<ul class="compact toc ulEmpty">
+<li class="compact toc ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-members-of-a-problem-detail" class="xref">Members of a Problem Details Object</a></p>
+<ul class="compact toc ulEmpty">
+<li class="compact toc ulEmpty" id="section-toc.1-1.3.2.1.2.1">
+                    <p id="section-toc.1-1.3.2.1.2.1.1" class="keepWithNext"><a href="#section-3.1.1" class="xref">3.1.1</a>.  <a href="#name-type" class="xref">"type"</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.2">
-                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-type" class="xref">"type"</a></p>
+                  <li class="compact toc ulEmpty" id="section-toc.1-1.3.2.1.2.2">
+                    <p id="section-toc.1-1.3.2.1.2.2.1"><a href="#section-3.1.2" class="xref">3.1.2</a>.  <a href="#name-status" class="xref">"status"</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.3">
-                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="xref">3.3</a>.  <a href="#name-status" class="xref">"status"</a></p>
+                  <li class="compact toc ulEmpty" id="section-toc.1-1.3.2.1.2.3">
+                    <p id="section-toc.1-1.3.2.1.2.3.1"><a href="#section-3.1.3" class="xref">3.1.3</a>.  <a href="#name-title" class="xref">"title"</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.4">
-                <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="xref">3.4</a>.  <a href="#name-title" class="xref">"title"</a></p>
+                  <li class="compact toc ulEmpty" id="section-toc.1-1.3.2.1.2.4">
+                    <p id="section-toc.1-1.3.2.1.2.4.1"><a href="#section-3.1.4" class="xref">3.1.4</a>.  <a href="#name-detail" class="xref">"detail"</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.5">
-                <p id="section-toc.1-1.3.2.5.1"><a href="#section-3.5" class="xref">3.5</a>.  <a href="#name-detail" class="xref">"detail"</a></p>
+                  <li class="compact toc ulEmpty" id="section-toc.1-1.3.2.1.2.5">
+                    <p id="section-toc.1-1.3.2.1.2.5.1"><a href="#section-3.1.5" class="xref">3.1.5</a>.  <a href="#name-instance" class="xref">"instance"</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.6">
-                <p id="section-toc.1-1.3.2.6.1"><a href="#section-3.6" class="xref">3.6</a>.  <a href="#name-instance" class="xref">"instance"</a></p>
+                </ul>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.7">
-                <p id="section-toc.1-1.3.2.7.1"><a href="#section-3.7" class="xref">3.7</a>.  <a href="#name-extension-members" class="xref">Extension Members</a></p>
+              <li class="compact toc ulEmpty" id="section-toc.1-1.3.2.2">
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-extension-members" class="xref">Extension Members</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.4">
+          <li class="compact toc ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-defining-new-problem-types" class="xref">Defining New Problem Types</a></p>
-<ul class="ulEmpty toc compact">
-<li class="ulEmpty toc compact" id="section-toc.1-1.4.2.1">
+<ul class="compact toc ulEmpty">
+<li class="compact toc ulEmpty" id="section-toc.1-1.4.2.1">
                 <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="xref">4.1</a>.  <a href="#name-example" class="xref">Example</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.4.2.2">
+              <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.2">
                 <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="xref">4.2</a>.  <a href="#name-predefined-problem-types" class="xref">Predefined Problem Types</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.5">
+          <li class="compact toc ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-security-considerations" class="xref">Security Considerations</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.6">
+          <li class="compact toc ulEmpty" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-iana-considerations" class="xref">IANA Considerations</a></p>
-<ul class="ulEmpty toc compact">
-<li class="ulEmpty toc compact" id="section-toc.1-1.6.2.1">
+<ul class="compact toc ulEmpty">
+<li class="compact toc ulEmpty" id="section-toc.1-1.6.2.1">
                 <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="xref">6.1</a>.  <a href="#name-application-problemjson" class="xref">application/problem+json</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.6.2.2">
+              <li class="compact toc ulEmpty" id="section-toc.1-1.6.2.2">
                 <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="xref">6.2</a>.  <a href="#name-application-problemxml" class="xref">application/problem+xml</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.7">
+          <li class="compact toc ulEmpty" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-7" class="xref">7</a>.  <a href="#name-references" class="xref">References</a></p>
-<ul class="ulEmpty toc compact">
-<li class="ulEmpty toc compact" id="section-toc.1-1.7.2.1">
+<ul class="compact toc ulEmpty">
+<li class="compact toc ulEmpty" id="section-toc.1-1.7.2.1">
                 <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="xref">7.1</a>.  <a href="#name-normative-references" class="xref">Normative References</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.2">
+              <li class="compact toc ulEmpty" id="section-toc.1-1.7.2.2">
                 <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="xref">7.2</a>.  <a href="#name-informative-references" class="xref">Informative References</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.8">
+          <li class="compact toc ulEmpty" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#section-appendix.a" class="xref">Appendix A</a>.  <a href="#name-http-problems-and-xml" class="xref">HTTP Problems and XML</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.9">
+          <li class="compact toc ulEmpty" id="section-toc.1-1.9">
             <p id="section-toc.1-1.9.1"><a href="#section-appendix.b" class="xref">Appendix B</a>.  <a href="#name-using-problem-details-with-" class="xref">Using Problem Details with Other Formats</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.10">
+          <li class="compact toc ulEmpty" id="section-toc.1-1.10">
             <p id="section-toc.1-1.10.1"><a href="#section-appendix.c" class="xref"></a><a href="#name-acknowledgements" class="xref">Acknowledgements</a></p>
 </li>
-          <li class="ulEmpty toc compact" id="section-toc.1-1.11">
+          <li class="compact toc ulEmpty" id="section-toc.1-1.11">
             <p id="section-toc.1-1.11.1"><a href="#section-appendix.d" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a></p>
 </li>
         </ul>
@@ -1121,67 +1123,67 @@ Content-Language: en
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-members-of-a-problem-detail" class="section-name selfRef">Members of a Problem Details Object</a>
         </h3>
 <p id="section-3.1-1">A problem details object can have the following members:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
-</section>
-</div>
 <div id="type">
-<section id="section-3.2">
-        <h3 id="name-type">
-<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-type" class="section-name selfRef">"type"</a>
-        </h3>
-<p id="section-3.2-1">The "type" member is a JSON string containing a URI reference <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span> that identifies the problem type.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
-<p id="section-3.2-2">This specification encourages that, when dereferenced, it provide human-readable documentation for the problem type (e.g., using HTML <span>[<a href="#HTML5" class="xref">HTML5</a>]</span>). When this member is not present, its value is assumed to be "about:blank".<a href="#section-3.2-2" class="pilcrow">¶</a></p>
-<p id="section-3.2-3">When "type" contains a relative URI, it is resolved relative to the document's base URI, as per <span>[<a href="#RFC3986" class="xref">RFC3986</a>], <a href="https://rfc-editor.org/rfc/rfc3986#section-5" class="relref">Section 5</a></span>. However, using relative URIs can cause confusion, and they might not be handled correctly by all implementations. For example, if the two resources "https://api.example.org/foo/bar/123" and "https://api.example.org/widget/456" both respond with a "type" equal to the relative URI reference "example-problem", when resolved they will identify different resources ("https://api.example.org/foo/bar/example-problem" and "https://api.example.org/widget/example-problem" respectively). As a result, it is RECOMMENDED that absolute URIs be used in "type" when possible, and that when relative URIs are used, they include the full path (e.g., "/types/123").<a href="#section-3.2-3" class="pilcrow">¶</a></p>
-<p id="section-3.2-4">Consumers MUST use the "type" URI (after resolution, if necessary) as the primary identifier for the problem type. Consumers SHOULD NOT automatically dereference the type URI.<a href="#section-3.2-4" class="pilcrow">¶</a></p>
+<section id="section-3.1.1">
+          <h4 id="name-type">
+<a href="#section-3.1.1" class="section-number selfRef">3.1.1. </a><a href="#name-type" class="section-name selfRef">"type"</a>
+          </h4>
+<p id="section-3.1.1-1">The "type" member is a JSON string containing a URI reference <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span> that identifies the problem type.<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-2">This specification encourages that, when dereferenced, it provide human-readable documentation for the problem type (e.g., using HTML <span>[<a href="#HTML5" class="xref">HTML5</a>]</span>). When this member is not present, its value is assumed to be "about:blank".<a href="#section-3.1.1-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-3">When "type" contains a relative URI, it is resolved relative to the document's base URI, as per <span>[<a href="#RFC3986" class="xref">RFC3986</a>], <a href="https://rfc-editor.org/rfc/rfc3986#section-5" class="relref">Section 5</a></span>. However, using relative URIs can cause confusion, and they might not be handled correctly by all implementations. For example, if the two resources "https://api.example.org/foo/bar/123" and "https://api.example.org/widget/456" both respond with a "type" equal to the relative URI reference "example-problem", when resolved they will identify different resources ("https://api.example.org/foo/bar/example-problem" and "https://api.example.org/widget/example-problem" respectively). As a result, it is RECOMMENDED that absolute URIs be used in "type" when possible, and that when relative URIs are used, they include the full path (e.g., "/types/123").<a href="#section-3.1.1-3" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-4">Consumers MUST use the "type" URI (after resolution, if necessary) as the primary identifier for the problem type. Consumers SHOULD NOT automatically dereference the type URI.<a href="#section-3.1.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="status">
-<section id="section-3.3">
-        <h3 id="name-status">
-<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-status" class="section-name selfRef">"status"</a>
-        </h3>
-<p id="section-3.3-1">The "status" member is a JSON number indicating the HTTP status code (<span>[<a href="#I-D.ietf-httpbis-semantics" class="xref">I-D.ietf-httpbis-semantics</a>], <a href="https://tools.ietf.org/html/draft-ietf-httpbis-semantics-16#section-15" class="relref">Section 15</a></span>) generated by the origin server for this occurrence of the problem.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
-<p id="section-3.3-2">The "status" member, if present, is only advisory; it conveys the HTTP status code used for the convenience of the consumer. Generators MUST use the same status code in the actual HTTP response, to assure that generic HTTP software that does not understand this format still behaves correctly. See <a href="#security-considerations" class="xref">Section 5</a> for further caveats regarding its use.<a href="#section-3.3-2" class="pilcrow">¶</a></p>
-<p id="section-3.3-3">Consumers can use the status member to determine what the original status code used by the generator was, in cases where it has been changed (e.g., by an intermediary or cache), and when message bodies persist without HTTP information. Generic HTTP software will still use the HTTP status code.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
+<section id="section-3.1.2">
+          <h4 id="name-status">
+<a href="#section-3.1.2" class="section-number selfRef">3.1.2. </a><a href="#name-status" class="section-name selfRef">"status"</a>
+          </h4>
+<p id="section-3.1.2-1">The "status" member is a JSON number indicating the HTTP status code (<span>[<a href="#I-D.ietf-httpbis-semantics" class="xref">I-D.ietf-httpbis-semantics</a>], <a href="https://tools.ietf.org/html/draft-ietf-httpbis-semantics-16#section-15" class="relref">Section 15</a></span>) generated by the origin server for this occurrence of the problem.<a href="#section-3.1.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.2-2">The "status" member, if present, is only advisory; it conveys the HTTP status code used for the convenience of the consumer. Generators MUST use the same status code in the actual HTTP response, to assure that generic HTTP software that does not understand this format still behaves correctly. See <a href="#security-considerations" class="xref">Section 5</a> for further caveats regarding its use.<a href="#section-3.1.2-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.2-3">Consumers can use the status member to determine what the original status code used by the generator was, in cases where it has been changed (e.g., by an intermediary or cache), and when message bodies persist without HTTP information. Generic HTTP software will still use the HTTP status code.<a href="#section-3.1.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="title">
-<section id="section-3.4">
-        <h3 id="name-title">
-<a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-title" class="section-name selfRef">"title"</a>
-        </h3>
-<p id="section-3.4-1">The "title" member is a JSON string containing a short, human-readable summary of the problem type.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
-<p id="section-3.4-2">It SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization (e.g., using proactive content negotiation; see <span>[<a href="#I-D.ietf-httpbis-semantics" class="xref">I-D.ietf-httpbis-semantics</a>], <a href="https://tools.ietf.org/html/draft-ietf-httpbis-semantics-16#section-12.1" class="relref">Section 12.1</a></span>).<a href="#section-3.4-2" class="pilcrow">¶</a></p>
-<p id="section-3.4-3">The "title" string is advisory and included only for users who are not aware of the semantics of the URI and do not have the ability to discover them (e.g., offline log analysis).<a href="#section-3.4-3" class="pilcrow">¶</a></p>
+<section id="section-3.1.3">
+          <h4 id="name-title">
+<a href="#section-3.1.3" class="section-number selfRef">3.1.3. </a><a href="#name-title" class="section-name selfRef">"title"</a>
+          </h4>
+<p id="section-3.1.3-1">The "title" member is a JSON string containing a short, human-readable summary of the problem type.<a href="#section-3.1.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-2">It SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization (e.g., using proactive content negotiation; see <span>[<a href="#I-D.ietf-httpbis-semantics" class="xref">I-D.ietf-httpbis-semantics</a>], <a href="https://tools.ietf.org/html/draft-ietf-httpbis-semantics-16#section-12.1" class="relref">Section 12.1</a></span>).<a href="#section-3.1.3-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-3">The "title" string is advisory and included only for users who are not aware of the semantics of the URI and do not have the ability to discover them (e.g., offline log analysis).<a href="#section-3.1.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="detail">
-<section id="section-3.5">
-        <h3 id="name-detail">
-<a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-detail" class="section-name selfRef">"detail"</a>
-        </h3>
-<p id="section-3.5-1">The "detail" member is a JSON string containing a human-readable explanation specific to this occurrence of the problem.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
-<p id="section-3.5-2">The "detail" member, if present, ought to focus on helping the client correct the problem, rather than giving debugging information.<a href="#section-3.5-2" class="pilcrow">¶</a></p>
-<p id="section-3.5-3">Consumers SHOULD NOT parse the "detail" member for information; extensions are more suitable and less error-prone ways to obtain such information.<a href="#section-3.5-3" class="pilcrow">¶</a></p>
+<section id="section-3.1.4">
+          <h4 id="name-detail">
+<a href="#section-3.1.4" class="section-number selfRef">3.1.4. </a><a href="#name-detail" class="section-name selfRef">"detail"</a>
+          </h4>
+<p id="section-3.1.4-1">The "detail" member is a JSON string containing a human-readable explanation specific to this occurrence of the problem.<a href="#section-3.1.4-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.4-2">The "detail" member, if present, ought to focus on helping the client correct the problem, rather than giving debugging information.<a href="#section-3.1.4-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.4-3">Consumers SHOULD NOT parse the "detail" member for information; extensions are more suitable and less error-prone ways to obtain such information.<a href="#section-3.1.4-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="instance">
-<section id="section-3.6">
-        <h3 id="name-instance">
-<a href="#section-3.6" class="section-number selfRef">3.6. </a><a href="#name-instance" class="section-name selfRef">"instance"</a>
-        </h3>
-<p id="section-3.6-1">The "instance" member is a JSON string containing a URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
-<p id="section-3.6-2">When "instance" contains a relative URI, it is resolved relative to the document's base URI, as per <span>[<a href="#RFC3986" class="xref">RFC3986</a>], <a href="https://rfc-editor.org/rfc/rfc3986#section-5" class="relref">Section 5</a></span>. However, using relative URIs can cause confusion, and they might not be handled correctly by all implementations. For example, if the two resources "https://api.example.org/foo/bar/123" and "https://api.example.org/widget/456" both respond with an "instance" equal to the relative URI reference "example-instance", when resolved they will identify different resources ("https://api.example.org/foo/bar/example-instance" and "https://api.example.org/widget/example-instance" respectively). As a result, it is RECOMMENDED that absolute URIs be used in "instance" when possible, and that when relative URIs are used, they include the full path (e.g., "/instances/123").<a href="#section-3.6-2" class="pilcrow">¶</a></p>
+<section id="section-3.1.5">
+          <h4 id="name-instance">
+<a href="#section-3.1.5" class="section-number selfRef">3.1.5. </a><a href="#name-instance" class="section-name selfRef">"instance"</a>
+          </h4>
+<p id="section-3.1.5-1">The "instance" member is a JSON string containing a URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced.<a href="#section-3.1.5-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.5-2">When "instance" contains a relative URI, it is resolved relative to the document's base URI, as per <span>[<a href="#RFC3986" class="xref">RFC3986</a>], <a href="https://rfc-editor.org/rfc/rfc3986#section-5" class="relref">Section 5</a></span>. However, using relative URIs can cause confusion, and they might not be handled correctly by all implementations. For example, if the two resources "https://api.example.org/foo/bar/123" and "https://api.example.org/widget/456" both respond with an "instance" equal to the relative URI reference "example-instance", when resolved they will identify different resources ("https://api.example.org/foo/bar/example-instance" and "https://api.example.org/widget/example-instance" respectively). As a result, it is RECOMMENDED that absolute URIs be used in "instance" when possible, and that when relative URIs are used, they include the full path (e.g., "/instances/123").<a href="#section-3.1.5-2" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="extension-members">
-<section id="section-3.7">
+<section id="section-3.2">
         <h3 id="name-extension-members">
-<a href="#section-3.7" class="section-number selfRef">3.7. </a><a href="#name-extension-members" class="section-name selfRef">Extension Members</a>
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-extension-members" class="section-name selfRef">Extension Members</a>
         </h3>
-<p id="section-3.7-1">Problem type definitions MAY extend the problem details object with additional members.<a href="#section-3.7-1" class="pilcrow">¶</a></p>
-<p id="section-3.7-2">For example, our "out of credit" problem above defines two such extensions -- "balance" and "accounts" to convey additional, problem-specific information.<a href="#section-3.7-2" class="pilcrow">¶</a></p>
-<p id="section-3.7-3">Clients consuming problem details MUST ignore any such extensions that they don't recognize; this allows problem types to evolve and include additional information in the future.<a href="#section-3.7-3" class="pilcrow">¶</a></p>
-<p id="section-3.7-4">Note that because extensions are effectively put into a namespace by the problem type, it is not possible to define new "standard" members without defining a new media type.<a href="#section-3.7-4" class="pilcrow">¶</a></p>
+<p id="section-3.2-1">Problem type definitions MAY extend the problem details object with additional members.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-2">For example, our "out of credit" problem above defines two such extensions -- "balance" and "accounts" to convey additional, problem-specific information.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
+<p id="section-3.2-3">Clients consuming problem details MUST ignore any such extensions that they don't recognize; this allows problem types to evolve and include additional information in the future.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
+<p id="section-3.2-4">Note that because extensions are effectively put into a namespace by the problem type, it is not possible to define new "standard" members without defining a new media type.<a href="#section-3.2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
