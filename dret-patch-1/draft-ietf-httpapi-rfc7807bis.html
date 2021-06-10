@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en" class="Internet-Draft">
+<head>
+<meta charset="utf-8">
+<meta content="Common,Latin" name="scripts">
+<meta content="initial-scale=1.0" name="viewport">
+<title>Problem Details for HTTP APIs</title>
+<meta content="Mark Nottingham" name="author">
+<meta content="Erik Wilde" name="author">
+<meta content="Sanjay Dalal" name="author">
+<meta content='
+       This document defines a "problem detail" as a way to carry machine-readable details of errors in a HTTP response to avoid the need to define new error response formats for HTTP APIs. 
+    ' name="description">
+<meta content="xml2rfc 3.8.0" name="generator">
+<meta content="status" name="keyword">
+<meta content="HTTP" name="keyword">
+<meta content="error" name="keyword">
+<meta content="problem" name="keyword">
+<meta content="API" name="keyword">
+<meta content="JSON" name="keyword">
+<meta content="XML" name="keyword">
+<meta content="draft-ietf-httpapi-rfc7807bis-latest" name="ietf.draft">
+<!-- Generator version information:
+  xml2rfc 3.8.0
+    Python 3.8.10
+    appdirs 1.4.4
+    ConfigArgParse 1.2.3
+    google-i18n-address 2.4.0
+    html5lib 1.1
+    intervaltree 3.1.0
+    Jinja2 2.11.2
+    kitchen 1.2.6
+    lxml 4.6.3
+    pycountry 20.7.3
+    pyflakes 2.2.0
+    PyYAML 5.3.1
+    requests 2.25.1
+    setuptools 51.3.3
+    six 1.15.0
+-->
+<link href="draft-ietf-httpapi-rfc7807bis.xml" rel="alternate" type="application/rfc+xml">
+<link href="#copyright" rel="license">
+<style type="text/css">@import url('https://martinthomson.github.io/i-d-template/fonts.css');
+
+html {
+  --background-color: #fff;
+  --text-color: #222;
+  --title-color: #191919;
+  --link-color: #2a6496;
+  --highlight-color: #f9f9f9;
+  --line-color: #eee;
+  --pilcrow-weak: #ddd;
+  --pilcrow-strong: #bbb;
+  --small-font-size: 14.5px;
+  scrollbar-color: #bbb #eee;
+}
+@media (prefers-color-scheme: dark) {
+html {
+  --background-color: #121212;
+  --text-color: #f0f0f0;
+  --title-color: #fff;
+  --link-color: #4da4f0;
+  --highlight-color: #282828;
+  --line-color: #444;
+  --pilcrow-weak: #444;
+  --pilcrow-strong: #666;
+  scrollbar-color: #777 #333;
+}
+}
+body {
+  max-width: 600px;
+  margin: 75px auto;
+  padding: 0 5px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font: 16px/22px "Lora", serif;
+  scroll-behavior: smooth;
+}
+
+.ears {
+  display: none;
+}
+
+/* headings */
+#title, h1, h2, h3, h4, h5, h6 {
+  font-family: "Cabin Condensed", sans-serif;
+  font-weight: 600;
+  margin: 0.8em 0 0.3em;
+  font-size-adjust: 0.5;
+  color: var(--title-color);
+}
+#title {
+  font-size: 32px;
+  line-height: 40px;
+  clear: both;
+}
+#title, #rfcnum {
+  margin: 1.5em 0 0.2em;
+}
+#rfcnum + #title {
+  margin: 0.2em 0;
+}
+
+h1, h2, h3 {
+  font-size: 22px;
+  line-height: 27px;
+}
+h4, h5, h6 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* general structure */
+.author {
+  padding-bottom: 0.3em;
+}
+#abstract+p, #abstract+p code, #abstract+p samp, #abstract+p tt {
+  font-size: 18px;
+  line-height: 24px;
+}
+p {
+  padding: 0;
+  margin: 0.5em 0;
+  text-align: left;
+}
+div {
+  margin: 0;
+}
+.alignRight.art-text {
+  background-color: var(--highlight-color);
+  border: 1px solid var(--line-color);
+  border-radius: 3px;
+  padding: 0.5em 1em 0;
+  margin-bottom: 0.5em;
+}
+.alignRight.art-text pre {
+  padding: 0;
+  width: auto;
+}
+.alignRight {
+  margin: 1em 0;
+}
+.alignRight > *:first-child {
+  border: none;
+  margin: 0;
+  float: right;
+  clear: both;
+}
+.alignRight > *:nth-child(2) {
+  clear: both;
+  display: block;
+  border: none;
+}
+svg {
+  display: block;
+}
+.alignCenter.art-text {
+  background-color: var(--highlight-color);
+  border: 1px solid var(--line-color);
+  border-radius: 3px;
+  padding: 0.5em 1em 0;
+  margin-bottom: 0.5em;
+}
+.alignCenter.art-text pre {
+  padding: 0;
+  width: auto;
+}
+.alignCenter {
+  margin: 1em 0;
+}
+.alignCenter > *:first-child {
+  border: none;
+  /* this isn't optimal, but it's an existence proof.  PrinceXML doesn't
+     support flexbox yet.
+  */
+  display: table;
+  margin: 0 auto;
+}
+
+/* lists */
+ol, ul {
+  padding: 0;
+  margin: 0 0 0.5em 2em;
+}
+ol ol, ul ul, ol ul, ul ol {
+  margin-left: 1em;
+}
+li {
+  margin: 0 0 0.25em 0;
+}
+.ulCompact li {
+  margin: 0;
+}
+ul.empty, .ulEmpty {
+  list-style-type: none;
+}
+ul.empty li, .ulEmpty li {
+  margin-top: 0.5em;
+}
+ul.compact, .ulCompact,
+ol.compact, .olCompact {
+  line-height: 100%;
+  margin: 0 0 0 2em;
+}
+
+/* definition lists */
+dl {
+}
+dl > dt {
+  float: left;
+  margin-right: 1em;
+}
+dl > dd {
+  margin-bottom: .8em;
+  min-height: 1.3em;
+}
+dl.compact > dd, .dlCompact > dd {
+  margin-bottom: 0em;
+}
+dl > dd > dl {
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+}
+dd.break {
+  display: none;
+}
+
+/* links */
+a, a[href].selfRef:hover {
+  text-decoration: none;
+}
+a[href].selfRef {
+  color: var(--text-color);
+}
+a[href] {
+  color: var(--link-color);
+}
+a[href]:hover {
+  text-decoration: underline;
+}
+a[href].selfRef:hover {
+  background-color: var(--highlight-color);
+}
+a.xref {
+  white-space: nowrap;
+}
+
+/* Figures */
+tt, code, pre {
+  background-color: var(--highlight-color);
+  font: 14px/22px 'Oxygen Mono', monospace;
+}
+pre {
+  border: 1px solid var(--line-color);
+  font-size: 13.5px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  margin: 5px;
+  padding: 5px;
+}
+img {
+  max-width: 100%;
+}
+figure {
+  margin: 0.5em 0;
+  padding: 0;
+}
+figure blockquote {
+  margin: 0.8em 0.4em 0.4em;
+}
+figcaption, caption {
+  font-style: italic;
+  margin: 0.5em 1.5em;
+  text-align: left;
+}
+@media screen {
+  pre {
+    display: inline-block;
+    overflow-x: auto;
+    max-width: 100%;
+    width: calc(100% - 22px - 1em);
+  }
+  figure pre {
+    display: block;
+    width: calc(100% - 25px);
+  }
+  pre + .pilcrow {
+    display: inline-block;
+    vertical-align: text-bottom;
+    padding-bottom: 8px;
+  }
+}
+
+/* aside, blockquote */
+aside, blockquote {
+  margin-left: 0;
+  padding: 0 2em;
+  font-style: italic;
+}
+blockquote {
+  background-color: var(--highlight-color);
+  border: 1px solid var(--line-color);
+  border-radius: 3px;
+  margin: 1em 0;
+}
+cite {
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
+
+/* tables */
+table {
+  max-width: 100%;
+  margin: 0 0 1em;
+  border-collapse: collapse;
+}
+table.right {
+  margin-left: auto;
+}
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+table.left {
+  margin-right: auto;
+}
+thead, tbody {
+  border: 1px solid var(--line-color);
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 5px 10px;
+}
+th {
+  background-color: var(--line-color);
+}
+tr:nth-child(2n) > td {
+  background-color: var(--background-color);
+}
+tr:nth-child(2n+1) > td {
+  background-color: var(--highlight-color);
+}
+thead+tbody > tr:nth-child(2n) > td {
+  background-color: var(--highlight-color);
+}
+thead+tbody > tr:nth-child(2n+1) > td {
+  background-color: var(--background-color);
+}
+table caption {
+  margin: 0;
+  padding: 3px 0 3px 1em;
+}
+table p {
+  margin: 0;
+}
+
+/* pilcrow */
+a.pilcrow {
+  margin-left: 3px;
+  opacity: 0.2;
+  user-select: none;
+}
+a.pilcrow[href] { color: var(--pilcrow-weak); }
+a.pilcrow[href]:hover { text-decoration: none; }
+@media not print {
+  :hover > a.pilcrow {
+    opacity: 1;
+  }
+  a.pilcrow[href]:hover {
+    color: var(--pilcrow-strong);
+    background-color: transparent;
+  }
+}
+@media print {
+  a.pilcrow {
+    display: none;
+  }
+}
+
+/* misc */
+hr {
+  border: 0;
+  border-top: 1px solid var(--line-color);
+}
+.bcp14 {
+  font-variant: small-caps;
+}
+
+.role {
+  font-variant: all-small-caps;
+}
+
+/* info block */
+#identifiers {
+  margin: 0;
+  font-size: var(--small-font-size);
+  line-height: 18px;
+  --identifier-width: 8em;
+}
+#identifiers dt {
+  width: var(--identifier-width);
+  margin: 0;
+  clear: left;
+  float: left;
+  text-align: right;
+}
+#identifiers dd {
+  margin: 0 0 0 calc(1em + var(--identifier-width));
+  min-width: 5em;
+}
+#identifiers .authors .author {
+  display: inline-block;
+  margin-right: 1.5em;
+}
+#identifiers .authors .org {
+  font-style: italic;
+}
+
+/* The prepared/rendered info at the very bottom of the page */
+.docInfo {
+  color: #999;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 2em;
+}
+.docInfo .prepared {
+  float: left;
+}
+.docInfo .prepared {
+  float: right;
+}
+
+/* table of contents */
+#toc {
+  padding: 0.75em 0 2em 0;
+  margin-bottom: 1em;
+}
+#toc nav ul {
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  list-style: none;
+}
+#toc nav li {
+  line-height: 1.3em;
+  margin: 0.75em 0;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+#toc a.xref {
+  white-space: normal;
+}
+/* references */
+.references dt {
+  text-align: right;
+  font-weight: bold;
+  min-width: 7em;
+}
+.references dd {
+  margin-left: 8em;
+  overflow: auto;
+}
+
+.refInstance {
+  margin-bottom: 1.25em;
+}
+
+.references .ascii {
+  margin-bottom: 0.25em;
+}
+
+/* index */
+.index ul {
+  margin: 0 0 0 1em;
+  padding: 0;
+  list-style: none;
+}
+.index ul ul {
+  margin: 0;
+}
+.index li {
+  margin: 0;
+  text-indent: -2em;
+  padding-left: 2em;
+  padding-bottom: 5px;
+}
+.indexIndex {
+  margin: 0.5em 0 1em;
+}
+.index a {
+  font-weight: 700;
+}
+/* make the index two-column on all but the smallest screens */
+@media (min-width: 500px) {
+  .index ul {
+    column-count: 2;
+    column-gap: 20px;
+  }
+  .index ul ul {
+    column-count: 1;
+    column-gap: 0;
+  }
+}
+
+/* authors */
+address.vcard {
+  font-style: normal;
+  margin: 1em 0;
+}
+address.vcard .nameRole {
+  font-weight: 700;
+  margin-left: 0;
+}
+address.vcard .label {
+  margin: 0.5em 0;
+}
+address.vcard .type {
+  display: none;
+}
+.alternative-contact {
+  margin: 1.5em 0 1em;
+}
+hr.addr {
+  border-top: 1px dashed;
+  margin: 0;
+  color: #ddd;
+  max-width: calc(100% - 16px);
+}
+@media (min-width: 500px) {
+  #authors-addresses > section {
+    column-count: 2;
+    column-gap: 20px;
+  }
+  #authors-addresses > section > h2 {
+    column-span: all;
+  }
+  /* hack for break-inside: avoid-column */
+  #authors-addresses address {
+    display: inline-block;
+    break-inside: avoid-column;
+  }
+}
+
+.rfcEditorRemove p:first-of-type {
+  font-style: italic;
+}
+.cref {
+  background-color: rgba(249, 232, 105, 0.3);
+  padding: 2px 4px;
+}
+.crefSource {
+  font-style: italic;
+}
+/* alternative layout for smaller screens */
+@media screen and (max-width: 929px) {
+  #toc {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+    opacity: 0.6;
+  }
+  #toc.active {
+      opacity: 1;
+  }
+  #toc h2 {
+    margin: 0;
+    padding: 2px 0 2px 6px;
+    padding-right: 1em;
+    font-size: 18px;
+    line-height: 24px;
+    min-width: 190px;
+    text-align: right;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+  }
+  #toc h2::before { /* css hamburger */
+    float: right;
+    position: relative;
+    width: 1em;
+    height: 1px;
+    left: -164px;
+    margin: 8px 0 0 0;
+    background: white none repeat scroll 0 0;
+    box-shadow: 0 4px 0 0 white, 0 8px 0 0 white;
+    content: "";
+  }
+  #toc nav {
+    display: none;
+    background-color: var(--background-color);
+    padding: 0.5em 1em 1em;
+    overflow: auto;
+    overscroll-behavior: contain;
+    height: calc(100vh - 48px);
+    border-left: 1px solid #ddd;
+  }
+  #toc.active nav {
+    display: block;
+  }
+  /* Make the collapsed ToC header render white on gray also when it's a link */
+  #toc h2 a,
+  #toc h2 a:link,
+  #toc h2 a:focus,
+  #toc h2 a:hover,
+  #toc a.toplink,
+  #toc a.toplink:hover {
+    color: white;
+    background-color: #444;
+    text-decoration: none;
+  }
+  #toc a.toplink {
+    margin-top: 2px;
+  }
+}
+
+/* alternative layout for wide screens */
+@media screen and (min-width: 930px) {
+  body {
+    padding-right: 360px;
+    padding-right: calc(min(180px + 20%, 500px));
+  }
+  #toc {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    right: calc(50vw - 480px);
+    width: 312px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+  #toc h2 {
+    margin: 0;
+    padding: 0.25em 1em 1em 0;
+  }
+  #toc nav {
+    display: block;
+    height: calc(90vh - 84px);
+    bottom: 0;
+    padding: 0.5em 0 2em;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  #toc nav > ul  {
+    margin-bottom: 2em;
+  }
+  #toc ul {
+    margin: 0 0 0 4px;
+    font-size: var(--small-font-size);
+  }
+  #toc ul p, #toc ul li {
+    margin: 2px 0;
+    line-height: 22px;
+  }
+  img { /* future proofing */
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* pagination */
+@media print {
+  body {
+    width: 100%;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  #n-copyright-notice {
+    border-bottom: none;
+  }
+  #toc, #n-introduction {
+    page-break-before: always;
+  }
+  #toc {
+    border-top: none;
+    padding-top: 0;
+  }
+  figure, pre {
+    page-break-inside: avoid;
+  }
+  figure {
+    overflow: scroll;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  h2+*, h3+*, h4+*, h5+*, h6+* {
+    page-break-before: avoid;
+  }
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 10pt;
+  }
+  table {
+    border: 1px solid #ddd;
+  }
+  td {
+    border-top: 1px solid #ddd;
+  }
+}
+
+@page :first {
+  padding-top: 0;
+  @top-left {
+    content: normal;
+    border: none;
+  }
+  @top-center {
+    content: normal;
+    border: none;
+  }
+  @top-right {
+    content: normal;
+    border: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin-bottom: 45mm;
+  padding-top: 20px;
+}
+
+/* Changes introduced to fix issues found during implementation */
+
+/* Separate body from document info even without intervening H1 */
+section {
+  clear: both;
+}
+
+/* Top align author divs, to avoid names without organization dropping level with org names */
+.author {
+  vertical-align: top;
+}
+
+/* Style section numbers with more space between number and title */
+.section-number {
+  padding-right: 0.5em;
+}
+
+/* Add styling for a link in the ToC that points to the top of the document */
+a.toplink {
+  float: right;
+  margin: 8px 0.5em 0;
+}
+
+/* Fix the dl styling to match the RFC 7992 attributes */
+dl > dt,
+dl.dlParallel > dt {
+  float: left;
+  margin-right: 1em;
+}
+dl.dlNewline > dt {
+  float: none;
+}
+
+/* Provide styling for table cell text alignment */
+table .text-left, table .text-left {
+  text-align: left;
+}
+table .text-center, table .text-center {
+  text-align: center;
+}
+table .text-right, table .text-right {
+  text-align: right;
+}
+
+/* Make the alternative author contact information look less like just another
+   author, and group it closer with the primary author contact information */
+.alternative-contact {
+  margin: 0.5em 0 0.25em 0;
+}
+address .non-ascii {
+  margin: 0 0 0 2em;
+}
+
+/* With it being possible to set tables with alignment
+  left, center, and right, { width: 100%; } does not make sense */
+table {
+  width: auto;
+}
+
+/* Avoid reference text that sits in a block with very wide left margin,
+   because of a long floating dt label.*/
+.references dd {
+  overflow: visible;
+}
+
+/* Control caption placement */
+caption {
+  caption-side: bottom;
+}
+
+/* Limit the width of the author address vcard, so names in right-to-left
+   script don't end up on the other side of the page. */
+
+address.vcard {
+  max-width: 20em;
+  margin-right: auto;
+}
+
+/* For address alignment dependent on LTR or RTL scripts */
+address div.left {
+  text-align: left;
+}
+address div.right {
+  text-align: right;
+}
+
+/* Give the table caption label the same styling as the figcaption */
+
+@media print {
+  .toplink {
+    display: none;
+  }
+
+  /* avoid overwriting the top border line with the ToC header */
+  #toc {
+    padding-top: 1px;
+  }
+
+  /* Avoid page breaks inside dl and author address entries */
+  dd {
+    page-break-before: avoid;
+  }
+  .vcard {
+    page-break-inside: avoid;
+  }
+
+}
+/* Tweak the bcp14 keyword presentation */
+.bcp14 {
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+</style>
+
+</head>
+<body>
+<table class="ears">
+<thead><tr>
+<td class="left">Internet-Draft</td>
+<td class="center">Problem Details for HTTP APIs</td>
+<td class="right">June 2021</td>
+</tr></thead>
+<tfoot><tr>
+<td class="left">Nottingham, et al.</td>
+<td class="center">Expires 12 December 2021</td>
+<td class="right">[Page]</td>
+</tr></tfoot>
+</table>
+<div id="external-metadata" class="document-information"></div>
+<div id="internal-metadata" class="document-information">
+<dl id="identifiers">
+<dt class="label-workgroup">Workgroup:</dt>
+<dd class="workgroup">HTTPAPI</dd>
+<dt class="label-internet-draft">Internet-Draft:</dt>
+<dd class="internet-draft">draft-ietf-httpapi-rfc7807bis-latest</dd>
+<dt class="label-obsoletes">Obsoletes:</dt>
+<dd class="obsoletes">
+<a href="https://datatracker.ietf.org/doc/html/rfc7807" class="eref">7807</a> (if approved)</dd>
+<dt class="label-published">Published:</dt>
+<dd class="published">
+<time datetime="2021-06-10" class="published">10 June 2021</time>
+    </dd>
+<dt class="label-intended-status">Intended Status:</dt>
+<dd class="intended-status">Standards Track</dd>
+<dt class="label-expires">Expires:</dt>
+<dd class="expires"><time datetime="2021-12-12">12 December 2021</time></dd>
+<dt class="label-authors">Authors:</dt>
+<dd class="authors">
+<div class="author">
+      <div class="author-name">M. Nottingham</div>
+</div>
+<div class="author">
+      <div class="author-name">E. Wilde</div>
+</div>
+<div class="author">
+      <div class="author-name">S. Dalal</div>
+</div>
+</dd>
+</dl>
+</div>
+<h1 id="title">Problem Details for HTTP APIs</h1>
+<section id="section-abstract">
+      <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
+<p id="section-abstract-1">This document defines a "problem detail" as a way to carry machine-readable details of errors in a HTTP response to avoid the need to define new error response formats for HTTP APIs.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+</section>
+<section class="note rfcEditorRemove" id="section-note.1">
+      <h2 id="name-discussion-venues">
+<a href="#name-discussion-venues" class="section-name selfRef">Discussion Venues</a>
+      </h2>
+<p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
+<p id="section-note.1-2">Source for this draft and an issue tracker can be found at
+  <span><a href="https://github.com/ietf-wg-httpapi/rfc7807bis">https://github.com/ietf-wg-httpapi/rfc7807bis</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+</section>
+<div id="status-of-memo">
+<section id="section-boilerplate.1">
+        <h2 id="name-status-of-this-memo">
+<a href="#name-status-of-this-memo" class="section-name selfRef">Status of This Memo</a>
+        </h2>
+<p id="section-boilerplate.1-1">
+        This Internet-Draft is submitted in full conformance with the
+        provisions of BCP 78 and BCP 79.<a href="#section-boilerplate.1-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-2">
+        Internet-Drafts are working documents of the Internet Engineering Task
+        Force (IETF). Note that other groups may also distribute working
+        documents as Internet-Drafts. The list of current Internet-Drafts is
+        at <span><a href="https://datatracker.ietf.org/drafts/current/">https://datatracker.ietf.org/drafts/current/</a></span>.<a href="#section-boilerplate.1-2" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-3">
+        Internet-Drafts are draft documents valid for a maximum of six months
+        and may be updated, replaced, or obsoleted by other documents at any
+        time. It is inappropriate to use Internet-Drafts as reference
+        material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.1-4">
+        This Internet-Draft will expire on 12 December 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="copyright">
+<section id="section-boilerplate.2">
+        <h2 id="name-copyright-notice">
+<a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
+        </h2>
+<p id="section-boilerplate.2-1">
+            Copyright (c) 2021 IETF Trust and the persons identified as the
+            document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
+<p id="section-boilerplate.2-2">
+            This document is subject to BCP 78 and the IETF Trust's Legal
+            Provisions Relating to IETF Documents
+            (<span><a href="https://trustee.ietf.org/license-info">https://trustee.ietf.org/license-info</a></span>) in effect on the date of
+            publication of this document. Please review these documents
+            carefully, as they describe your rights and restrictions with
+            respect to this document. Code Components extracted from this
+            document must include Simplified BSD License text as described in
+            Section 4.e of the Trust Legal Provisions and are provided without
+            warranty as described in the Simplified BSD License.<a href="#section-boilerplate.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="toc">
+<section id="section-toc.1">
+        <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
+<a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
+        </h2>
+<nav class="toc"><ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.1">
+            <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a></p>
+</li>
+          <li class="ulEmpty toc compact" id="section-toc.1-1.2">
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="xref">2</a>.  <a href="#name-requirements" class="xref">Requirements</a></p>
+</li>
+          <li class="ulEmpty toc compact" id="section-toc.1-1.3">
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-the-problem-details-json-ob" class="xref">The Problem Details JSON Object</a></p>
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-members-of-a-problem-detail" class="xref">Members of a Problem Details Object</a></p>
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.3.2.1.2.1">
+                    <p id="section-toc.1-1.3.2.1.2.1.1" class="keepWithNext"><a href="#section-3.1.1" class="xref">3.1.1</a>.  <a href="#name-type" class="xref">"type"</a></p>
+</li>
+                  <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.1.2.2">
+                    <p id="section-toc.1-1.3.2.1.2.2.1"><a href="#section-3.1.2" class="xref">3.1.2</a>.  <a href="#name-status" class="xref">"status"</a></p>
+</li>
+                  <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.1.2.3">
+                    <p id="section-toc.1-1.3.2.1.2.3.1"><a href="#section-3.1.3" class="xref">3.1.3</a>.  <a href="#name-title" class="xref">"title"</a></p>
+</li>
+                  <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.1.2.4">
+                    <p id="section-toc.1-1.3.2.1.2.4.1"><a href="#section-3.1.4" class="xref">3.1.4</a>.  <a href="#name-detail" class="xref">"detail"</a></p>
+</li>
+                  <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.1.2.5">
+                    <p id="section-toc.1-1.3.2.1.2.5.1"><a href="#section-3.1.5" class="xref">3.1.5</a>.  <a href="#name-instance" class="xref">"instance"</a></p>
+</li>
+                </ul>
+</li>
+              <li class="ulEmpty toc compact" id="section-toc.1-1.3.2.2">
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-extension-members" class="xref">Extension Members</a></p>
+</li>
+            </ul>
+</li>
+          <li class="ulEmpty toc compact" id="section-toc.1-1.4">
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-defining-new-problem-types" class="xref">Defining New Problem Types</a></p>
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.4.2.1">
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="xref">4.1</a>.  <a href="#name-example" class="xref">Example</a></p>
+</li>
+              <li class="ulEmpty toc compact" id="section-toc.1-1.4.2.2">
+                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="xref">4.2</a>.  <a href="#name-predefined-problem-types" class="xref">Predefined Problem Types</a></p>
+</li>
+            </ul>
+</li>
+          <li class="ulEmpty toc compact" id="section-toc.1-1.5">
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-security-considerations" class="xref">Security Considerations</a></p>
+</li>
+          <li class="ulEmpty toc compact" id="section-toc.1-1.6">
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-iana-considerations" class="xref">IANA Considerations</a></p>
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.6.2.1">
+                <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="xref">6.1</a>.  <a href="#name-application-problemjson" class="xref">application/problem+json</a></p>
+</li>
+              <li class="ulEmpty toc compact" id="section-toc.1-1.6.2.2">
+                <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="xref">6.2</a>.  <a href="#name-application-problemxml" class="xref">application/problem+xml</a></p>
+</li>
+            </ul>
+</li>
+          <li class="ulEmpty toc compact" id="section-toc.1-1.7">
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="xref">7</a>.  <a href="#name-references" class="xref">References</a></p>
+<ul class="ulEmpty toc compact">
+<li class="ulEmpty toc compact" id="section-toc.1-1.7.2.1">
+                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="xref">7.1</a>.  <a href="#name-normative-references" class="xref">Normative References</a></p>
+</li>
+              <li class="ulEmpty toc compact" id="section-toc.1-1.7.2.2">
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="xref">7.2</a>.  <a href="#name-informative-references" class="xref">Informative References</a></p>
+</li>
+            </ul>
+</li>
+          <li class="ulEmpty toc compact" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#section-appendix.a" class="xref">Appendix A</a>.  <a href="#name-http-problems-and-xml" class="xref">HTTP Problems and XML</a></p>
+</li>
+          <li class="ulEmpty toc compact" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#section-appendix.b" class="xref">Appendix B</a>.  <a href="#name-using-problem-details-with-" class="xref">Using Problem Details with Other Formats</a></p>
+</li>
+          <li class="ulEmpty toc compact" id="section-toc.1-1.10">
+            <p id="section-toc.1-1.10.1"><a href="#section-appendix.c" class="xref"></a><a href="#name-acknowledgements" class="xref">Acknowledgements</a></p>
+</li>
+          <li class="ulEmpty toc compact" id="section-toc.1-1.11">
+            <p id="section-toc.1-1.11.1"><a href="#section-appendix.d" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a></p>
+</li>
+        </ul>
+</nav>
+</section>
+</div>
+<div id="introduction">
+<section id="section-1">
+      <h2 id="name-introduction">
+<a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
+      </h2>
+<p id="section-1-1">HTTP <span>[<a href="#I-D.ietf-httpbis-semantics" class="xref">I-D.ietf-httpbis-semantics</a>]</span> status codes are sometimes not sufficient to convey enough information about an error to be helpful. While humans behind Web browsers can be informed about the nature of the problem with an HTML <span>[<a href="#HTML5" class="xref">HTML5</a>]</span> response body, non-human consumers of so-called "HTTP APIs" are usually not.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">This specification defines simple JSON <span>[<a href="#RFC8259" class="xref">RFC8259</a>]</span> and XML <span>[<a href="#XML" class="xref">XML</a>]</span> document formats to suit this purpose. They are designed to be reused by HTTP APIs, which can identify distinct "problem types" specific to their needs.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">Thus, API clients can be informed of both the high-level error class (using the status code) and the finer-grained details of the problem (using one of these formats).<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">For example, consider a response that indicates that the client's account doesn't have enough credit. The 403 Forbidden status code might be deemed most appropriate to use, as it will inform HTTP-generic software (such as client libraries, caches, and proxies) of the general semantics of the response.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-5">However, that doesn't give the API client enough information about why the request was forbidden, the applicable account balance, or how to correct the problem. If these details are included in the response body in a machine-readable format, the client can treat it appropriately; for example, triggering a transfer of more credit into the account.<a href="#section-1-5" class="pilcrow">¶</a></p>
+<p id="section-1-6">This specification does this by identifying a specific type of problem (e.g., "out of credit") with a URI <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>; HTTP APIs can do this by nominating new URIs under their control, or by reusing existing ones.<a href="#section-1-6" class="pilcrow">¶</a></p>
+<p id="section-1-7">Additionally, problem details can contain other information, such as a URI that identifies the specific occurrence of the problem (effectively giving an identifier to the concept "The time Joe didn't have enough credit last Thursday"), which can be useful for support or forensic purposes.<a href="#section-1-7" class="pilcrow">¶</a></p>
+<p id="section-1-8">The data model for problem details is a JSON <span>[<a href="#RFC8259" class="xref">RFC8259</a>]</span> object; when formatted as a JSON document, it uses the "application/problem+json" media type. <a href="#xml-syntax" class="xref">Appendix A</a> defines how to express them in an equivalent XML format, which uses the "application/problem+xml" media type.<a href="#section-1-8" class="pilcrow">¶</a></p>
+<p id="section-1-9">Note that problem details are (naturally) not the only way to convey the details of a problem in HTTP; if the response is still a representation of a resource, for example, it's often preferable to accommodate describing the relevant details in that application's format. Likewise, in many situations, there is an appropriate HTTP status code that does not require extra detail to be conveyed.<a href="#section-1-9" class="pilcrow">¶</a></p>
+<p id="section-1-10">Instead, the aim of this specification is to define common error formats for those applications that need one, so that they aren't required to define their own, or worse, tempted to redefine the semantics of existing HTTP status codes. Even if an application chooses not to use it to convey errors, reviewing its design can help guide the design decisions faced when conveying errors in an existing format.<a href="#section-1-10" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="requirements">
+<section id="section-2">
+      <h2 id="name-requirements">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-requirements" class="section-name selfRef">Requirements</a>
+      </h2>
+<p id="section-2-1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <span>[<a href="#RFC2119" class="xref">RFC2119</a>]</span>.<a href="#section-2-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="problem-json">
+<section id="section-3">
+      <h2 id="name-the-problem-details-json-ob">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-the-problem-details-json-ob" class="section-name selfRef">The Problem Details JSON Object</a>
+      </h2>
+<p id="section-3-1">The canonical model for problem details is a JSON <span>[<a href="#RFC8259" class="xref">RFC8259</a>]</span> object.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">When serialized as a JSON document, that format is identified with the "application/problem+json" media type.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-3">For example, an HTTP response carrying JSON problem details:<a href="#section-3-3" class="pilcrow">¶</a></p>
+<div id="section-3-4">
+<pre class="sourcecode lang-http-message">
+HTTP/1.1 403 Forbidden
+Content-Type: application/problem+json
+Content-Language: en
+
+{
+ "type": "https://example.com/probs/out-of-credit",
+ "title": "You do not have enough credit.",
+ "detail": "Your current balance is 30, but that costs 50.",
+ "instance": "/account/12345/msgs/abc",
+ "balance": 30,
+ "accounts": ["/account/12345",
+              "/account/67890"]
+}
+</pre><a href="#section-3-4" class="pilcrow">¶</a>
+</div>
+<p id="section-3-5">Here, the out-of-credit problem (identified by its type URI)
+indicates the reason for the 403 in "title", gives a reference for the
+specific problem occurrence with "instance", gives
+occurrence-specific details in "detail", and adds two extensions;
+"balance" conveys the account's balance, and "accounts" gives links
+where the account can be topped up.<a href="#section-3-5" class="pilcrow">¶</a></p>
+<p id="section-3-6">The ability to convey problem-specific extensions allows more than
+  one problem to be conveyed. For example:<a href="#section-3-6" class="pilcrow">¶</a></p>
+<div id="section-3-7">
+<pre class="sourcecode lang-http-message">
+HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+Content-Language: en
+
+{
+"type": "https://example.net/validation-error",
+"title": "Your request parameters didn't validate.",
+"invalid_params": [ {
+                      "name": "age",
+                      "reason": "must be a positive integer"
+                    },
+                    {
+                      "name": "color",
+                      "reason": "must be 'green', 'red' or 'blue'"}
+                  ]
+}
+</pre><a href="#section-3-7" class="pilcrow">¶</a>
+</div>
+<p id="section-3-8">Note that this requires each of the subproblems to be similar enough to use the same HTTP status code. If they do not, the 207 (Multi-Status) <span>[<a href="#RFC4918" class="xref">RFC4918</a>]</span> code could be used to encapsulate multiple status messages.<a href="#section-3-8" class="pilcrow">¶</a></p>
+<div id="members">
+<section id="section-3.1">
+        <h3 id="name-members-of-a-problem-detail">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-members-of-a-problem-detail" class="section-name selfRef">Members of a Problem Details Object</a>
+        </h3>
+<p id="section-3.1-1">A problem details object can have the following members, all of which are OPTIONAL:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<div id="type">
+<section id="section-3.1.1">
+          <h4 id="name-type">
+<a href="#section-3.1.1" class="section-number selfRef">3.1.1. </a><a href="#name-type" class="section-name selfRef">"type"</a>
+          </h4>
+<p id="section-3.1.1-1">The "type" member is a JSON string containing a URI reference <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span> that identifies the problem type.<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-2">This specification encourages that, when dereferenced, it provide human-readable documentation for the problem type (e.g., using HTML <span>[<a href="#HTML5" class="xref">HTML5</a>]</span>). When this member is not present, its value is assumed to be "about:blank".<a href="#section-3.1.1-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-3">When "type" contains a relative URI, it is resolved relative to the document's base URI, as per <span>[<a href="#RFC3986" class="xref">RFC3986</a>], <a href="https://rfc-editor.org/rfc/rfc3986#section-5" class="relref">Section 5</a></span>. However, using relative URIs can cause confusion, and they might not be handled correctly by all implementations. For example, if the two resources "https://api.example.org/foo/bar/123" and "https://api.example.org/widget/456" both respond with a "type" equal to the relative URI reference "example-problem", when resolved they will identify different resources ("https://api.example.org/foo/bar/example-problem" and "https://api.example.org/widget/example-problem" respectively). As a result, it is RECOMMENDED that absolute URIs be used in "type" when possible, and that when relative URIs are used, they include the full path (e.g., "/types/123").<a href="#section-3.1.1-3" class="pilcrow">¶</a></p>
+<p id="section-3.1.1-4">Consumers MUST use the "type" URI (after resolution, if necessary) as the primary identifier for the problem type. Consumers SHOULD NOT automatically dereference the type URI.<a href="#section-3.1.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="status">
+<section id="section-3.1.2">
+          <h4 id="name-status">
+<a href="#section-3.1.2" class="section-number selfRef">3.1.2. </a><a href="#name-status" class="section-name selfRef">"status"</a>
+          </h4>
+<p id="section-3.1.2-1">The "status" member is a JSON number indicating the HTTP status code (<span>[<a href="#I-D.ietf-httpbis-semantics" class="xref">I-D.ietf-httpbis-semantics</a>], <a href="https://tools.ietf.org/html/draft-ietf-httpbis-semantics-16#section-15" class="relref">Section 15</a></span>) generated by the origin server for this occurrence of the problem.<a href="#section-3.1.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.2-2">The "status" member, if present, is only advisory; it conveys the HTTP status code used for the convenience of the consumer. Generators MUST use the same status code in the actual HTTP response, to assure that generic HTTP software that does not understand this format still behaves correctly. See <a href="#security-considerations" class="xref">Section 5</a> for further caveats regarding its use.<a href="#section-3.1.2-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.2-3">Consumers can use the status member to determine what the original status code used by the generator was, in cases where it has been changed (e.g., by an intermediary or cache), and when message bodies persist without HTTP information. Generic HTTP software will still use the HTTP status code.<a href="#section-3.1.2-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="title">
+<section id="section-3.1.3">
+          <h4 id="name-title">
+<a href="#section-3.1.3" class="section-number selfRef">3.1.3. </a><a href="#name-title" class="section-name selfRef">"title"</a>
+          </h4>
+<p id="section-3.1.3-1">The "title" member is a JSON string containing a short, human-readable summary of the problem type.<a href="#section-3.1.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-2">It SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization (e.g., using proactive content negotiation; see <span>[<a href="#I-D.ietf-httpbis-semantics" class="xref">I-D.ietf-httpbis-semantics</a>], <a href="https://tools.ietf.org/html/draft-ietf-httpbis-semantics-16#section-12.1" class="relref">Section 12.1</a></span>).<a href="#section-3.1.3-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.3-3">The "title" string is advisory and included only for users who are not aware of the semantics of the URI and do not have the ability to discover them (e.g., offline log analysis).<a href="#section-3.1.3-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="detail">
+<section id="section-3.1.4">
+          <h4 id="name-detail">
+<a href="#section-3.1.4" class="section-number selfRef">3.1.4. </a><a href="#name-detail" class="section-name selfRef">"detail"</a>
+          </h4>
+<p id="section-3.1.4-1">The "detail" member is a JSON string containing a human-readable explanation specific to this occurrence of the problem.<a href="#section-3.1.4-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.4-2">The "detail" member, if present, ought to focus on helping the client correct the problem, rather than giving debugging information.<a href="#section-3.1.4-2" class="pilcrow">¶</a></p>
+<p id="section-3.1.4-3">Consumers SHOULD NOT parse the "detail" member for information; extensions are more suitable and less error-prone ways to obtain such information.<a href="#section-3.1.4-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="instance">
+<section id="section-3.1.5">
+          <h4 id="name-instance">
+<a href="#section-3.1.5" class="section-number selfRef">3.1.5. </a><a href="#name-instance" class="section-name selfRef">"instance"</a>
+          </h4>
+<p id="section-3.1.5-1">The "instance" member is a JSON string containing a URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced.<a href="#section-3.1.5-1" class="pilcrow">¶</a></p>
+<p id="section-3.1.5-2">When "instance" contains a relative URI, it is resolved relative to the document's base URI, as per <span>[<a href="#RFC3986" class="xref">RFC3986</a>], <a href="https://rfc-editor.org/rfc/rfc3986#section-5" class="relref">Section 5</a></span>. However, using relative URIs can cause confusion, and they might not be handled correctly by all implementations. For example, if the two resources "https://api.example.org/foo/bar/123" and "https://api.example.org/widget/456" both respond with an "instance" equal to the relative URI reference "example-instance", when resolved they will identify different resources ("https://api.example.org/foo/bar/example-instance" and "https://api.example.org/widget/example-instance" respectively). As a result, it is RECOMMENDED that absolute URIs be used in "instance" when possible, and that when relative URIs are used, they include the full path (e.g., "/instances/123").<a href="#section-3.1.5-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="extension-members">
+<section id="section-3.2">
+        <h3 id="name-extension-members">
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-extension-members" class="section-name selfRef">Extension Members</a>
+        </h3>
+<p id="section-3.2-1">Problem type definitions MAY extend the problem details object with additional members.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-2">For example, our "out of credit" problem above defines two such extensions -- "balance" and "accounts" to convey additional, problem-specific information.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
+<p id="section-3.2-3">Clients consuming problem details MUST ignore any such extensions that they don't recognize; this allows problem types to evolve and include additional information in the future.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
+<p id="section-3.2-4">Note that because extensions are effectively put into a namespace by the problem type, it is not possible to define new "standard" members without defining a new media type.<a href="#section-3.2-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="defining">
+<section id="section-4">
+      <h2 id="name-defining-new-problem-types">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-defining-new-problem-types" class="section-name selfRef">Defining New Problem Types</a>
+      </h2>
+<p id="section-4-1">When an HTTP API needs to define a response that indicates an error condition, it might be appropriate to do so by defining a new problem type.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-2">Before doing so, it's important to understand what they are good for, and what's better left to other mechanisms.<a href="#section-4-2" class="pilcrow">¶</a></p>
+<p id="section-4-3">Problem details are not a debugging tool for the underlying implementation; rather, they are a way to expose greater detail about the HTTP interface itself. Designers of new problem types need to carefully consider the Security Considerations (<a href="#security-considerations" class="xref">Section 5</a>), in particular, the risk of exposing attack vectors by exposing implementation internals through error messages.<a href="#section-4-3" class="pilcrow">¶</a></p>
+<p id="section-4-4">Likewise, truly generic problems -- i.e., conditions that could potentially apply to any resource on the Web -- are usually better expressed as plain status codes. For example, a "write access disallowed" problem is probably unnecessary, since a 403 Forbidden status code in response to a PUT request is self-explanatory.<a href="#section-4-4" class="pilcrow">¶</a></p>
+<p id="section-4-5">Finally, an application might have a more appropriate way to carry an error in a format that it already defines. Problem details are intended to avoid the necessity of establishing new "fault" or "error" document formats, not to replace existing domain-specific formats.<a href="#section-4-5" class="pilcrow">¶</a></p>
+<p id="section-4-6">That said, it is possible to add support for problem details to existing HTTP APIs using HTTP content negotiation (e.g., using the Accept request header to indicate a preference for this format; see <span>[<a href="#I-D.ietf-httpbis-semantics" class="xref">I-D.ietf-httpbis-semantics</a>], <a href="https://tools.ietf.org/html/draft-ietf-httpbis-semantics-16#section-12.5.1" class="relref">Section 12.5.1</a></span>).<a href="#section-4-6" class="pilcrow">¶</a></p>
+<p id="section-4-7">New problem type definitions MUST document:<a href="#section-4-7" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-4-8">
+<li id="section-4-8.1">a type URI (typically, with the "http" or "https" scheme),<a href="#section-4-8.1" class="pilcrow">¶</a>
+</li>
+        <li id="section-4-8.2">a title that appropriately describes it (think short), and<a href="#section-4-8.2" class="pilcrow">¶</a>
+</li>
+        <li id="section-4-8.3">the HTTP status code for it to be used with.<a href="#section-4-8.3" class="pilcrow">¶</a>
+</li>
+      </ol>
+<p id="section-4-9">Problem type definitions MAY specify the use of the Retry-After response header (<span>[<a href="#I-D.ietf-httpbis-semantics" class="xref">I-D.ietf-httpbis-semantics</a>], <a href="https://tools.ietf.org/html/draft-ietf-httpbis-semantics-16#section-10.2.4" class="relref">Section 10.2.4</a></span>) in appropriate circumstances.<a href="#section-4-9" class="pilcrow">¶</a></p>
+<p id="section-4-10">A problem's type URI SHOULD resolve to HTML <span>[<a href="#HTML5" class="xref">HTML5</a>]</span> documentation that explains how to resolve the problem.<a href="#section-4-10" class="pilcrow">¶</a></p>
+<p id="section-4-11">A problem type definition MAY specify additional members on the problem details object. For example, an extension might use typed links <span>[<a href="#RFC8288" class="xref">RFC8288</a>]</span> to another resource that can be used by machines to resolve the problem.<a href="#section-4-11" class="pilcrow">¶</a></p>
+<p id="section-4-12">If such additional members are defined, their names SHOULD start with a letter (ALPHA, as per <span>[<a href="#RFC5234" class="xref">RFC5234</a>], <a href="https://rfc-editor.org/rfc/rfc5234#appendix-B.1" class="relref">Appendix B.1</a></span>) and SHOULD consist of characters from ALPHA, DIGIT (<span>[<a href="#RFC5234" class="xref">RFC5234</a>], <a href="https://rfc-editor.org/rfc/rfc5234#appendix-B.1" class="relref">Appendix B.1</a></span>), and "_" (so that it can be serialized in formats other than JSON), and they SHOULD be three characters or longer.<a href="#section-4-12" class="pilcrow">¶</a></p>
+<div id="example">
+<section id="section-4.1">
+        <h3 id="name-example">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-example" class="section-name selfRef">Example</a>
+        </h3>
+<p id="section-4.1-1">For example, if you are publishing an HTTP API to your online shopping cart, you might need to indicate that the user is out of credit (our example from above), and therefore cannot make the purchase.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-2">If you already have an application-specific format that can accommodate this information, it's probably best to do that. However, if you don't, you might consider using one of the problem details formats -- JSON if your API is JSON-based, or XML if it uses that format.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.1-3">To do so, you might look for an already-defined type URI that suits your purposes. If one is available, you can reuse that URI.<a href="#section-4.1-3" class="pilcrow">¶</a></p>
+<p id="section-4.1-4">If one isn't available, you could mint and document a new type URI (which ought to be under your control and stable over time), an appropriate title and the HTTP status code that it will be used with, along with what it means and how it should be handled.<a href="#section-4.1-4" class="pilcrow">¶</a></p>
+<p id="section-4.1-5">In summary: an instance URI will always identify a specific occurrence of a problem. On the other hand, type URIs can be reused if an appropriate description of a problem type is already available someplace else, or they can be created for new problem types.<a href="#section-4.1-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="predefined-problem-types">
+<section id="section-4.2">
+        <h3 id="name-predefined-problem-types">
+<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-predefined-problem-types" class="section-name selfRef">Predefined Problem Types</a>
+        </h3>
+<p id="section-4.2-1">This specification reserves the use of one URI as a problem type:<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<p id="section-4.2-2">The "about:blank" URI <span>[<a href="#RFC6694" class="xref">RFC6694</a>]</span>, when used as a problem type, indicates that the problem has no additional semantics beyond that of the HTTP status code.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
+<p id="section-4.2-3">When "about:blank" is used, the title SHOULD be the same as the recommended HTTP status phrase for that code (e.g., "Not Found" for 404, and so on), although it MAY be localized to suit client preferences (expressed with the Accept-Language request header).<a href="#section-4.2-3" class="pilcrow">¶</a></p>
+<p id="section-4.2-4">Please note that according to how the "type" member is defined (<a href="#members" class="xref">Section 3.1</a>), the "about:blank" URI is the default value for that member. Consequently, any problem details object not carrying an explicit "type" member implicitly uses this URI.<a href="#section-4.2-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="security-considerations">
+<section id="section-5">
+      <h2 id="name-security-considerations">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      </h2>
+<p id="section-5-1">When defining a new problem type, the information included must be carefully vetted. Likewise, when actually generating a problem -- however it is serialized -- the details given must also be scrutinized.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-5-2">Risks include leaking information that can be exploited to compromise the system, access to the system, or the privacy of users of the system.<a href="#section-5-2" class="pilcrow">¶</a></p>
+<p id="section-5-3">Generators providing links to occurrence information are encouraged to avoid making implementation details such as a stack dump available through the HTTP interface, since this can expose sensitive details of the server implementation, its data, and so on.<a href="#section-5-3" class="pilcrow">¶</a></p>
+<p id="section-5-4">The "status" member duplicates the information available in the HTTP status code itself, thereby bringing the possibility of disagreement between the two. Their relative precedence is not clear, since a disagreement might indicate that (for example) an intermediary has modified the HTTP status code in transit (e.g., by a proxy or cache).<a href="#section-5-4" class="pilcrow">¶</a></p>
+<p id="section-5-5">As such, those defining problem types as well as generators and consumers of problems need to be aware that generic software (such as proxies, load balancers, firewalls, and virus scanners) are unlikely to know of or respect the status code conveyed in this member.<a href="#section-5-5" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="iana-considerations">
+<section id="section-6">
+      <h2 id="name-iana-considerations">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+      </h2>
+<p id="section-6-1">This specification defines two new Internet media types <span>[<a href="#RFC6838" class="xref">RFC6838</a>]</span>.<a href="#section-6-1" class="pilcrow">¶</a></p>
+<div id="applicationproblemjson">
+<section id="section-6.1">
+        <h3 id="name-application-problemjson">
+<a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-application-problemjson" class="section-name selfRef">application/problem+json</a>
+        </h3>
+<span class="break"></span><dl class="dlParallel" id="section-6.1-1">
+          <dt id="section-6.1-1.1">
+Type name:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.2">
+            <p id="section-6.1-1.2.1">application<a href="#section-6.1-1.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.3">
+Subtype name:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.4">
+            <p id="section-6.1-1.4.1">problem+json<a href="#section-6.1-1.4.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.5">
+Required parameters:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.6">
+            <p id="section-6.1-1.6.1">None<a href="#section-6.1-1.6.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.7">
+Optional parameters:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.8">
+            <p id="section-6.1-1.8.1">None; unrecognized parameters should be ignored<a href="#section-6.1-1.8.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.9">
+Encoding considerations:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.10">
+            <p id="section-6.1-1.10.1">Same as <span>[<a href="#RFC8259" class="xref">RFC8259</a>]</span><a href="#section-6.1-1.10.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.11">
+Security considerations:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.12">
+            <p id="section-6.1-1.12.1">see <a href="#security-considerations" class="xref">Section 5</a> of this document<a href="#section-6.1-1.12.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.13">
+Interoperability considerations:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.14">
+            <p id="section-6.1-1.14.1">None<a href="#section-6.1-1.14.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.15">
+Published specification:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.16">
+            <p id="section-6.1-1.16.1">RFC 7807 (this document)<a href="#section-6.1-1.16.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.17">
+Applications that use this media type:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.18">
+            <p id="section-6.1-1.18.1">HTTP<a href="#section-6.1-1.18.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.19">
+Fragment identifier considerations:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.20">
+            <p id="section-6.1-1.20.1">Same as for application/json (<span>[<a href="#RFC8259" class="xref">RFC8259</a>]</span>)<a href="#section-6.1-1.20.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.21">
+Deprecated alias names for this type:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.22">
+            <p id="section-6.1-1.22.1">n/a<a href="#section-6.1-1.22.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.23">
+Magic number(s):  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.24">
+            <p id="section-6.1-1.24.1">n/a<a href="#section-6.1-1.24.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.25">
+File extension(s):  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.26">
+            <p id="section-6.1-1.26.1">n/a<a href="#section-6.1-1.26.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.27">
+Macintosh file type code(s):  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.28">
+            <p id="section-6.1-1.28.1">n/a<a href="#section-6.1-1.28.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.29">
+Person and email address to contact for further information:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.30">
+            <p id="section-6.1-1.30.1">Mark Nottingham &lt;mnot@mnot.net&gt;<a href="#section-6.1-1.30.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.31">
+Intended usage:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.32">
+            <p id="section-6.1-1.32.1">COMMON<a href="#section-6.1-1.32.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.33">
+Restrictions on usage:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.34">
+            <p id="section-6.1-1.34.1">None.<a href="#section-6.1-1.34.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.35">
+Author:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.36">
+            <p id="section-6.1-1.36.1">Mark Nottingham &lt;mnot@mnot.net&gt;<a href="#section-6.1-1.36.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.1-1.37">
+Change controller:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.1-1.38">
+            <p id="section-6.1-1.38.1">IESG<a href="#section-6.1-1.38.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+</dl>
+</section>
+</div>
+<div id="applicationproblemxml">
+<section id="section-6.2">
+        <h3 id="name-application-problemxml">
+<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-application-problemxml" class="section-name selfRef">application/problem+xml</a>
+        </h3>
+<span class="break"></span><dl class="dlParallel" id="section-6.2-1">
+          <dt id="section-6.2-1.1">
+Type name:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.2">
+            <p id="section-6.2-1.2.1">application<a href="#section-6.2-1.2.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.3">
+Subtype name:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.4">
+            <p id="section-6.2-1.4.1">problem+xml<a href="#section-6.2-1.4.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.5">
+Required parameters:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.6">
+            <p id="section-6.2-1.6.1">None<a href="#section-6.2-1.6.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.7">
+Optional parameters:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.8">
+            <p id="section-6.2-1.8.1">None; unrecognized parameters should be ignored<a href="#section-6.2-1.8.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.9">
+Encoding considerations:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.10">
+            <p id="section-6.2-1.10.1">Same as <span>[<a href="#RFC7303" class="xref">RFC7303</a>]</span><a href="#section-6.2-1.10.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.11">
+Security considerations:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.12">
+            <p id="section-6.2-1.12.1">see <a href="#security-considerations" class="xref">Section 5</a> of this document<a href="#section-6.2-1.12.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.13">
+Interoperability considerations:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.14">
+            <p id="section-6.2-1.14.1">None<a href="#section-6.2-1.14.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.15">
+Published specification:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.16">
+            <p id="section-6.2-1.16.1">RFC 7807 (this document)<a href="#section-6.2-1.16.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.17">
+Applications that use this media type:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.18">
+            <p id="section-6.2-1.18.1">HTTP<a href="#section-6.2-1.18.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.19">
+Fragment identifier considerations:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.20">
+            <p id="section-6.2-1.20.1">Same as for application/xml (as specified by <span><a href="https://rfc-editor.org/rfc/rfc7303#section-5" class="relref">Section 5</a> of [<a href="#RFC7303" class="xref">RFC7303</a>]</span>)<a href="#section-6.2-1.20.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.21">
+Deprecated alias names for this type:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.22">
+            <p id="section-6.2-1.22.1">n/a<a href="#section-6.2-1.22.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.23">
+Magic number(s):  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.24">
+            <p id="section-6.2-1.24.1">n/a<a href="#section-6.2-1.24.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.25">
+File extension(s):  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.26">
+            <p id="section-6.2-1.26.1">n/a<a href="#section-6.2-1.26.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.27">
+Macintosh file type code(s):  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.28">
+            <p id="section-6.2-1.28.1">n/a<a href="#section-6.2-1.28.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.29">
+Person and email address to contact for further information:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.30">
+            <p id="section-6.2-1.30.1">Mark Nottingham &lt;mnot@mnot.net&gt;<a href="#section-6.2-1.30.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.31">
+Intended usage:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.32">
+            <p id="section-6.2-1.32.1">COMMON<a href="#section-6.2-1.32.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.33">
+Restrictions on usage:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.34">
+            <p id="section-6.2-1.34.1">None.<a href="#section-6.2-1.34.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.35">
+Author:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.36">
+            <p id="section-6.2-1.36.1">Mark Nottingham &lt;mnot@mnot.net&gt;<a href="#section-6.2-1.36.1" class="pilcrow">¶</a></p>
+</dd>
+          <dd class="break"></dd>
+<dt id="section-6.2-1.37">
+Change controller:  </dt>
+          <dd style="margin-left: 1.5em" id="section-6.2-1.38">
+            <p id="section-6.2-1.38.1">IESG<a href="#section-6.2-1.38.1" class="pilcrow">¶</a></p>
+</dd>
+        <dd class="break"></dd>
+</dl>
+</section>
+</div>
+</section>
+</div>
+<section id="section-7">
+      <h2 id="name-references">
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-references" class="section-name selfRef">References</a>
+      </h2>
+<section id="section-7.1">
+        <h3 id="name-normative-references">
+<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+        </h3>
+<dl class="references">
+<dt id="I-D.ietf-httpbis-semantics">[I-D.ietf-httpbis-semantics]</dt>
+        <dd>
+<span class="refAuthor">Fielding, R. T.</span>, <span class="refAuthor">Nottingham, M.</span>, and <span class="refAuthor">J. Reschke</span>, <span class="refTitle">"HTTP Semantics"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-semantics-16</span>, <time datetime="2021-05-27" class="refDate">27 May 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-16.txt">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-16.txt</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC2119">[RFC2119]</dt>
+        <dd>
+<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC3986">[RFC3986]</dt>
+        <dd>
+<span class="refAuthor">Berners-Lee, T.</span>, <span class="refAuthor">Fielding, R.</span>, and <span class="refAuthor">L. Masinter</span>, <span class="refTitle">"Uniform Resource Identifier (URI): Generic Syntax"</span>, <span class="seriesInfo">STD 66</span>, <span class="seriesInfo">RFC 3986</span>, <span class="seriesInfo">DOI 10.17487/RFC3986</span>, <time datetime="2005-01" class="refDate">January 2005</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc3986">https://datatracker.ietf.org/doc/html/rfc3986</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC5234">[RFC5234]</dt>
+        <dd>
+<span class="refAuthor">Crocker, D., Ed.</span> and <span class="refAuthor">P. Overell</span>, <span class="refTitle">"Augmented BNF for Syntax Specifications: ABNF"</span>, <span class="seriesInfo">STD 68</span>, <span class="seriesInfo">RFC 5234</span>, <span class="seriesInfo">DOI 10.17487/RFC5234</span>, <time datetime="2008-01" class="refDate">January 2008</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc5234">https://datatracker.ietf.org/doc/html/rfc5234</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8259">[RFC8259]</dt>
+        <dd>
+<span class="refAuthor">Bray, T., Ed.</span>, <span class="refTitle">"The JavaScript Object Notation (JSON) Data Interchange Format"</span>, <span class="seriesInfo">STD 90</span>, <span class="seriesInfo">RFC 8259</span>, <span class="seriesInfo">DOI 10.17487/RFC8259</span>, <time datetime="2017-12" class="refDate">December 2017</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc8259">https://datatracker.ietf.org/doc/html/rfc8259</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="XML">[XML]</dt>
+      <dd>
+<span class="refAuthor">Bray, T.</span>, <span class="refAuthor">Paoli, J.</span>, <span class="refAuthor">Sperberg-McQueen, M.</span>, <span class="refAuthor">Maler, E.</span>, and <span class="refAuthor">F. Yergeau</span>, <span class="refTitle">"Extensible Markup Language (XML) 1.0 (Fifth Edition)"</span>, <span class="seriesInfo">World Wide Web Consortium Recommendation REC-xml-20081126</span>, <time datetime="2008-11-26" class="refDate">26 November 2008</time>, <span>&lt;<a href="https://www.w3.org/TR/2008/REC-xml-20081126">https://www.w3.org/TR/2008/REC-xml-20081126</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+<section id="section-7.2">
+        <h3 id="name-informative-references">
+<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+        </h3>
+<dl class="references">
+<dt id="HTML5">[HTML5]</dt>
+        <dd>
+<span class="refAuthor">WHATWG</span>, <span class="refTitle">"HTML - Living Standard"</span>, <span>n.d.</span>, <span>&lt;<a href="https://html.spec.whatwg.org">https://html.spec.whatwg.org</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="ISO-19757-2">[ISO-19757-2]</dt>
+        <dd>
+<span class="refAuthor">International Organization for Standardization</span>, <span class="refTitle">"Information Technology -- Document Schema Definition Languages (DSDL) -- Part 2: Grammar-based Validation -- RELAX NG"</span>, <span class="seriesInfo">ISO/IEC 19757-2</span>, <time datetime="2003" class="refDate">2003</time>. </dd>
+<dd class="break"></dd>
+<dt id="RDFA">[RDFA]</dt>
+        <dd>
+<span class="refAuthor">Adida, B.</span>, <span class="refAuthor">Birbeck, M.</span>, <span class="refAuthor">McCarron, S.</span>, and <span class="refAuthor">I. Herman</span>, <span class="refTitle">"RDFa Core 1.1 - Third Edition"</span>, <span class="seriesInfo">World Wide Web Consortium Recommendation REC-rdfa-core-20150317</span>, <time datetime="2015-03-17" class="refDate">17 March 2015</time>, <span>&lt;<a href="https://www.w3.org/TR/2015/REC-rdfa-core-20150317">https://www.w3.org/TR/2015/REC-rdfa-core-20150317</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC4918">[RFC4918]</dt>
+        <dd>
+<span class="refAuthor">Dusseault, L., Ed.</span>, <span class="refTitle">"HTTP Extensions for Web Distributed Authoring and Versioning (WebDAV)"</span>, <span class="seriesInfo">RFC 4918</span>, <span class="seriesInfo">DOI 10.17487/RFC4918</span>, <time datetime="2007-06" class="refDate">June 2007</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc4918">https://datatracker.ietf.org/doc/html/rfc4918</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6694">[RFC6694]</dt>
+        <dd>
+<span class="refAuthor">Moonesamy, S., Ed.</span>, <span class="refTitle">"The "about" URI Scheme"</span>, <span class="seriesInfo">RFC 6694</span>, <span class="seriesInfo">DOI 10.17487/RFC6694</span>, <time datetime="2012-08" class="refDate">August 2012</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc6694">https://datatracker.ietf.org/doc/html/rfc6694</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC6838">[RFC6838]</dt>
+        <dd>
+<span class="refAuthor">Freed, N.</span>, <span class="refAuthor">Klensin, J.</span>, and <span class="refAuthor">T. Hansen</span>, <span class="refTitle">"Media Type Specifications and Registration Procedures"</span>, <span class="seriesInfo">BCP 13</span>, <span class="seriesInfo">RFC 6838</span>, <span class="seriesInfo">DOI 10.17487/RFC6838</span>, <time datetime="2013-01" class="refDate">January 2013</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc6838">https://datatracker.ietf.org/doc/html/rfc6838</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7303">[RFC7303]</dt>
+        <dd>
+<span class="refAuthor">Thompson, H.</span> and <span class="refAuthor">C. Lilley</span>, <span class="refTitle">"XML Media Types"</span>, <span class="seriesInfo">RFC 7303</span>, <span class="seriesInfo">DOI 10.17487/RFC7303</span>, <time datetime="2014-07" class="refDate">July 2014</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc7303">https://datatracker.ietf.org/doc/html/rfc7303</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8288">[RFC8288]</dt>
+        <dd>
+<span class="refAuthor">Nottingham, M.</span>, <span class="refTitle">"Web Linking"</span>, <span class="seriesInfo">RFC 8288</span>, <span class="seriesInfo">DOI 10.17487/RFC8288</span>, <time datetime="2017-10" class="refDate">October 2017</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/rfc8288">https://datatracker.ietf.org/doc/html/rfc8288</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="XSLT">[XSLT]</dt>
+      <dd>
+<span class="refAuthor">Clark, J.</span>, <span class="refAuthor">Pieters, S.</span>, and <span class="refAuthor">H. Thompson</span>, <span class="refTitle">"Associating Style Sheets with XML documents 1.0 (Second Edition)"</span>, <span class="seriesInfo">World Wide Web Consortium Recommendation REC-xml-stylesheet-20101028</span>, <time datetime="2010-10-28" class="refDate">28 October 2010</time>, <span>&lt;<a href="https://www.w3.org/TR/2010/REC-xml-stylesheet-20101028">https://www.w3.org/TR/2010/REC-xml-stylesheet-20101028</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+</section>
+<div id="xml-syntax">
+<section id="section-appendix.a">
+      <h2 id="name-http-problems-and-xml">
+<a href="#section-appendix.a" class="section-number selfRef">Appendix A. </a><a href="#name-http-problems-and-xml" class="section-name selfRef">HTTP Problems and XML</a>
+      </h2>
+<p id="section-appendix.a-1">Some HTTP-based APIs use XML <span>[<a href="#XML" class="xref">XML</a>]</span> as their primary format convention. Such APIs can express problem details using the format defined in this appendix.<a href="#section-appendix.a-1" class="pilcrow">¶</a></p>
+<p id="section-appendix.a-2">The RELAX NG schema <span>[<a href="#ISO-19757-2" class="xref">ISO-19757-2</a>]</span> for the XML format is as follows. Keep in mind that this schema is only meant as documentation, and not as a normative schema that captures all constraints of the XML format. Also, it would be possible to use other XML schema languages to define a similar set of constraints (depending on the features of the chosen schema language).<a href="#section-appendix.a-2" class="pilcrow">¶</a></p>
+<div id="section-appendix.a-3">
+<pre class="sourcecode lang-relax-ng-compact-syntax">
+   default namespace ns = "urn:ietf:rfc:7807"
+
+   start = problem
+
+   problem =
+     element problem {
+       (  element  type            { xsd:anyURI }?
+        &amp; element  title           { xsd:string }?
+        &amp; element  detail          { xsd:string }?
+        &amp; element  status          { xsd:positiveInteger }?
+        &amp; element  instance        { xsd:anyURI }? ),
+       anyNsElement
+     }
+
+   anyNsElement =
+     (  element    ns:*  { anyNsElement | text }
+      | attribute  *     { text })*
+</pre><a href="#section-appendix.a-3" class="pilcrow">¶</a>
+</div>
+<p id="section-appendix.a-4">The media type for this format is "application/problem+xml".<a href="#section-appendix.a-4" class="pilcrow">¶</a></p>
+<p id="section-appendix.a-5">Extension arrays and objects are serialized into the XML format by considering an element containing a child or children to represent an object, except for elements that contain only child element(s) named 'i', which are considered arrays. For example, the example above appears in XML as follows:<a href="#section-appendix.a-5" class="pilcrow">¶</a></p>
+<div id="section-appendix.a-6">
+<pre class="sourcecode lang-http-message">
+HTTP/1.1 403 Forbidden
+Content-Type: application/problem+xml
+Content-Language: en
+
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;problem xmlns="urn:ietf:rfc:7807"&gt;
+  &lt;type&gt;https://example.com/probs/out-of-credit&lt;/type&gt;
+  &lt;title&gt;You do not have enough credit.&lt;/title&gt;
+  &lt;detail&gt;Your current balance is 30, but that costs 50.&lt;/detail&gt;
+  &lt;instance&gt;https://example.net/account/12345/msgs/abc&lt;/instance&gt;
+  &lt;balance&gt;30&lt;/balance&gt;
+  &lt;accounts&gt;
+    &lt;i&gt;https://example.net/account/12345&lt;/i&gt;
+    &lt;i&gt;https://example.net/account/67890&lt;/i&gt;
+  &lt;/accounts&gt;
+&lt;/problem&gt;
+</pre><a href="#section-appendix.a-6" class="pilcrow">¶</a>
+</div>
+<p id="section-appendix.a-7">Note that this format uses an XML namespace. This is primarily to allow embedding it into other XML-based formats; it does not imply that it can or should be extended with elements or attributes in other namespaces. The RELAX NG schema explicitly only allows elements from the one namespace used in the XML format. Any extension arrays and objects MUST be serialized into XML markup using only that namespace.<a href="#section-appendix.a-7" class="pilcrow">¶</a></p>
+<p id="section-appendix.a-8">When using the XML format, it is possible to embed an XML processing instruction in the XML that instructs clients to transform the XML, using the referenced XSLT code <span>[<a href="#XSLT" class="xref">XSLT</a>]</span>. If this code is transforming the XML into (X)HTML, then it is possible to serve the XML format, and yet have clients capable of performing the transformation display human-friendly (X)HTML that is rendered and displayed at the client. Note that when using this method, it is advisable to use XSLT 1.0 in order to maximize the number of clients capable of executing the XSLT code.<a href="#section-appendix.a-8" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="using-problem-details-with-other-formats">
+<section id="section-appendix.b">
+      <h2 id="name-using-problem-details-with-">
+<a href="#section-appendix.b" class="section-number selfRef">Appendix B. </a><a href="#name-using-problem-details-with-" class="section-name selfRef">Using Problem Details with Other Formats</a>
+      </h2>
+<p id="section-appendix.b-1">In some situations, it can be advantageous to embed problem details in formats other than those described here. For example, an API that uses HTML <span>[<a href="#HTML5" class="xref">HTML5</a>]</span> might want to also use HTML for expressing its problem details.<a href="#section-appendix.b-1" class="pilcrow">¶</a></p>
+<p id="section-appendix.b-2">Problem details can be embedded in other formats either by encapsulating one of the existing serializations (JSON or XML) into that format or by translating the model of a problem detail (as specified in <a href="#problem-json" class="xref">Section 3</a>) into the format's conventions.<a href="#section-appendix.b-2" class="pilcrow">¶</a></p>
+<p id="section-appendix.b-3">For example, in HTML, a problem could be embedded by encapsulating JSON in a script tag:<a href="#section-appendix.b-3" class="pilcrow">¶</a></p>
+<div id="section-appendix.b-4">
+<pre class="sourcecode lang-html">
+&lt;script type="application/problem+json"&gt;
+  {
+   "type": "https://example.com/probs/out-of-credit",
+   "title": "You do not have enough credit.",
+   "detail": "Your current balance is 30, but that costs 50.",
+   "instance": "/account/12345/msgs/abc",
+   "balance": 30,
+   "accounts": ["/account/12345",
+                "/account/67890"]
+  }
+&lt;/script&gt;
+</pre><a href="#section-appendix.b-4" class="pilcrow">¶</a>
+</div>
+<p id="section-appendix.b-5">or by inventing a mapping into RDFa <span>[<a href="#RDFA" class="xref">RDFA</a>]</span>.<a href="#section-appendix.b-5" class="pilcrow">¶</a></p>
+<p id="section-appendix.b-6">This specification does not make specific recommendations regarding embedding problem details in other formats; the appropriate way to embed them depends both upon the format in use and application of that format.<a href="#section-appendix.b-6" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="acknowledgements">
+<section id="section-appendix.c">
+      <h2 id="name-acknowledgements">
+<a href="#name-acknowledgements" class="section-name selfRef">Acknowledgements</a>
+      </h2>
+<p id="section-appendix.c-1">The authors would like to thank
+Jan Algermissen,
+Subbu Allamaraju,
+Mike Amundsen,
+Roy Fielding,
+Eran Hammer,
+Sam Johnston,
+Mike McCall,
+Julian Reschke, and
+James Snell
+for review of this specification.<a href="#section-appendix.c-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="authors-addresses">
+<section id="section-appendix.d">
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
+      </h2>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Mark Nottingham</span></div>
+<div dir="auto" class="left">
+<span class="locality">Prahran</span> <span class="region">VIC</span> </div>
+<div dir="auto" class="left"><span class="country-name">Australia</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:mnot@mnot.net" class="email">mnot@mnot.net</a>
+</div>
+<div class="url">
+<span>URI:</span>
+<a href="https://www.mnot.net/" class="url">https://www.mnot.net/</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Erik Wilde</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:erik.wilde@dret.net" class="email">erik.wilde@dret.net</a>
+</div>
+<div class="url">
+<span>URI:</span>
+<a href="http://dret.net/netdret/" class="url">http://dret.net/netdret/</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Sanjay Dalal</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:sanjay.dalal@cal.berkeley.edu" class="email">sanjay.dalal@cal.berkeley.edu</a>
+</div>
+<div class="url">
+<span>URI:</span>
+<a href="https://github.com/sdatspun2" class="url">https://github.com/sdatspun2</a>
+</div>
+</address>
+</section>
+</div>
+<script>const toc = document.getElementById("toc");
+toc.querySelector("h2").addEventListener("click", e => {
+  toc.classList.toggle("active");
+});
+toc.querySelector("nav").addEventListener("click", e => {
+  toc.classList.remove("active");
+});
+</script>
+</body>
+</html>
