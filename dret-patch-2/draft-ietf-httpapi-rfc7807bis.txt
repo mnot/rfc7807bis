@@ -6,8 +6,8 @@ HTTPAPI                                                    M. Nottingham
 Internet-Draft                                                          
 Obsoletes: 7807 (if approved)                                   E. Wilde
 Intended status: Standards Track                                        
-Expires: 12 December 2021                                       S. Dalal
-                                                            10 June 2021
+Expires: 13 December 2021                                       S. Dalal
+                                                            11 June 2021
 
 
                      Problem Details for HTTP APIs
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 December 2021.
+   This Internet-Draft will expire on 13 December 2021.
 
 Copyright Notice
 
@@ -320,11 +320,11 @@ Table of Contents
 
 3.3.  Processing Problem Detail Objects
 
-   Processing problem detail objects MUST use the following processing
-   model.  Any member defined by this specification must be tested to
-   use the type given in its definition.  If the type is incorrect, the
-   member MUST be ignored and processing must continue as if the member
-   had not been present.
+   When interpreting problem details, processing errors (such as an an
+   extension member whose value type is unexpected) might be
+   encountered.  In these cases, the safest way to process problem
+   detail is to ignore these ill-formed members, while the information
+   in other valid parts of the problem details can still be relied upon.
 
 4.  Defining New Problem Types
 
