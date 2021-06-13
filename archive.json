@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-03T02:33:29.165974+00:00",
+  "timestamp": "2021-06-13T01:01:12.332004+00:00",
   "repo": "ietf-wg-httpapi/rfc7807bis",
   "labels": [
     {
@@ -1603,6 +1603,73 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 22,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjY2NzQ4NTA2",
+      "title": "all predefined members are optional",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/pull/22",
+      "state": "OPEN",
+      "author": "dret",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "adding a clear statement that all members of the problem details object are optional. i guess using the RFC 2119 \"OPTIONAL\" makes sense in this case.",
+      "createdAt": "2021-06-10T10:25:02Z",
+      "updatedAt": "2021-06-10T10:25:02Z",
+      "baseRepository": "ietf-wg-httpapi/rfc7807bis",
+      "baseRefName": "main",
+      "baseRefOid": "2b0d06306d9de017088e04b12e9321397b6a59f9",
+      "headRepository": "ietf-wg-httpapi/rfc7807bis",
+      "headRefName": "dret-patch-1",
+      "headRefOid": "2eddf3a78dbc1abd2862a1daa9606a4a278fd6fa",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 23,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjY2NzU0NDkz",
+      "title": "adding processing model (closing #19)",
+      "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/pull/23",
+      "state": "OPEN",
+      "author": "dret",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "making it clear that members using the wrong type must be ignored.",
+      "createdAt": "2021-06-10T10:32:24Z",
+      "updatedAt": "2021-06-11T14:55:03Z",
+      "baseRepository": "ietf-wg-httpapi/rfc7807bis",
+      "baseRefName": "main",
+      "baseRefOid": "2b0d06306d9de017088e04b12e9321397b6a59f9",
+      "headRepository": "ietf-wg-httpapi/rfc7807bis",
+      "headRefName": "dret-patch-2",
+      "headRefOid": "aaba2eba8aaefca0a2e54f02a985c7f3c3848887",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "body": "A couple of things:\r\n\r\n* I don't know what \"Any member defined by this specification must be tested to use the type given in its definition\" means.\r\n* Generally, MUST is used to specify interoperability requirements; they should be testable. These MUSTs read oddly in that light. \r\n* This isn't so much a processing model as it does specify error handling. Processing models generally specify behaviours; this doesn't (and arguably, this spec can't; that's up to the application in question)\r\n* In the case that a problem type defines that a particular extension member MUST be present and valid, what happens? \r\n\r\nSo, I'd just say something like: \"When interpreting problem details, errors (such as an an extension member whose value type is unexpected) might be encountered. In most situations, the information in other valid parts of the problem details can still be relied upon.\"",
+          "createdAt": "2021-06-11T02:43:12Z",
+          "updatedAt": "2021-06-11T02:43:12Z"
+        },
+        {
+          "author": "dret",
+          "authorAssociation": "COLLABORATOR",
+          "body": "On 2021-06-11 04:43, Mark Nottingham wrote:\n>   * Generally, MUST is used to specify interoperability requirements;\n>     they should be testable. These MUSTs read oddly in that light.\n\nwouldn't the test simply be whether the member values conform to the \ntype given in the definition or not? if they don't, interop suffers \nbecause consumers don't know how to interpret the invalid type.\n\n>   * This isn't so much a processing model as it does specify error\n>     handling. Processing models generally specify behaviours; this\n>     doesn't (and arguably, this spec can't; that's up to the application\n>     in question)\n\nok. to me, the first line of defense in behavior is to do this kind of \nvalidation. validate, then proceed. the original issue was asking what \nto do when validation fails.\n\n>   * In the case that a problem type defines that a particular extension\n>     member MUST be present and valid, what happens?\n\ni forgot that this is even possible. wouldn't that up for the type to \ndefine? that's hard for the generic spec to do. but i agree that saying \nthis in the new section probably would help.\n\n> So, I'd just say something like: \"When interpreting problem details, \n> errors (such as an an extension member whose value type is unexpected) \n> might be encountered. In most situations, the information in other valid \n> parts of the problem details can still be relied upon.\"\n\nthanks, i tweaked that a little and updated the PR.\n",
+          "createdAt": "2021-06-11T14:55:03Z",
+          "updatedAt": "2021-06-11T14:55:03Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
