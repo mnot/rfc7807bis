@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-17T00:57:27.084635+00:00",
+  "timestamp": "2021-06-20T01:01:40.387628+00:00",
   "repo": "ietf-wg-httpapi/rfc7807bis",
   "labels": [
     {
@@ -1079,13 +1079,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2021-04-23T14:11:40Z",
-      "updatedAt": "2021-05-01T01:15:42Z",
+      "updatedAt": "2021-06-18T07:24:13Z",
       "baseRepository": "ietf-wg-httpapi/rfc7807bis",
       "baseRefName": "main",
       "baseRefOid": "c1bd1003cb39fa4c3fecd6aa593445aa928a473e",
       "headRepository": "sdatspun2/rfc7807bis",
       "headRefName": "main",
-      "headRefOid": "4ed3cca1b9aaac4e00a70d85366733c0e91f0d5d",
+      "headRefOid": "fc9781b97ed20c7f4214b658e3a5521bed214fa3",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -1395,6 +1395,139 @@
               "updatedAt": "2021-05-01T01:15:42Z"
             }
           ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg1ODQ0MjQ2",
+          "commit": {
+            "abbreviatedOid": "4ed3cca"
+          },
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-06-17T03:59:19Z",
+          "updatedAt": "2021-06-17T03:59:19Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "Right, but this is a proposal to resolve the issue about having a JSON Schema, not that. Addressing two issues together conflates them, and we haven't yet come to consensus on the latter. \r\n\r\nIn this situation, the usual process is to address the more straightforward thing first -- in this case, adding a JSON Schema -- and then adding to it when we resolve the other issue. So I'd suggest removing `properties` for now (although we might add it back later).",
+              "createdAt": "2021-06-17T03:59:19Z",
+              "updatedAt": "2021-06-17T03:59:20Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg1ODQ0MzIw",
+          "commit": {
+            "abbreviatedOid": "4ed3cca"
+          },
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-06-17T03:59:33Z",
+          "updatedAt": "2021-06-17T03:59:33Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "Sounds good to me - let's change to that value.",
+              "createdAt": "2021-06-17T03:59:33Z",
+              "updatedAt": "2021-06-17T03:59:33Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg3MDQwNDMy",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-06-18T05:24:46Z",
+          "updatedAt": "2021-06-18T05:24:46Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "Removed",
+              "createdAt": "2021-06-18T05:24:46Z",
+              "updatedAt": "2021-06-18T05:24:46Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg3MDQwNTA5",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-06-18T05:24:59Z",
+          "updatedAt": "2021-06-18T05:24:59Z",
+          "comments": [
+            {
+              "originalPosition": 35,
+              "body": "Removed",
+              "createdAt": "2021-06-18T05:24:59Z",
+              "updatedAt": "2021-06-18T05:24:59Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg3MDQwNjE4",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-06-18T05:25:18Z",
+          "updatedAt": "2021-06-18T05:25:19Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "not relevant. removed.",
+              "createdAt": "2021-06-18T05:25:19Z",
+              "updatedAt": "2021-06-18T05:25:19Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg3MDQwOTE3",
+          "commit": {
+            "abbreviatedOid": "5467bff"
+          },
+          "author": "sdatspun2",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-06-18T05:25:57Z",
+          "updatedAt": "2021-06-18T05:25:57Z",
+          "comments": [
+            {
+              "originalPosition": 2,
+              "body": "Changed",
+              "createdAt": "2021-06-18T05:25:57Z",
+              "updatedAt": "2021-06-18T05:25:57Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg3MTA3MDM4",
+          "commit": {
+            "abbreviatedOid": "fc9781b"
+          },
+          "author": "mnot",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "LGTM",
+          "createdAt": "2021-06-18T07:24:13Z",
+          "updatedAt": "2021-06-18T07:24:13Z",
+          "comments": []
         }
       ]
     },
