@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-20T01:01:40.387628+00:00",
+  "timestamp": "2021-07-06T01:02:32.888682+00:00",
   "repo": "ietf-wg-httpapi/rfc7807bis",
   "labels": [
     {
@@ -1072,24 +1072,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0NjIyMTAwOTUw",
       "title": "Added JSON schema",
       "url": "https://github.com/ietf-wg-httpapi/rfc7807bis/pull/18",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "sdatspun2",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2021-04-23T14:11:40Z",
-      "updatedAt": "2021-06-18T07:24:13Z",
+      "updatedAt": "2021-07-05T16:45:59Z",
       "baseRepository": "ietf-wg-httpapi/rfc7807bis",
       "baseRefName": "main",
       "baseRefOid": "c1bd1003cb39fa4c3fecd6aa593445aa928a473e",
       "headRepository": "sdatspun2/rfc7807bis",
       "headRefName": "main",
       "headRefOid": "fc9781b97ed20c7f4214b658e3a5521bed214fa3",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2021-07-05T16:45:59Z",
+      "mergedAt": "2021-07-05T16:45:59Z",
+      "mergedBy": "sdatspun2",
+      "mergeCommit": {
+        "oid": "d2958d39ffea9e76444199513f8f67f29e2691d4"
+      },
       "comments": [
         {
           "author": "sdatspun2",
