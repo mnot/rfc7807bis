@@ -6,8 +6,8 @@ HTTPAPI                                                    M. Nottingham
 Internet-Draft                                                          
 Obsoletes: 7807 (if approved)                                   E. Wilde
 Intended status: Standards Track                                        
-Expires: 13 December 2021                                       S. Dalal
-                                                            11 June 2021
+Expires: 15 January 2022                                        S. Dalal
+                                                            14 July 2021
 
 
                      Problem Details for HTTP APIs
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 December 2021.
+   This Internet-Draft will expire on 15 January 2022.
 
 Copyright Notice
 
@@ -69,14 +69,15 @@ Table of Contents
        3.1.4.  "detail"
        3.1.5.  "instance"
      3.2.  Extension Members
-     3.3.  Processing Problem Detail Objects
    4.  Defining New Problem Types
      4.1.  Example
-     4.2.  Predefined Problem Types
+     4.2.  Registered Problem Types
+       4.2.1.  about:blank
    5.  Security Considerations
    6.  IANA Considerations
-     6.1.  application/problem+json
-     6.2.  application/problem+xml
+     6.1.  HTTP Problem Types Registry
+     6.2.  application/problem+json
+     6.3.  application/problem+xml
    7.  References
      7.1.  Normative References
      7.2.  Informative References
@@ -318,14 +319,6 @@ Table of Contents
    the problem type, it is not possible to define new "standard" members
    without defining a new media type.
 
-3.3.  Processing Problem Detail Objects
-
-   When interpreting problem details, processing errors (such as an an
-   extension member whose value type is unexpected) might be
-   encountered.  In these cases, the safest way to process problem
-   detail is to ignore these ill-formed members, while the information
-   in other valid parts of the problem details can still be relied upon.
-
 4.  Defining New Problem Types
 
    When an HTTP API needs to define a response that indicates an error
@@ -411,9 +404,50 @@ Table of Contents
    if an appropriate description of a problem type is already available
    someplace else, or they can be created for new problem types.
 
-4.2.  Predefined Problem Types
+4.2.  Registered Problem Types
 
-   This specification reserves the use of one URI as a problem type:
+   This specification defines the HTTP Problem Type registry for common,
+   widely-used problem type URIs, to promote reuse.
+
+   Registration requests are reviewed and approved by a Designated
+   Expert, as per [RFC8126], Section 4.5.  A specification document is
+   appreciated, but not required.
+
+   When evaluating requests the Expert(s) should consider community
+   feedback, how well-defined the problem type is, and this
+   specification's requirements.  Vendor-specific, application-specific,
+   and deployment-specific values are not registrable.
+
+   Registrations MAY use the prefix "https://iana.org/assignments/http-
+   problem-types#", and are encouraged to do so when a stable, neutral
+   URI is desirable.
+
+   Registration requests should use the following template:
+
+   *  Type URI: [a URI for the problem type]
+
+   *  Title: [a short description of the problem type]
+
+   *  Recommended HTTP status code: [what status code is most
+      appropriate to use with the type]
+
+   *  Reference: [to a specification defining the type]
+
+   See the registry at https://iana.org/assignments/http-problem-types
+   (https://iana.org/assignments/http-problem-types) for details on
+   where to send registration requests.
+
+4.2.1.  about:blank
+
+   This specification registers one Problem Type, "about:blank".
+
+   *  Type URI: about:blank
+
+   *  Title: See HTTP Status Code
+
+   *  Recommended HTTP status code: N/A
+
+   *  Reference: [this document]
 
    The "about:blank" URI [RFC6694], when used as a problem type,
    indicates that the problem has no additional semantics beyond that of
@@ -458,9 +492,15 @@ Table of Contents
 
 6.  IANA Considerations
 
-   This specification defines two new Internet media types [RFC6838].
+   This specification defines a new registry and two new Internet media
+   types [RFC6838].
 
-6.1.  application/problem+json
+6.1.  HTTP Problem Types Registry
+
+   Please create the HTTP Problem Types Registry, as specified in
+   Section 4.2, and populate it with "about:blank" as per Section 4.2.1.
+
+6.2.  application/problem+json
 
    Type name:  application
 
@@ -502,7 +542,7 @@ Table of Contents
 
    Change controller:  IESG
 
-6.2.  application/problem+xml
+6.3.  application/problem+xml
 
    Type name:  application
 
@@ -553,7 +593,7 @@ Table of Contents
               Semantics", Work in Progress, Internet-Draft, draft-ietf-
               httpbis-semantics-16, 27 May 2021,
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              semantics-16.txt>.
+              semantics-16>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -569,6 +609,11 @@ Table of Contents
               Specifications: ABNF", STD 68, RFC 5234,
               DOI 10.17487/RFC5234, January 2008,
               <https://datatracker.ietf.org/doc/html/rfc5234>.
+
+   [RFC8126]  Cotton, M., Leiba, B., and T. Narten, "Guidelines for
+              Writing an IANA Considerations Section in RFCs", BCP 26,
+              RFC 8126, DOI 10.17487/RFC8126, June 2017,
+              <https://datatracker.ietf.org/doc/html/rfc8126>.
 
    [RFC8259]  Bray, T., Ed., "The JavaScript Object Notation (JSON) Data
               Interchange Format", STD 90, RFC 8259,
