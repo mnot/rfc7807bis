@@ -6,8 +6,8 @@ HTTPAPI                                                    M. Nottingham
 Internet-Draft                                                          
 Obsoletes: 7807 (if approved)                                   E. Wilde
 Intended status: Standards Track                                        
-Expires: 6 January 2022                                         S. Dalal
-                                                             5 July 2021
+Expires: 15 January 2022                                        S. Dalal
+                                                            14 July 2021
 
 
                      Problem Details for HTTP APIs
@@ -41,7 +41,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 January 2022.
+   This Internet-Draft will expire on 15 January 2022.
 
 Copyright Notice
 
@@ -74,8 +74,6 @@ Table of Contents
      4.2.  Predefined Problem Types
    5.  Security Considerations
    6.  IANA Considerations
-     6.1.  application/problem+json
-     6.2.  application/problem+xml
    7.  References
      7.1.  Normative References
      7.2.  Informative References
@@ -449,91 +447,9 @@ Table of Contents
 
 6.  IANA Considerations
 
-   This specification defines two new Internet media types [RFC6838].
-
-6.1.  application/problem+json
-
-   Type name:  application
-
-   Subtype name:  problem+json
-
-   Required parameters:  None
-
-   Optional parameters:  None; unrecognized parameters should be ignored
-
-   Encoding considerations:  Same as [RFC8259]
-
-   Security considerations:  see Section 5 of this document
-
-   Interoperability considerations:  None
-
-   Published specification:  RFC 7807 (this document)
-
-   Applications that use this media type:  HTTP
-
-   Fragment identifier considerations:  Same as for application/json
-      ([RFC8259])
-
-   Deprecated alias names for this type:  n/a
-
-   Magic number(s):  n/a
-
-   File extension(s):  n/a
-
-   Macintosh file type code(s):  n/a
-
-   Person and email address to contact for further information:  Mark No
-      ttingham <mnot@mnot.net>
-
-   Intended usage:  COMMON
-
-   Restrictions on usage:  None.
-
-   Author:  Mark Nottingham <mnot@mnot.net>
-
-   Change controller:  IESG
-
-6.2.  application/problem+xml
-
-   Type name:  application
-
-   Subtype name:  problem+xml
-
-   Required parameters:  None
-
-   Optional parameters:  None; unrecognized parameters should be ignored
-
-   Encoding considerations:  Same as [RFC7303]
-
-   Security considerations:  see Section 5 of this document
-
-   Interoperability considerations:  None
-
-   Published specification:  RFC 7807 (this document)
-
-   Applications that use this media type:  HTTP
-
-   Fragment identifier considerations:  Same as for application/xml (as
-      specified by Section 5 of [RFC7303])
-
-   Deprecated alias names for this type:  n/a
-
-   Magic number(s):  n/a
-
-   File extension(s):  n/a
-
-   Macintosh file type code(s):  n/a
-
-   Person and email address to contact for further information:  Mark No
-      ttingham <mnot@mnot.net>
-
-   Intended usage:  COMMON
-
-   Restrictions on usage:  None.
-
-   Author:  Mark Nottingham <mnot@mnot.net>
-
-   Change controller:  IESG
+   Please update the "application/problem+json" and "application/
+   problem+xml" registrations in the Internet media types registry
+   [RFC6838]. to refer to this document.
 
 7.  References
 
@@ -601,10 +517,6 @@ Table of Contents
               Specifications and Registration Procedures", BCP 13,
               RFC 6838, DOI 10.17487/RFC6838, January 2013,
               <https://datatracker.ietf.org/doc/html/rfc6838>.
-
-   [RFC7303]  Thompson, H. and C. Lilley, "XML Media Types", RFC 7303,
-              DOI 10.17487/RFC7303, July 2014,
-              <https://datatracker.ietf.org/doc/html/rfc7303>.
 
    [RFC8288]  Nottingham, M., "Web Linking", RFC 8288,
               DOI 10.17487/RFC8288, October 2017,
